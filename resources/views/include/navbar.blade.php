@@ -19,7 +19,7 @@
                     </a>
                 </li>
                 <li class="nav-item mr-1 mb-1 ">
-                    <a class="btn btn-sm links" href="/items">
+                    <a class="btn btn-sm btn links" href="/items">
                         Browse Ads
                     </a>
                 </li>
@@ -31,42 +31,20 @@
                 </li>
                 @if (Route::has('register'))
                 <li class="nav-item mr-1 mb-1">
-                    <a class="btn btn-sm links" href="{{ route('register') }}">
+                    <a class="btn btn-sm btn-outline-success links" href="{{ route('register') }}">
                         {{ __('Register') }}
                     </a>
                 </li>
                 @endif
                 @else
-               <!--  <div class="dropdown">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
-                    </a>
-
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div> -->
-
-
-
-
-
-
-
-
-
-
-
-                <li class="nav-item dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item dropdown mr-1 mb-1">
+                    <a aria-expanded="false" aria-haspopup="true" class="btn btn-sm btn-outline-success dropdown-toggle " data-toggle="dropdown" href="#" id="navbarDropdown" role="button" v-pre="">
                         {{ Auth::user()->name }}
                         <span class="caret">
                         </span>
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                         <a class="dropdown-item" href="/home">Dashboard</a>
+                    <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right">
+                        <a href="/home" class="dropdown-item">Dashboard</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
