@@ -1,6 +1,7 @@
-.body-content{
-	margin-top: 58px;
-	margin-bottom:100px;
+ .body-content{
+	height: 100vh;
+	display: flex;
+	align-items: center;
 }
 
 .jumbotron {
@@ -48,6 +49,9 @@
     padding: 25px;
 }
 
+.font-12{
+	font-size: 12px;
+}
 
 @media screen and (max-width: 780px) {
 	.bannercontainer{
@@ -63,5 +67,3 @@
 	}
 
 }
-
-
