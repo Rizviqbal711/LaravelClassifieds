@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
-            WebsiteName
+            QuickList
         </a>
         <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon">
@@ -18,24 +18,17 @@
                         List your item
                     </a>
                 </li>
-                <li class="nav-item mr-1 mb-1 ">
+                <li class="nav-item mr-1">
                     <a class="btn btn-sm btn links" href="/items">
                         Browse Ads
                     </a>
                 </li>
                 @guest
-                <li class="nav-item mr-1 mb-1">
+                <li class="nav-item mr-1">
                     <a class="btn btn-sm links" href="{{ route('login') }}">
-                        {{ __('Login') }}
+                        {{ __('Login / Register') }}
                     </a>
                 </li>
-                @if (Route::has('register'))
-                <li class="nav-item mr-1 mb-1">
-                    <a class="btn btn-sm btn-outline-success links" href="{{ route('register') }}">
-                        {{ __('Register') }}
-                    </a>
-                </li>
-                @endif
                 @else
                 <li class="nav-item dropdown mr-1 mb-1">
                     <a aria-expanded="false" aria-haspopup="true" class="btn btn-sm btn-outline-success dropdown-toggle " data-toggle="dropdown" href="#" id="navbarDropdown" role="button" v-pre="">

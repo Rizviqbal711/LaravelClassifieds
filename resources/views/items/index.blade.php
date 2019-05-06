@@ -67,11 +67,9 @@
                                 View Ad
                             </a>
                             <br>
-                                <br>
-                                    <small class="text-muted">
+                                <small class="text-muted">
                                         Last updated 3 mins ago
-                                    </small>
-                                </br>
+                                </small>
                             </br>
                         </p>
                     </div>

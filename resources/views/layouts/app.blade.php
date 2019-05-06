@@ -20,9 +20,7 @@
 </head>
 <body>
     @include('include.navbar')
-    <div class="body-content">
-        @yield('content')
-    </div>
+    @yield('content')
     <footer class="text-white bg-dark footer-content ">
         <div class="container text-center">
             All rights reserved
