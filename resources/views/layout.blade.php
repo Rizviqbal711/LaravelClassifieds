@@ -8,13 +8,16 @@
         <title>
             @yield('title')
         </title>
-                    <!-- Fonts -->
+        <!-- Fonts -->
         <link href="//fonts.gstatic.com" rel="dns-prefetch">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-                    <!-- Styles -->
+        <!-- Styles -->
         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
         <link href="/css/main.css" rel="stylesheet" type="text/css">
+        
+        <!-- Scripts -->
+
     </head>
     <body>
         @include('include.navbar')
@@ -29,7 +32,19 @@
             </div>
         </footer>
         <!-- Scripts -->
-        <script defer="" src="{{ asset('js/app.js') }}">
+        <script defer="" src="{{ asset('js/app.js') }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+        <script type="text/javascript">
+
+        var typed4 = new Typed('#typed4', {
+            strings: ['Furniture', 'Television', 'Clothes'],
+            typeSpeed: 75,
+            backSpeed: 75,
+            attr: 'placeholder',
+            bindInputFocusEvents: true,
+            loop: true
+        });
+
         </script>
     </body>
 </html>

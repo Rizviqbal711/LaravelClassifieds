@@ -1,7 +1,13 @@
 .body-content {
-  height: 100vh;
+  height: 89.3vh;
   display: flex;
   align-items: center;
+}
+
+.dashboard-content {
+  height: 89.3vh;
+  display: flex;
+  margin-top: 60px;
 }
 
 .jumbotron {
@@ -51,7 +57,7 @@
 }
 
 .font-12 {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 780px) {

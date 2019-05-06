@@ -8,16 +8,13 @@ New Idea
 @endsection
 @section('content')
 <div class="jumbotron">
-    <div class="container bannercontainer">
-        <h1 class="display-3 text-center">
-            Some Catchy Quote
+    <div class="container bannercontainer row justify-content-center align-items-center">
+        <h1 class=" display-4 text-center">
+            Find what you are looking for
         </h1>
-        <p class="text-center">
-            Some Subheading Catchy quote
-        </p>
         <p>
             <div class="input-group">
-                <input class="form-control" placeholder="Search" type="text">
+                <input class="form-control" id=typed4 type="text">
                     <div class="input-group-append">
                         <button class="btn btn-success" type="button">
                             <i class="fa fa-search">
@@ -28,6 +25,24 @@ New Idea
         </p>
     </div>
 </div>
+<div class="container">
+    <h2 class="text-center">About QuickList</h2>
+    <div class="row">
+        <div class="col text-center mt-5 mb-5">
+            <h3>Post</h3>
+            <p>List your Item quickly without any complications</p>
+        </div>
+        <div class="col text-center mt-5 mb-5">
+            <h3>Find</h3>
+            <p>Find the right item you want quickly</p>
+        </div>
+        <div class="col text-center mt-5 mb-5">
+            <h3>Deal</h3>
+            <p>Chat with the seller/buyer easily</p>
+        </div>
+    </div>
+</div>
+<hr>
 <div class="container">
     <h2 class="text-center">
         ITEMS
@@ -52,6 +67,9 @@ New Idea
                 </div>
         </div>
     @endforeach
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <a href="/items" class="btn btn-success">View All</a>
     </div>
 </div>
 @endsection
