@@ -9,7 +9,7 @@
     <h1 class="text-center">
         Add Items
     </h1>
-    <form action="/items" method="POST">
+    <form action="/items" method="POST" enctype="multipart/form-data">
         @csrf()
         <div class="form-group">
           <!--   <label class="col-sm-2 col-form-label" for="inputEmail3">
@@ -78,8 +78,12 @@
             <label>
             	Area
             </label>
-        	<input type="text" name="area" placeholder="Area" value="{{ old('item_area') }}" class="form-control">
+        	<input type="text" name="item_area" placeholder="Area" value="{{ old('item_area') }}" class="form-control">
             <!--     <input name="Country" class="form-control" placeholder="Country" type="text" value="{{ old('country') }}"> -->
+        </div>
+        <div class="form-group">
+            <label>Images</label>
+            <input type="file" name="item_image[]" multiple>
         </div>
         <div class="form-group">
             <div>

@@ -60,7 +60,6 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-
         $validated_attr = request()->validate([
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
@@ -69,10 +68,26 @@ class ItemController extends Controller
             'item_max_price' => ['required'],
             'item_city' => ['required'],
             'item_area' => ['required', 'min:3'],
-            'item_area' => ['required', 'min:3'],
-            'item_category' => ['required', 'min:3'],
+            // 'item_area' => ['required', 'min:3'],
+            // 'item_category' => ['required', 'min:3'],
+            'item_image' => ['required'],
+            'item_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
+        $image_names = [];
+        if (request()->hasFile('item_image')) {
+            foreach (request()->file('item_image') as $image) {
+                $file_name = date('YmdHis') . '-' . $image->getClientOriginalName();
+                $image->move(public_path() . '/uploads/', $file_name);  
+                $image_names[] = $file_name;
+            }
+        }
+        $validated_attr['item_image'] = json_encode($image_names);
+        $validated_attr['user_id'] = Auth()->user()->id;
+
+        // TEMPORARY: remove later after fixing the age..
+        $validated_attr['item_age'] = 0;
+        
         Item::create($validated_attr);
 
         return redirect('/items');

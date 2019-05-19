@@ -62,7 +62,9 @@
                             <br>
                             <br>
                             <small>
+                                @if($item->category)
                                 {{ $item->category->category_name }}
+                                @endif($item->category)
                             </small>
                         </p>
                         <p class="card-text">
