@@ -8,25 +8,31 @@
 @section('content')
 <div class="categories">
     <div class="container">
-        <h5>
-            @foreach($categories as $category)
-		    	{{ $category->category_name }}  
-		    @endforeach
-        </h5>
+        @foreach($categories as $category)
+            <div class="d-inline-block">
+                <form action="/items" method="get">
+                    <input type="hidden" name="category_id" value="{{ $category->id}}">
+    		    	<button type="submit" class="btn text-white">{{ $category->category_name }} {{ $category->search_categories }}</button>  
+                </form>
+            </div>
+    	@endforeach
     </div>
 </div>
-<div class="container search-content">
-    <div class="card">
+<div class="card">
+    <div class="container">
         <div class="card-body">
-        	 <div class="input-group">
-                <input class="form-control" placeholder="Search" type="text">
+            <form action="/search" method="get" role="search">
+                <div class="input-group search-bar">
+                    @csrf()
+                    <input class="form-control search-bar" placeholder="Search" name="search" type="text">
                     <div class="input-group-append">
-                        <button class="btn btn-success" type="button">
+                        <button class="btn btn-success" type="submit">
                             <i class="fa fa-search">
                             </i>
                         </button>
                     </div>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -45,32 +51,28 @@
             <div class="row no-gutters">
                 <div class="col-md-4">
                     <img alt="..." class="card-img" src="...">
-                    </img>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {{$item->title}}
+                            {{$item->item_title}}
                         </h5>
                         <p class="card-text">
-                            {{$item->description}}
+                            {{$item->item_description}}
                             <br>
-                                <br>
-                                    <small>
-                                        {{ $item->category->category_name }}
-                                    </small>
-                                </br>
-                            </br>
+                            <br>
+                            <small>
+                                {{ $item->category->category_name }}
+                            </small>
                         </p>
                         <p class="card-text">
                             <a class="btn-sm btn btn-success" href="/items/{{ $item->id }}">
                                 View Ad
                             </a>
                             <br>
-                                <small class="text-muted">
-                                        Last updated 3 mins ago
-                                </small>
-                            </br>
+                            <small class="text-muted">
+                                {{ $item->created_at->diffForHumans() }}
+                            </small>
                         </p>
                     </div>
                 </div>

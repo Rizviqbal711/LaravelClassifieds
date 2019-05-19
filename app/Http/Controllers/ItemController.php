@@ -6,23 +6,35 @@ use Illuminate\Http\Request;
 
 use App\Item;
 use App\Category;
+use App\User;
 
 class ItemController extends Controller
 {
+
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $categories = Category::all();
-        $items = Item::all();
 
+        $search_categories = $request->category_id;
+        if ($search_categories) {
+            $items = Item::where('category_id' , $search_categories)->get();
+        } else {
+            $items = Item::all();
+        }
+
+        // dd($search_categories);
         return view('items.index', [
 
             'items' => $items,
-            'categories' => $categories
+            'categories' => $categories,
+            
 
         ]);
     
@@ -50,8 +62,15 @@ class ItemController extends Controller
     {
 
         $validated_attr = request()->validate([
-            'title' => ['required', 'min:3'],
-            'description' => ['required', 'min:3']
+            'item_title' => ['required', 'min:3'],
+            'item_description' => ['required', 'min:3'],
+            'item_age' => ['required'],
+            'item_min_price' => ['required'],
+            'item_max_price' => ['required'],
+            'item_city' => ['required'],
+            'item_area' => ['required', 'min:3'],
+            'item_area' => ['required', 'min:3'],
+            'item_category' => ['required', 'min:3'],
         ]);
 
         Item::create($validated_attr);
@@ -95,7 +114,19 @@ class ItemController extends Controller
      */
     public function update(Item $item)
     {
-        item::update(request(['title', 'description']));
+        // dd($item);
+        Item::where('id', $item->id)->update(request([
+            'item_title', 
+            'item_description',
+            'item_city',
+            'item_age',
+            'item_min_price',
+            'item_max_price',
+            'item_category'
+            ])
+        );
+
+
 
         return redirect('/items');
     }
@@ -113,5 +144,23 @@ class ItemController extends Controller
     
         return redirect('/items');
     
+    }
+
+
+    public function search(Request $request) {
+
+        $search = $request->get('search');
+        $search_qry = Item::where('item_title' , 'LIKE', '%'.$search. '%')->get();
+        // dd($qry);
+        return view('search', compact('search_qry'));
+    }
+
+
+    public function useritems(Item $item){
+
+        $user_id = Auth()->user()->id;
+
+        $user_items = $item->where('user_id', $user_id)->get();
+        return view('myitems', compact('user_items'));   
     }
 }

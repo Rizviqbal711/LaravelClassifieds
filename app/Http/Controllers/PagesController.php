@@ -13,7 +13,8 @@ class PagesController extends Controller
 
     public function home ()
     {
-        $items = Item::all();
+        $items = Item::limit(6)->get();
+        // $item = $all_items->;
 
         return view('welcome', [
 
