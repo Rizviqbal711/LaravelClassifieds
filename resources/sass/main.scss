@@ -47,8 +47,17 @@
 .items{
 	margin-top: 30px
 }
+
 .item-card{
 	width: 48%
+}
+
+.item-image{
+	width: 500px;
+}
+
+.item-desc{
+	height: 500px;
 }
 
 .categories{
@@ -106,6 +115,15 @@
 	.home-card{
 		width: 81%
 	}
+
+	.item-image{
+		width: 400px;
+	}
+
+	.item-desc{
+		height: 200px;
+	}
+
 
 }
 

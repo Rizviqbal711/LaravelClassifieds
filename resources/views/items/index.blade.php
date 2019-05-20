@@ -50,7 +50,9 @@
         <div class="card mb-3 ml-3 item-card">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img alt="..." class="card-img" src="...">
+                    @if($item->item_primary_image)
+                    <img alt="..." class="card-img" src="{{asset('uploads') .'/'. $item->item_primary_image}}">
+                    @endif
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">

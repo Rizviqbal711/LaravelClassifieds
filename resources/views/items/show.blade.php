@@ -21,17 +21,19 @@
                     @endif
                 </div>
             <div>
-                <img src="{{ asset('images/000000.png') }}">
+                @if($item->item_primary_image)
+                <img src="{{asset('uploads') .'/'. $item->item_primary_image}}" class="item-image">
+                @endif
             </div>
         </div>
-        <div  class="col-md-5">
+        <div  class="col-md-5 item-desc" >
             <div class="align-top mt-5">
                 <h3><u>Description</u></h3>
                 {{ $item->item_description}}
             </div>
             <div class="text-muted location">
                 <u>Location</u><br>
-                {{ $item->item_area}}
+                {{ $item->item_area}} > {{ $item->item_city}}
             </div>
         </div> 
     </div>

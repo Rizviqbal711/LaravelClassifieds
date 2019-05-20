@@ -30,6 +30,10 @@ Route::get('search', 'ItemController@search');
 
 Route::get('myitems', 'ItemController@useritems');
 
+Route::get('profile', 'UserController@myprofile');
+
+Route::patch('update/{user}', 'UserController@update');
+
 // Route::get('list', 'ListController@indeextendsx');
 
 // Route::get('/items', 'ItemController@index');

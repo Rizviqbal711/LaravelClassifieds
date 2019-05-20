@@ -20,8 +20,8 @@ class ListController extends Controller
 
 	public function create()
     {
-
-        return view('items.create');
+    	$categories = Category::all();
+        return view('items.create', compact('categories'));
 
     }
 }

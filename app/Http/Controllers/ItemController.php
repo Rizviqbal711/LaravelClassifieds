@@ -29,6 +29,8 @@ class ItemController extends Controller
             $items = Item::all();
         }
 
+        // dd($items);
+
         // dd($search_categories);
         return view('items.index', [
 
@@ -47,9 +49,9 @@ class ItemController extends Controller
      */
     public function create()
     {
-
-        return view('items.create');
-
+        
+        // NOT USED
+        // USED IN ListController
     }
 
     /**
@@ -60,33 +62,29 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
+        // dd(request()->item_primary_image);
         $validated_attr = request()->validate([
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
             'item_age' => ['required'],
-            'item_min_price' => ['required'],
-            'item_max_price' => ['required'],
+            'item_min_price' => ['numeric', 'required'],
+            'item_max_price' => ['numeric', 'required', 'min:'.request()->item_min_price],
             'item_city' => ['required'],
             'item_area' => ['required', 'min:3'],
-            // 'item_area' => ['required', 'min:3'],
-            // 'item_category' => ['required', 'min:3'],
-            'item_image' => ['required'],
-            'item_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'category_id' => ['required'],
+            'item_primary_image' => ['required'],
+            'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
-        $image_names = [];
-        if (request()->hasFile('item_image')) {
-            foreach (request()->file('item_image') as $image) {
-                $file_name = date('YmdHis') . '-' . $image->getClientOriginalName();
-                $image->move(public_path() . '/uploads/', $file_name);  
-                $image_names[] = $file_name;
-            }
+        if (request()->hasFile('item_primary_image')) {
+            $file_name = date('YmdHis') . '-' . request()->file('item_primary_image')->getClientOriginalName();
+            request()->file('item_primary_image')->move(public_path() . '/uploads/', $file_name);  
         }
-        $validated_attr['item_image'] = json_encode($image_names);
+        $validated_attr['item_primary_image'] = $file_name;
         $validated_attr['user_id'] = Auth()->user()->id;
 
         // TEMPORARY: remove later after fixing the age..
-        $validated_attr['item_age'] = 0;
+        // $validated_attr['item_age'] = 0;
         
         Item::create($validated_attr);
 
@@ -102,9 +100,7 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-
         return view('items.show', compact('item'));
-    
     }
 
     /**
@@ -115,9 +111,9 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
-
-        return view('items.edit', compact('item'));
-
+        $categories = Category::all();
+        // dd($item);
+        return view('items.edit', compact('item', 'categories'));
     }
 
     /**
@@ -130,16 +126,17 @@ class ItemController extends Controller
     public function update(Item $item)
     {
         // dd($item);
-        Item::where('id', $item->id)->update(request([
-            'item_title', 
-            'item_description',
-            'item_city',
-            'item_age',
-            'item_min_price',
-            'item_max_price',
-            'item_category'
-            ])
-        );
+        $attr = request()->all(); 
+        unset($attr['_method']);
+        unset($attr['_token']);
+
+        if (request()->hasFile('item_primary_image')) {
+            $file_name = date('YmdHis') . '-' . request()->file('item_primary_image')->getClientOriginalName();
+            request()->file('item_primary_image')->move(public_path() . '/uploads/', $file_name);  
+            $attr['item_primary_image'] = $file_name;
+        }
+
+        Item::where('id', $item->id)->update($attr);
 
 
 
@@ -176,6 +173,9 @@ class ItemController extends Controller
         $user_id = Auth()->user()->id;
 
         $user_items = $item->where('user_id', $user_id)->get();
+
+        // dd($user_items);
+
         return view('myitems', compact('user_items'));   
     }
 }

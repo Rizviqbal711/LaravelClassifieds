@@ -19,7 +19,7 @@
         <div class="card mb-3 ml-3 item-card">
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img alt="..." class="card-img" src="...">
+                    <img alt="" class="card-img" src="{{asset('uploads') .'/'. $myitems->item_primary_image}}">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -31,7 +31,7 @@
                             <br>
                             <br>
                             <small>
-                                {{ $myitems->category->category_name }}
+                              
                             </small>
                         </p>
                         <p class="card-text">

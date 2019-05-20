@@ -15,7 +15,7 @@ class Item extends Model
     	'item_city',
     	'item_area',
         'item_category',
-        'item_image',
+        'item_primary_image',
     	'user_id',
     ];
 

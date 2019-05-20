@@ -31,17 +31,32 @@
         </div>
         <div class="form-group">
             <label>
+                Category
+            </label>
+                <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
+                <select class="form-control custom-select" placeholder="Category" name="category_id">
+                    <option disabled selected>Category</option>
+                    @foreach($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                    @endforeach
+                </select>
+                <!-- <textarea  class="form-control" name="description" placeholder="Description">
+                {{ old('description') }}
+                </textarea> -->
+        </div>
+        <div class="form-group">
+            <label>
                 Age
             </label>
                 <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
                 <select class="form-control custom-select" placeholder="Age" name="item_age">
             		<option disabled selected>Age</option>
-            		<option>Brand New</option>
-            		<option>1 - 6 Months</option>
-            		<option>6 - 12 Months</option>
-            		<option>1 - 2 Years</option>
-            		<option>2 - 5 Years</option>
-            		<option>5+ Years</option>
+                    <option value="1">Brand New</option>
+                    <option value="2">1 - 6 Months</option>
+                    <option value="3">6 - 12 Months</option>
+                    <option value="4">1 - 2 Years</option>
+                    <option value="5">2 - 5 Years</option>
+                    <option value="6">5+ Years</option>
             	</select>
                 <!-- <textarea  class="form-control" name="description" placeholder="Description">
                 {{ old('description') }}
@@ -65,12 +80,13 @@
             </label>
             <select class="form-control custom-select" name="item_city">
             	<option disabled selected>Select City</option>
-            	<option>Abu Dhabi</option>
-            	<option>Dubai</option>
-            	<option>Sharjah</option>
-            	<option>Ajman</option>
-            	<option>Ras Al Khaimah</option>
-            	<option>Fujeirah</option>
+                <option value="AUH">Abu Dhabi</option>
+                <option value="DXB">Dubai</option>
+                <option value="SHJ">Sharjah</option>
+                <option value="AJM">Ajman</option>
+                <option value="RAK">Ras Al Khaimah</option>
+                <option value="UAQ">Umm Al Quwain</option>
+                <option value="FUJ">Fujeirah</option>
             </select>
             <!--     <input name="Country" class="form-control" placeholder="Country" type="text" value="{{ old('country') }}"> -->
         </div>
@@ -83,7 +99,7 @@
         </div>
         <div class="form-group">
             <label>Images</label>
-            <input type="file" name="item_image[]" multiple>
+            <input type="file" name="item_primary_image">
         </div>
         <div class="form-group">
             <div>

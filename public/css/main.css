@@ -44,6 +44,14 @@
   width: 48%;
 }
 
+.item-image {
+  width: 500px;
+}
+
+.item-desc {
+  height: 500px;
+}
+
 .categories {
   background-color: #28a745;
   color: #fff;
@@ -99,6 +107,14 @@
 
   .home-card {
     width: 81%;
+  }
+
+  .item-image {
+    width: 400px;
+  }
+
+  .item-desc {
+    height: 200px;
   }
 }
 
