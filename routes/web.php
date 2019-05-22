@@ -49,3 +49,7 @@ Route::patch('update/{user}', 'UserController@update');
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('auth/facebook', 'Auth\FacebookloginController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'Auth\FacebookloginController@handleFacebookCallback');
+

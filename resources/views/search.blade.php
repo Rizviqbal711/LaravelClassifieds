@@ -8,23 +8,41 @@
 	<h1>
 		Search
 	</h1>
-	<div class="card-deck items">
+	<div class="mt-5 row justify-content-around">
 		@foreach($search_qry as $search)
-	    	<div class="card">
-	    		<img alt="..." class="card-img-top" src="..."/>
+	    	<div class="card d-inline-block mr-3 mb-3 home-card">
+	    		<img src="{{asset('uploads') .'/'. $search->item_primary_image}}" class="card-img-top">
 	            <div class="card-body">
 	            	<h5 class="card-title">
 	                	{{ $search->item_title }}
 	                </h5>
-	                <p class="card-text">
-	                	{{ $search->item_description }}
-	                </p>
-	                <p class="card-text">
-	                	<a href="/items/{{ $search->id }}" class="btn btn-success">View Ad</a><br><br>
-	                	<small class="text-muted">
-	                		Last updated 3 mins ago
-	                	</small>
-	                </p>
+	                <div class="card-text">
+                            {{$search->item_description}}
+                            <br>
+                            <br>
+                            <small>
+                                <div class="text-muted">
+                                    <i class="fas fa-layer-group"></i>
+                                    {{ $search->category->category_name }}
+                                </div>
+                                 <div class="text-muted">
+                                    <i class="fas fa-user"></i>
+                                    {{ $search->user->name }}
+                                </div>
+                                <div class="text-muted location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ $search->item_area}} > {{ $search->item_city}}
+                                </div>
+                            </small>
+                            <br>
+                            <a class="btn-sm btn btn-success" href="/items/{{ $search->id }}">
+                                View Ad
+                            </a>
+                            <br>
+                            <small class="text-muted">
+                                {{ $search->created_at->diffForHumans() }}
+                            </small>
+                    </div>
 	        	</div>
 	        </div>
 	    @endforeach

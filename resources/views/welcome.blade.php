@@ -60,20 +60,38 @@
     <div class="mt-5 row justify-content-around">
         @foreach($items as $i => $item)
             <div class="card d-inline-block mr-3 mb-3 home-card" style="">
-            <img alt="..." class="card-img-top" src="..."/>
+            <img alt="..." class="card-img-top" src="{{asset('uploads') .'/'. $item->item_primary_image}}"/>
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{ $item->item_title }}
+                        {{ $item->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_min_price, date('w') + 1)}} AED</small>
                     </h5>
-                    <p class="card-text">
-                        {{ $item->item_description }}
-                    </p>
-                    <p class="card-text">
-                        <a href="/items/{{ $item->id }}" class="btn btn-success">View Ad</a><br><br>
-                        <small class="text-muted">
-                            {{ $item->created_at->diffForHumans() }}
-                        </small>
-                    </p>
+                    <div class="card-text">
+                            {{$item->item_description}}
+                            <br>
+                            <br>
+                            <small>
+                                <div class="text-muted">
+                                    <i class="fas fa-layer-group"></i>
+                                    {{ $item->category->category_name }}
+                                </div>
+                                 <div class="text-muted">
+                                    <i class="fas fa-user"></i>
+                                    {{ $item->user->name }}
+                                </div>
+                                <div class="text-muted location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ $item->item_area}} > {{ $item->item_city}}
+                                </div>
+                            </small>
+                            <br>
+                            <a class="btn-sm btn btn-success" href="/items/{{ $item->id }}">
+                                View Ad
+                            </a>
+                            <br>
+                            <small class="text-muted">
+                                {{ $item->created_at->diffForHumans() }}
+                            </small>
+                    </div>
                 </div>
             </div>
         @endforeach

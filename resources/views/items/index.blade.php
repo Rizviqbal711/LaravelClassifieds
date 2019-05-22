@@ -57,19 +57,27 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {{$item->item_title}}
+                            {{$item->item_title}}<small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_min_price, date('w') + 1)}} AED</small>
                         </h5>
-                        <p class="card-text">
+                        <div class="card-text">
                             {{$item->item_description}}
                             <br>
                             <br>
                             <small>
-                                @if($item->category)
-                                {{ $item->category->category_name }}
-                                @endif($item->category)
+                                <div class="text-muted">
+                                    <i class="fas fa-layer-group"></i>
+                                    {{ $item->category->category_name }}
+                                </div>
+                                 <div class="text-muted">
+                                    <i class="fas fa-user"></i>
+                                    {{ $item->user->name }}
+                                </div>
+                                <div class="text-muted location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ $item->item_area}} > {{ $item->item_city}}
+                                </div>
                             </small>
-                        </p>
-                        <p class="card-text">
+                            <br>
                             <a class="btn-sm btn btn-success" href="/items/{{ $item->id }}">
                                 View Ad
                             </a>
@@ -77,7 +85,7 @@
                             <small class="text-muted">
                                 {{ $item->created_at->diffForHumans() }}
                             </small>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

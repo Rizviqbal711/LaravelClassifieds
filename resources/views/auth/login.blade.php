@@ -66,6 +66,11 @@
                                     {{ __('Login') }}
                                 </button>
                             </div>
+                            <div class="col-md-12 ">
+                                <a href="{{ url('auth/facebook') }}" class="btn btn-primary col-md-12">
+                                    <strong>Login With Facebook</strong>
+                                </a> 
+                            </div>
                         </div>
                     </form>
                     <hr>

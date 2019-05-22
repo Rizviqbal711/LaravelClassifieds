@@ -24,6 +24,6 @@ class Item extends Model
     }
 
     public function user() {
-        return $this->belongsTo(Item::class); 
+        return $this->belongsTo(User::class); 
     }
 }

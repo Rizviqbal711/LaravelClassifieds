@@ -26,15 +26,25 @@
                         <h5 class="card-title">
                             {{ $myitems->item_title }}
                         </h5>
-                        <p class="card-text">
-                            {{ $myitems->item_description }}
+                       <div class="card-text">
+                            {{$myitems->item_description}}
                             <br>
                             <br>
                             <small>
-                              
+                                <div class="text-muted">
+                                    <i class="fas fa-layer-group"></i>
+                                    {{ $myitems->category->category_name }}
+                                </div>
+                                 <div class="text-muted">
+                                    <i class="fas fa-user"></i>
+                                    {{ $myitems->user->name }}
+                                </div>
+                                <div class="text-muted location">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    {{ $myitems->item_area}} > {{ $myitems->item_city}}
+                                </div>
                             </small>
-                        </p>
-                        <p class="card-text">
+                            <br>
                             <a class="btn-sm btn btn-success" href="/items/{{ $myitems->id }}/edit">
                                 Edit
                             </a>
@@ -42,7 +52,7 @@
                             <small class="text-muted">
                                 {{ $myitems->created_at->diffForHumans() }}
                             </small>
-                        </p>
+                        </div>
                     </div>
                 </div>
             </div>

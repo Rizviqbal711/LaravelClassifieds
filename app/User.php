@@ -16,7 +16,7 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','phone',
+        'name', 'email', 'password','phone', 'facebook_id'
     ];
 
     /**
@@ -38,6 +38,6 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     public function item(){
-        return $this->hasOne(Item::class);
+        return $this->hasMany(Item::class);
     }
 }
