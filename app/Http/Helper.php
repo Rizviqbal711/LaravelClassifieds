@@ -1,7 +1,5 @@
 <?php
 
-
-
 function germanizer($min, $max, $day)
 {
     $difference = $max - $min;

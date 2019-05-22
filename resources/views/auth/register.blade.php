@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Register | QuickList')
 @section('content')
 <div class="body-content">
 <div class="container ">
@@ -70,6 +70,11 @@
                                 <button type="submit" class="btn btn-success col-md-12">
                                     {{ __('Register') }}
                                 </button>
+                            </div>
+                            <div class="col-md-12 ">
+                                <a href="{{ url('auth/facebook') }}" class="btn btn-primary col-md-12">
+                                    <strong>Continue With Facebook</strong>
+                                </a> 
                             </div>
                         </div>
                     </form>

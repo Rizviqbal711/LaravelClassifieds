@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@section('title', 'Login | QuickList')
 @section('content')
 <div class="body-content">
 <div class="container">

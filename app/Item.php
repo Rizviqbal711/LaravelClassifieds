@@ -14,7 +14,7 @@ class Item extends Model
     	'item_max_price',
     	'item_city',
     	'item_area',
-        'item_category',
+        'category_id',
         'item_primary_image',
     	'user_id',
     ];

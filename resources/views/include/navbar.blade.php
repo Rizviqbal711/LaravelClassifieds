@@ -3,14 +3,14 @@
         <a class="navbar-brand" href="/">
             QuickList
         </a>
+        @if (\Request::is('login') || \Request::is('register')) 
+        @else
         <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-target="#navbarResponsive" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon">
             </span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <!-- Right Side Of Navbar -->
-            @if (\Request::is('login') || \Request::is('register')) 
-            @else
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 <li class="nav-item mr-1 mb-1">
@@ -40,6 +40,7 @@
                         <!-- <a href="/home" class="dropdown-item">Dashboard</a> -->
                         <a href="/myitems" class="dropdown-item">My Items</a>
                         <a href="/profile" class="dropdown-item">My Profile</a>
+                        <a href="/rewards" class="dropdown-item">Your Rewards</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -51,7 +52,7 @@
                 </li>
                 @endguest
             </ul>
-            @endif
         </div>
+        @endif
     </div>
 </nav>

@@ -63,7 +63,7 @@
             <img alt="..." class="card-img-top" src="{{asset('uploads') .'/'. $item->item_primary_image}}"/>
                 <div class="card-body">
                     <h5 class="card-title">
-                        {{ $item->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_min_price, date('w') + 1)}} AED</small>
+                        {{ $item->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</small>
                     </h5>
                     <div class="card-text">
                             {{$item->item_description}}

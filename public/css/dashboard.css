@@ -61,6 +61,12 @@
 }
 
 @media screen and (max-width: 780px) {
+  .body-content {
+    height: 110vh;
+    display: flex;
+    align-items: center;
+  }
+
   .bannercontainer {
     margin-top: 20px;
   }

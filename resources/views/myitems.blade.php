@@ -24,7 +24,7 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {{ $myitems->item_title }}
+                            {{ $myitems->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</small>
                         </h5>
                        <div class="card-text">
                             {{$myitems->item_description}}

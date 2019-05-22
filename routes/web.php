@@ -28,28 +28,23 @@ Route::get('list', 'ListController@create');
 
 Route::get('search', 'ItemController@search');
 
-Route::get('myitems', 'ItemController@useritems');
-
-Route::get('profile', 'UserController@myprofile');
-
-Route::patch('update/{user}', 'UserController@update');
-
-// Route::get('list', 'ListController@indeextendsx');
-
-// Route::get('/items', 'ItemController@index');
-// Route::get('/items/create', 'ItemController@create');
-// Route::post('/items', 'ItemController@store');
-// Route::get('/items/{item}', 'ItemController@show');
-// Route::get('/items/{item}/edit', 'ItemController@edit');
-// Route::patch('/items/{item}', 'ItemController@update');
-// Route::delete('/items/{item}', 'ItemController@destroy');
 
 
+
+
+// Login
 
 Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('auth/facebook', 'Auth\FacebookloginController@redirectToFacebook');
+
 Route::get('auth/facebook/callback', 'Auth\FacebookloginController@handleFacebookCallback');
 
+// Rewards
+
+Route::patch('update/{user}', 'UserController@update');
+Route::get('myitems', 'ItemController@useritems');
+Route::get('profile', 'UserController@myprofile');
+Route::get('rewards', 'UserController@rewards');
