@@ -14,7 +14,7 @@
 	    		<img src="{{asset('uploads') .'/'. $search->item_primary_image}}" class="card-img-top">
 	            <div class="card-body">
 	            	<h5 class="card-title">
-	                	{{ $search->item_title }}
+	                	{{ $search->item_title }}  <small class="float-right text-success">{{ germanizer($search->item_min_price, $search->item_max_price, date('w') + 1)}} AED</small>
 	                </h5>
 	                <div class="card-text">
                             {{$search->item_description}}

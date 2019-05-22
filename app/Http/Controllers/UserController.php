@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Reward;
 
 class UserController extends Controller
 {
@@ -29,8 +30,15 @@ class UserController extends Controller
         User::where('id', $user->id)->update($attr);
 
         return redirect('/profile');
-
-
-
    	}
+
+    public function rewards(Reward $reward)
+    {
+
+        $user_id = Auth()->user()->id;
+        
+        $rewards = Reward::where('user_id',$user_id)->sum('reward_points');
+        // dd($rewards);
+        return view('user.rewards', compact('rewards'));
+    }
 }

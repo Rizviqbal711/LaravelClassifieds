@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Item;
 use App\Category;
 use App\User;
+use App\Reward;
 
 class ItemController extends Controller
 {
@@ -62,7 +63,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(request()->item_primary_image);
+        // dd(request()->category_id);
         $validated_attr = request()->validate([
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
@@ -85,8 +86,14 @@ class ItemController extends Controller
 
         // TEMPORARY: remove later after fixing the age..
         // $validated_attr['item_age'] = 0;
-        
+        // dd($validated_attr);
         Item::create($validated_attr);
+
+        Reward::create([
+            'user_id' => Auth()->user()->id,
+            'reward_points' => 5,
+        ]);
+
 
         return redirect('/items');
 

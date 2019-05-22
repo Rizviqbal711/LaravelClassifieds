@@ -40,4 +40,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function item(){
         return $this->hasMany(Item::class);
     }
+
+    public function reward(){
+        return $this->hasMany(Reward::class);
+    }
 }

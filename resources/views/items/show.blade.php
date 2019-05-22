@@ -8,7 +8,7 @@
         <div class="col-md-7">
             <div>
                 <div class="d-inline-block">
-                    <h1>{{ $item->item_title }} <small> - <span class="text-success">{{ germanizer($item->item_min_price, $item->item_min_price, date('w') + 1)}} AED</span></small></h1> 
+                    <h1>{{ $item->item_title }} <small> - <span class="text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</span></small></h1> 
                 </div>
                 @if(Auth::user())
                     <div class="d-inline-block">
