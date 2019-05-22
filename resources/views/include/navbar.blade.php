@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="/">
             QuickList
         </a>
-        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarResponsive" data-toggle="collapse" type="button">
+        <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler collapsed" data-target="#navbarResponsive" data-toggle="collapse" type="button">
             <span class="navbar-toggler-icon">
             </span>
         </button>
@@ -14,7 +14,7 @@
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
                 <li class="nav-item mr-1 mb-1">
-                    <a class=" btn btn-success btn-sm" href="#">
+                    <a class=" btn btn-success btn-sm" href="/list">
                         List your item
                     </a>
                 </li>
@@ -37,9 +37,11 @@
                         </span>
                     </a>
                     <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right">
-                        <a href="/home" class="dropdown-item">Dashboard</a>
+                        <!-- <a href="/home" class="dropdown-item">Dashboard</a> -->
+                        <a href="/myitems" class="dropdown-item">My Items</a>
+                        <a href="/profile" class="dropdown-item">My Profile</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                            document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
                         <form action="{{ route('logout') }}" id="logout-form" method="POST" style="display: none;">

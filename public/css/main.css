@@ -1,20 +1,39 @@
 .body-content {
-  margin-top: 58px;
+  margin-top: 55px;
   margin-bottom: 100px;
 }
 
 .jumbotron {
-  height: 50vh;
+  height: 55vh;
+  background: linear-gradient(rgba(128, 128, 128, 0.45), rgba(128, 128, 128, 0.45)), url("/images/cover.jpg");
+  background-size: 100%;
+  background-position-y: -210px;
+}
+
+.headline {
+  color: white;
 }
 
 .bannercontainer {
-  margin-top: 80px;
+  margin-top: 90px;
   margin-right: auto;
   margin-left: auto;
 }
 
+#typed4 {
+  height: 50px;
+}
+
+.search-bar {
+  height: 50px;
+}
+
 .links {
   color: #28a745;
+}
+
+.about-image {
+  margin-bottom: 10px;
 }
 
 .items {
@@ -25,18 +44,39 @@
   width: 48%;
 }
 
+.item-image {
+  width: 500px;
+}
+
+.item-desc {
+  height: 500px;
+}
+
 .categories {
   background-color: #28a745;
   color: #fff;
   padding: 10px;
 }
 
+.home-card {
+  width: 31.5%;
+}
+
 .item-content {
   margin-top: 50px;
 }
 
+.myitem-content {
+  margin-top: 150px;
+}
+
 .all-item {
   margin-top: 20px;
+}
+
+.other-desc {
+  position: absolute;
+  bottom: 0px;
 }
 
 .search-content {
@@ -44,7 +84,6 @@
 }
 
 .footer-content {
-  position: relative;
   bottom: 0;
   width: 100%;
   height: 100px;
@@ -53,15 +92,29 @@
 
 @media screen and (max-width: 780px) {
   .bannercontainer {
-    margin-top: 130px;
+    margin-top: 95px;
   }
 
   .jumbotron {
-    height: 92vh;
+    height: 79vh;
+    background-size: 287%;
+    background-position-x: -525px;
   }
 
   .item-card {
     width: 90%;
+  }
+
+  .home-card {
+    width: 81%;
+  }
+
+  .item-image {
+    width: 400px;
+  }
+
+  .item-desc {
+    height: 200px;
   }
 }
 
