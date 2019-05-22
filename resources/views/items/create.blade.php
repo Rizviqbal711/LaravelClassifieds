@@ -1,5 +1,4 @@
-@extends('layout')
-
+@extends('layouts.layout')
 
 @section('title', 'Add Item')
 
