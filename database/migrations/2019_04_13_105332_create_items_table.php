@@ -17,7 +17,7 @@ class CreateItemsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description');
-            $table->unsignedinteger('catagory_id');
+            $table->unsignedinteger('category_id');
             $table->timestamps();
         });
     }
