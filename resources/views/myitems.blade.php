@@ -24,20 +24,13 @@
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title">
-                            {{ $myitems->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</small>
+                            {{ $myitems->item_title }} <small class="float-right text-success">{{ germanizer($myitems->item_min_price, $myitems->item_max_price, date('w') + 1)}} AED</small>
                         </h5>
                        <div class="card-text">
-                            {{$myitems->item_description}}
-                            <br>
-                            <br>
                             <small>
                                 <div class="text-muted">
                                     <i class="fas fa-layer-group"></i>
                                     {{ $myitems->category->category_name }}
-                                </div>
-                                 <div class="text-muted">
-                                    <i class="fas fa-user"></i>
-                                    {{ $myitems->user->name }}
                                 </div>
                                 <div class="text-muted location">
                                     <i class="fas fa-map-marker-alt"></i>

@@ -63,7 +63,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(request()->category_id);
+        // dd(request()->phone);
         $validated_attr = request()->validate([
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
@@ -77,12 +77,17 @@ class ItemController extends Controller
             'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
+        $phone = request()->validate([
+            'phone' => ['required'],
+        ]);
+
+        $user_id = Auth()->user()->id;
         if (request()->hasFile('item_primary_image')) {
             $file_name = date('YmdHis') . '-' . request()->file('item_primary_image')->getClientOriginalName();
             request()->file('item_primary_image')->move(public_path() . '/uploads/', $file_name);  
         }
         $validated_attr['item_primary_image'] = $file_name;
-        $validated_attr['user_id'] = Auth()->user()->id;
+        $validated_attr['user_id'] = $user_id;
 
         // TEMPORARY: remove later after fixing the age..
         // $validated_attr['item_age'] = 0;
@@ -93,6 +98,8 @@ class ItemController extends Controller
             'user_id' => Auth()->user()->id,
             'reward_points' => 5,
         ]);
+
+        User::where('id', $user_id)->update($phone);
 
 
         return redirect('/items');
