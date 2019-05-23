@@ -60,18 +60,22 @@
                             {{$item->item_title}}<small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</small>
                         </h5>
                         <div class="card-text">
-                            {{$item->item_description}}
-                            <br>
-                            <br>
                             <small>
                                 <div class="text-muted">
                                     <i class="fas fa-layer-group"></i>
                                     {{ $item->category->category_name }}
                                 </div>
+                                @guest
+                                <div class="text-muted">
+                                    <i class="fas fa-user"></i>
+                                    Login/Register to see the User Details
+                                </div>
+                                @else
                                  <div class="text-muted">
                                     <i class="fas fa-user"></i>
                                     {{ $item->user->name }}
                                 </div>
+                                @endguest
                                 <div class="text-muted location">
                                     <i class="fas fa-map-marker-alt"></i>
                                     {{ $item->item_area}} > {{ $item->item_city}}

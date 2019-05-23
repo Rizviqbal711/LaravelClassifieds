@@ -34,21 +34,21 @@
                 <img src="{{ asset('images/website.png') }}" width="100">
             </div>
             <h3>Register</h3>
-            <p>List your Item quickly without any complications</p>
+            <p class="text-wrap">Register on the simplest and yet quickest classifieds website</p>
         </div>
         <div class="col text-center mt-5 mb-5">
             <div class="about-image">
-                <img src="{{ asset('images/website.png') }}" width="100">
+                <img src="{{ asset('images/list.png') }}" width="100">
             </div>
             <h3>List</h3>
-            <p>Find the right item you want quickly</p>
+            <p class="text-wrap">List your item in just few steps and start selling.</p>
         </div>
         <div class="col text-center mt-5 mb-5">
             <div class="about-image">
-                <img src="{{ asset('images/website.png') }}" width="100">
+                <img src="{{ asset('images/gift.png') }}" width="100">
             </div>
-            <h3>Deal</h3>
-            <p>Chat with the seller/buyer easily</p>
+            <h3>Win</h3>
+            <p class="text-wrap">Win exciting prizes every weekend</p>
         </div>
     </div>
 </div>
@@ -66,18 +66,22 @@
                         {{ $item->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</small>
                     </h5>
                     <div class="card-text">
-                            {{$item->item_description}}
-                            <br>
-                            <br>
                             <small>
                                 <div class="text-muted">
                                     <i class="fas fa-layer-group"></i>
                                     {{ $item->category->category_name }}
                                 </div>
+                                @guest
+                                <div class="text-muted">
+                                    <i class="fas fa-user"></i>
+                                    Login/Register to see the User Details
+                                </div>
+                                @else
                                  <div class="text-muted">
                                     <i class="fas fa-user"></i>
                                     {{ $item->user->name }}
                                 </div>
+                                @endguest
                                 <div class="text-muted location">
                                     <i class="fas fa-map-marker-alt"></i>
                                     {{ $item->item_area}} > {{ $item->item_city}}

@@ -8,6 +8,8 @@
         <title>
             @yield('title')
         </title>
+
+        <link rel = "icon" href = "{{ asset('images/icon.png') }}" type = "image/x-icon">
         <!-- Fonts -->
         <link href="//fonts.gstatic.com" rel="dns-prefetch">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
@@ -27,10 +29,25 @@
             @yield('content')
         </div>
         <footer class="text-white bg-dark footer-content ">
-            <div class="container text-center">
-                All rights reserved
-                <br>
-                Made with ❤ in Dubai
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="/" class="align-middle">
+                            <img src="{{ asset('images/logo.png') }}" width="50%" class="mt-2">
+                        </a>
+                    </div>
+                    <div class="col-md-4 text-center ">
+                        <a href="/#" class="text-white">Privacy Policy</a>
+                        <br>
+                        <a href="/terms" class="text-white">Terms and Condition</a>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        All rights reserved
+                        <br>
+                        Made with ❤ in Dubai
+
+                    </div>
+                </div>
             </div>
         </footer>
         <!-- Scripts -->

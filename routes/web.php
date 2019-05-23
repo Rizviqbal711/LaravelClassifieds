@@ -18,6 +18,11 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/contact', 'PagesController@contact');
 
+Route::get('/privacy', 'PagesController@privacy');
+
+Route::get('/terms', 'PagesController@terms');
+
+
 // App Pages
 
 Route::resource('items', 'ItemController');
@@ -42,9 +47,12 @@ Route::get('auth/facebook', 'Auth\FacebookloginController@redirectToFacebook');
 
 Route::get('auth/facebook/callback', 'Auth\FacebookloginController@handleFacebookCallback');
 
-// Rewards
+// User
 
 Route::patch('update/{user}', 'UserController@update');
+
 Route::get('myitems', 'ItemController@useritems');
+
 Route::get('profile', 'UserController@myprofile');
+
 Route::get('rewards', 'UserController@rewards');

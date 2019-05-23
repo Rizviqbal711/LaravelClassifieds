@@ -20,8 +20,9 @@ class ListController extends Controller
 
 	public function create()
     {
+    	$phone = Auth()->user()->phone;
     	$categories = Category::all();
-        return view('items.create', compact('categories'));
+        return view('items.create', compact('categories', 'phone'));
 
     }
 }

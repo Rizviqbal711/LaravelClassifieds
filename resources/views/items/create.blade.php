@@ -11,14 +11,8 @@
     <form action="/items" method="POST" enctype="multipart/form-data">
         @csrf()
         <div class="form-group">
-          <!--   <label class="col-sm-2 col-form-label" for="inputEmail3">
-                Title
-            </label>
-            <div class="col-sm-10">
-                <input name="title" class="form-control" placeholder="Title" type="text" value="{{ old('title') }}">
-            </div> -->
             <label>Title</label>
-    		<input type="text" class="form-control" placeholder="Title" name="item_title">
+    		<input type="text" class="form-control" placeholder="Title" name="item_title"  value="{{ old('title') }}">
         </div>
         <div class="form-group">
             <label>
@@ -27,6 +21,10 @@
                 <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
             <textarea  class="form-control" name="item_description" placeholder="Describe your Item, List down as much detail as possible">{{ old('description') }}
             </textarea>
+        </div>
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="tel"  class="form-control" name="phone" placeholder="888-888-8888" title="XXX-XXX-XXXX"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{ $phone }}">
         </div>
         <div class="form-group">
             <label>
