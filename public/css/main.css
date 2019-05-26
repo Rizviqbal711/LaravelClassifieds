@@ -1,3 +1,9 @@
+@import url(//db.onlinewebfonts.com/c/62c0135163427c652ae397f327f85010?family=Museo+Sans);@font-face {
+  font-family: "Museo Sans";
+  src: url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.eot");
+  src: url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.woff") format("woff"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.svg#Museo Sans") format("svg");
+}
+
 .body-content {
   margin-top: 55px;
   margin-bottom: 100px;
@@ -62,6 +68,14 @@
   width: 31.5%;
 }
 
+.listing {
+  height: 400px;
+  background: linear-gradient(rgba(128, 128, 128, 0.45), rgba(128, 128, 128, 0.45)), url("/images/listing-banner.jpg") no-repeat;
+  background-position-x: center;
+  background-size: cover;
+  background-position-y: -165px;
+}
+
 .item-content {
   margin-top: 50px;
 }
@@ -99,6 +113,11 @@
     height: 79vh;
     background-size: 287%;
     background-position-x: -525px;
+    background-position-y: 0px;
+  }
+
+  .listing {
+    background-position-y: 0px;
   }
 
   .item-card {
@@ -115,6 +134,22 @@
 
   .item-desc {
     height: 200px;
+  }
+
+  .footer-content {
+    height: 100%;
+  }
+
+  .footer-logo {
+    margin-left: 23%;
+  }
+
+  .footer-container {
+    margin-bottom: 10px;
+  }
+
+  .footer-text {
+    text-align: center !important;
   }
 }
 
