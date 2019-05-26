@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
-            QuickList
+            <span style="font-family: Museo Sans">QUICK<span class="text-success">LIST</span></span>
         </a>
         @if (\Request::is('login') || \Request::is('register')) 
         @else

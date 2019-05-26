@@ -27,28 +27,28 @@
     </div>
 </div>
 <div class="container">
-    <h2 class="text-center">About QuickList</h2>
+    <h2 class="text-center">Why QuickList</h2>
     <div class="row">
         <div class="col text-center mt-5 mb-5">
             <div class="about-image">
                 <img src="{{ asset('images/website.png') }}" width="100">
             </div>
             <h3>Register</h3>
-            <p class="text-wrap">Register on the simplest and yet quickest classifieds website</p>
+            <p class="text-wrap">Join the simplest and yet quickest classifieds website.</p>
         </div>
         <div class="col text-center mt-5 mb-5">
             <div class="about-image">
                 <img src="{{ asset('images/list.png') }}" width="100">
             </div>
             <h3>List</h3>
-            <p class="text-wrap">List your item in just few steps and start selling.</p>
+            <p class="text-wrap">List your items in seconds and start selling.</p>
         </div>
         <div class="col text-center mt-5 mb-5">
             <div class="about-image">
                 <img src="{{ asset('images/gift.png') }}" width="100">
             </div>
             <h3>Win</h3>
-            <p class="text-wrap">Win exciting prizes every weekend</p>
+            <p class="text-wrap">Free raffles for exiting prices every weekend!</p>
         </div>
     </div>
 </div>
@@ -100,8 +100,44 @@
             </div>
         @endforeach
     </div>
-    <div class="d-flex justify-content-center mt-5">
+    <div class="d-flex justify-content-center mt-4">
         <a href="/items" class="btn btn-success">View All</a>
     </div>
+</div>
+<div class="container-fluid d-flex justify-content-center align-items-center listing mt-5 bg-white">
+    <div class="text-center">
+        <h3 class="text-white">Its Absoulety Free</h3>
+        <a href="/login" class="btn btn-success btn-lg mt-1"> Start Listing</a>    
+    </div>
+</div>
+<div class="container text-center mt-5">
+    <h2>Get In Touch</h2>
+    <form>
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="form-group">
+                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message" spellcheck="false"></textarea>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                </div>
+            </div>
+        </div>
+        <div class="form-group mt-3">
+            <button type="submit" id="send-message" class="btn btn-md btn-success">Send Message</button>
+        </div>
+    </form>
 </div>
 @endsection
