@@ -112,6 +112,23 @@
 .search-content{
 	margin-top: 20px;
 }
+
+.facebook-link{
+	color: #4267b2;
+	font-size: 30px;
+}
+
+.twitter-link{
+	color: #38A1F3;
+	font-size: 30px;	
+}
+
+.whatsapp-link{
+	color: #25D366;
+	font-size: 30px;
+}
+
+
 .footer-content{
 	// position: fixed;
   	bottom: 0;
@@ -168,6 +185,10 @@
 
 
 @media screen and (max-width: 780px) {
+
+	.body-content{
+		min-height: 100vh;
+	}
 	.bannercontainer{
 		margin-top: 95px;
 	}
@@ -192,11 +213,16 @@
 	}
 
 	.item-image{
-		width: 400px;
+		width: 345px;
 	}
 
 	.item-desc{
 		height: 200px;
+	}
+
+	.other-desc{
+	position:relative;
+	bottom: 0px;
 	}
 
 	.footer-content{
