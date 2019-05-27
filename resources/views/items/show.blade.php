@@ -30,10 +30,11 @@
                 {{ $item->item_description}}
             </div>
             <div class="other-desc">
+                <h4><u>Details</u></h4>
                 <div class="text-muted user">
                     <i class="fas fa-user"></i>
-                    {{ $item->user->name }} - <i class="fas fa-phone"></i>
-                    {{ $item->user->phone }}
+                    {{ $item->user->name }} - 
+                    {{ $item->user->phone }} <a href="https://api.WhatsApp.com/send?phone={{ $item->user->phone }}"><i class="fab fa-whatsapp-square whatsapp-link"></i></a>
 
                 </div>
                 <div class="text-muted location">
@@ -41,12 +42,14 @@
                     {{ $item->item_area}} > {{ $item->item_city}}
                 </div>
             </div>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{$route}}&display=popup" style="font-size: 30px;"> 
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{$route}}&display=popup" style="font-size: 30px;" class="facebook-link"> 
                 <i class="fab fa-facebook-square"></i> 
             </a>
-            <a href="http://twitter.com/share?text=Check this Item!&url={{$route}}"  style="font-size: 30px;"> 
+            <a href="http://twitter.com/share?text=I found this amazing item on Qucklist!&url={{$route}}" style="font-size: 30px;" class="twitter-link"> 
                 <i class="fab fa-twitter-square"></i>
-            <a href="whatsapp://send?text=Check this Item!" data-action="share/whatsapp/share">Share via Whatsapp</a>
+            </a>
+            <a href="whatsapp://send?text=I found this amazing item on Qucklist!" data-action="share/whatsapp/share" style="font-size: 30px;" class="whatsapp-link">
+                <i class="fab fa-whatsapp-square"></i>
             </a>
         </div> 
     </div>
