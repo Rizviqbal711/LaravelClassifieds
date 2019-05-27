@@ -5,6 +5,24 @@
 @section('title', 'QuickList')
 
 @section('content')
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="thank-you-pop">
+                    <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                    <h1>Thank You!</h1>
+                    <p>{{session('success')}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="jumbotron overlay">
     <div class="container bannercontainer row justify-content-center align-items-center">
         <h1 class=" display-4 text-center headline">
@@ -79,7 +97,8 @@
                                 @else
                                  <div class="text-muted">
                                     <i class="fas fa-user"></i>
-                                    {{ $item->user->name }}
+                                    {{ $item->user->name }} - <i class="fas fa-phone"></i>
+                                    {{ $item->user->phone }}
                                 </div>
                                 @endguest
                                 <div class="text-muted location">
@@ -112,7 +131,8 @@
 </div>
 <div class="container text-center mt-5">
     <h2>Get In Touch</h2>
-    <form>
+    <form method="post" action="/contact-us">
+        {{ csrf_field() }}
         <div class="row mt-5">
             <div class="col-12">
                 <div class="form-group">
@@ -140,4 +160,11 @@
         </div>
     </form>
 </div>
+@if (session('success'))
+<script type="text/javascript">
+   $( document ).ready(function() {
+        $('#myModal').modal('show');
+    });
+</script>
+@endif
 @endsection

@@ -56,3 +56,7 @@ Route::get('myitems', 'ItemController@useritems');
 Route::get('profile', 'UserController@myprofile');
 
 Route::get('rewards', 'UserController@rewards');
+
+// Contact Form
+
+Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUSController@contactSaveData']);

@@ -30,7 +30,8 @@
                                 @else
                                  <div class="text-muted">
                                     <i class="fas fa-user"></i>
-                                    {{ $search->user->name }}
+                                    {{ $search->user->name }} - <i class="fas fa-phone"></i>
+                                    {{ $search->user->phone }}
                                 </div>
                                 @endguest
                                 <div class="text-muted location">

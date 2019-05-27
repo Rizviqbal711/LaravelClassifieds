@@ -32,13 +32,22 @@
             <div class="other-desc">
                 <div class="text-muted user">
                     <i class="fas fa-user"></i>
-                    {{ $item->user->name }}
+                    {{ $item->user->name }} - <i class="fas fa-phone"></i>
+                    {{ $item->user->phone }}
+
                 </div>
                 <div class="text-muted location">
                     <i class="fas fa-map-marker-alt"></i>
                     {{ $item->item_area}} > {{ $item->item_city}}
                 </div>
             </div>
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{$route}}&display=popup" style="font-size: 30px;"> 
+                <i class="fab fa-facebook-square"></i> 
+            </a>
+            <a href="http://twitter.com/share?text=Check this Item!&url={{$route}}"  style="font-size: 30px;"> 
+                <i class="fab fa-twitter-square"></i>
+            <a href="whatsapp://send?text=Check this Item!" data-action="share/whatsapp/share">Share via Whatsapp</a>
+            </a>
         </div> 
     </div>
 </div>

@@ -101,7 +101,6 @@ class ItemController extends Controller
 
         User::where('id', $user_id)->update($phone);
 
-
         return redirect('/items');
 
     }
@@ -114,7 +113,9 @@ class ItemController extends Controller
      */
     public function show(Item $item)
     {
-        return view('items.show', compact('item'));
+
+        $route = url()->current();
+        return view('items.show', compact('item', 'route'));
     }
 
     /**

@@ -22,12 +22,33 @@
     @include('include.navbar')
     @yield('content')
     <footer class="text-white bg-dark footer-content ">
-        <div class="container text-center">
-            All rights reserved
-            <br>
-            Made with ❤ in Dubai
-        </div>
-    </footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 footer-container">
+                        <a class="align-middle footer-logo" href="/">
+                            <img class="mt-2" src="{{ asset('images/logo.png') }}" width="50%">
+                            </img>
+                        </a>
+                    </div>
+                    <div class="col-md-4 text-center footer-container">
+                        <a class="text-white" href="/privacy">
+                            Privacy Policy
+                        </a>
+                        <br>
+                            <a class="text-white" href="/terms">
+                                Terms and Condition
+                            </a>
+                        </br>
+                    </div>
+                    <div class="col-md-4 text-right footer-text">
+                        All rights reserved
+                        <br>
+                            Made with ❤ in Dubai
+                        </br>
+                    </div>
+                </div>
+            </div>
+        </footer>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
