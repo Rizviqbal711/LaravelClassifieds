@@ -59,4 +59,4 @@ Route::get('rewards', 'UserController@rewards');
 
 // Contact Form
 
-Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUSController@contactSaveData']);
+Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@contactSaveData']);
