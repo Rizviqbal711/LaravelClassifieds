@@ -19,7 +19,7 @@
         <link href="/css/main.css" rel="stylesheet" type="text/css">
         <link href="/css/privacy.css" rel="stylesheet" type="text/css"/>
          <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}"></script>
+        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
         <script src="{{ asset('js/privacy.js') }}"></script>
     </head>
     <body class="eupopup eupopup-bottom eupopup-style-compact">
@@ -65,14 +65,16 @@
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9">
         </script>
         <script type="text/javascript">
-            var typed4 = new Typed('#typed4', {
-            strings: ['Furniture', 'Television', 'Clothes'],
-            typeSpeed: 75,
-            backSpeed: 75,
-            attr: 'placeholder',
-            bindInputFocusEvents: true,
-            loop: true
-        });
+            $( document ).ready(function() {
+                var typed4 = new Typed('#typed4', {
+                    strings: ['Furniture', 'Television', 'Clothes'],
+                    typeSpeed: 75,
+                    backSpeed: 75,
+                    attr: 'placeholder',
+                    bindInputFocusEvents: true,
+                    loop: true
+                });
+            });
         </script>
     </body>
 </html>

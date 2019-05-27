@@ -73,7 +73,8 @@
                                 @else
                                  <div class="text-muted">
                                     <i class="fas fa-user"></i>
-                                    {{ $item->user->name }}
+                                    {{ $item->user->name }} - <i class="fas fa-phone"></i>
+                                    {{ $item->user->phone }}
                                 </div>
                                 @endguest
                                 <div class="text-muted location">

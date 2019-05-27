@@ -1,3 +1,9 @@
+@import url(//db.onlinewebfonts.com/c/62c0135163427c652ae397f327f85010?family=Museo+Sans);@font-face {
+  font-family: "Museo Sans";
+  src: url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.eot");
+  src: url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.woff") format("woff"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.svg#Museo Sans") format("svg");
+}
+
 .body-content {
   height: 89.3vh;
   display: flex;
@@ -77,6 +83,22 @@
 
   .item-card {
     width: 90%;
+  }
+
+  .footer-content {
+    height: 100%;
+  }
+
+  .footer-logo {
+    margin-left: 23%;
+  }
+
+  .footer-container {
+    margin-bottom: 10px;
+  }
+
+  .footer-text {
+    text-align: center !important;
   }
 }
 
