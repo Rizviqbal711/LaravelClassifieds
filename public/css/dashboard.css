@@ -1,7 +1,7 @@
-@import url(//db.onlinewebfonts.com/c/62c0135163427c652ae397f327f85010?family=Museo+Sans);@font-face {
-  font-family: "Museo Sans";
-  src: url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.eot");
-  src: url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.woff") format("woff"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/62c0135163427c652ae397f327f85010.svg#Museo Sans") format("svg");
+@font-face {
+  font-family: "MuseoSans-500";
+  src: url("/webfonts/3978CB_0_0.eot");
+  src: url("/webfonts/3978CB_0_0.eot?#iefix") format("embedded-opentype"), url("/webfonts/3978CB_0_0.woff2") format("woff2"), url("/webfonts/3978CB_0_0.woff") format("woff"), url("/webfonts/3978CB_0_0.ttf") format("truetype");
 }
 
 .body-content {
@@ -90,7 +90,7 @@
   }
 
   .footer-logo {
-    margin-left: 23%;
+    margin-left: 20%;
   }
 
   .footer-container {

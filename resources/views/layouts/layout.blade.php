@@ -12,7 +12,6 @@
         <!-- Fonts -->
         <link href="//fonts.gstatic.com" rel="dns-prefetch">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-        <link href="//db.onlinewebfonts.com/c/62c0135163427c652ae397f327f85010?family=Museo+Sans" rel="stylesheet" type="text/css">
          <!-- Styles -->
         <link crossorigin="anonymous" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet">
         <link href="/css/app.css" rel="stylesheet" type="text/css">
@@ -57,8 +56,7 @@
                 <div class="row">
                     <div class="col-md-4 footer-container">
                         <a class="align-middle footer-logo" href="/">
-                            <img class="mt-2" src="{{ asset('images/logo.png') }}" width="50%">
-                            </img>
+                            <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
                         </a>
                     </div>
                     <div class="col-md-4 text-center footer-container">
