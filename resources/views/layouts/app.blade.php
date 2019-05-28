@@ -20,11 +20,6 @@
 </head>
 <body>
     <script>
-          function checkLoginState() {
-            FB.getLoginStatus(function (response) {
-                statusChangeCallback(response);
-            });
-        }
             window.fbAsyncInit = function() {
                 FB.init({
                 appId      : '2035159810123718',
@@ -35,6 +30,11 @@
       
             FB.AppEvents.logPageView();   
 
+              function checkLoginState() {
+                FB.getLoginStatus(function (response) {
+                    statusChangeCallback(response);
+                });
+            }
              function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
                 console.log(response);
