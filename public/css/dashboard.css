@@ -66,6 +66,11 @@
   font-size: 14px;
 }
 
+.facebook {
+  width: 100%;
+  background: #4267b2;
+}
+
 @media screen and (max-width: 780px) {
   .body-content {
     height: 110vh;
