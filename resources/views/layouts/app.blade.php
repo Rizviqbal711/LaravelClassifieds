@@ -51,8 +51,7 @@
                 <div class="row">
                     <div class="col-md-4 footer-container">
                         <a class="align-middle footer-logo" href="/">
-                            <img class="mt-2" src="{{ asset('images/logo.png') }}" width="50%">
-                            </img>
+                            <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
                         </a>
                     </div>
                     <div class="col-md-4 text-center footer-container">
