@@ -31,14 +31,15 @@ class FacebookloginController extends Controller
   		if($finduser){
       		Auth::login($finduser);
       		return Redirect::to('/');
-  		}else{
+  		} else{
   			$new_user = User::create([
-        'fname'      => $userSocial->name,
-        'email'      => $userSocial->email,
-        'image'  => $userSocial->avatar_original,
-        'facebook_id'=> $userSocial->id
-    	]);
-    	Auth::login($new_user);
-    	return redirect()->back();
+        	'name'      => $userSocial->name,
+        	'email'      => $userSocial->email,
+        	'image'  => $userSocial->avatar_original,
+        	'facebook_id'=> $userSocial->id
+    		]);
+    		Auth::login($new_user);
+    		return redirect()->back();
+		}
 	}
 }
