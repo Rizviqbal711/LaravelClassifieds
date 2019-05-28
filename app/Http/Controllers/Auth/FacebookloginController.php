@@ -25,20 +25,8 @@ class FacebookloginController extends Controller
 	*/
 	public function handleFacebookCallback()
 	{
-		$userSocial = Socialite::driver('facebook')->user();
-  		//return $userSocial;
-  		$finduser = User::where('facebook_id', $userSocial->id)->first();
-  		if($finduser){
-    		Auth::login($finduser);
-      		return Redirect::to('/');
-  		}else{
-  			$new_user = User::create([
-        		'fname'      => $userSocial->name,
-        		'email'      => $userSocial->email,
-        		'facebook_id'=> $userSocial->id
-    		]);
-    		Auth::login($new_user);
-    		return redirect()->back();
-		}
+		$user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+        auth()->login($user);
+        return redirect()->to('/home');
 	}
 }
