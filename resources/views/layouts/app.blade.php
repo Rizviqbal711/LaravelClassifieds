@@ -20,21 +20,6 @@
 </head>
 <body>
     <script>
-            window.fbAsyncInit = function() {
-                FB.init({
-                appId      : '2035159810123718',
-                cookie     : true,
-                xfbml      : true,
-                version    : 'v3.3'
-            });
-      
-            FB.AppEvents.logPageView();   
-
-              function checkLoginState() {
-                FB.getLoginStatus(function (response) {
-                    statusChangeCallback(response);
-                });
-            }
              function statusChangeCallback(response) {
                 console.log('statusChangeCallback');
                 console.log(response);
@@ -56,6 +41,27 @@
                       'into this app.';
                 }
             }
+
+            function checkLoginState() {
+                FB.getLoginStatus(function (response) {
+                    statusChangeCallback(response);
+                });
+            }
+
+            window.fbAsyncInit = function() {
+                FB.init({
+                appId      : '2035159810123718',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v3.3'
+            });
+      
+            FB.AppEvents.logPageView();  
+            
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            }); 
+
         };
 
         (function(d, s, id){
