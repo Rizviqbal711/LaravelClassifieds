@@ -67,9 +67,11 @@
                                 </button>
                             </div>
                             <div class="col-md-12">
-                                <div class="facebook text-center">
-                                    <a href="#" onclick="checkLoginState();"  class="btn" style="color: white;"><i class="fab fa-facebook-square"> Login With Facebook</i></a>
-                                </div>
+                                
+                                <fb:login-button 
+                                    scope="public_profile,email"
+                                    onlogin="checkLoginState();">
+                                </fb:login-button>
                             </div>
                         </div>
                     </form>
