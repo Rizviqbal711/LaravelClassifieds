@@ -20,6 +20,11 @@
 </head>
 <body>
     <script>
+          function checkLoginState() {
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+        }
             window.fbAsyncInit = function() {
                 FB.init({
                 appId      : '2035159810123718',
