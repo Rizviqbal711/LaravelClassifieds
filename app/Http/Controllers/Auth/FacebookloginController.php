@@ -25,7 +25,7 @@ class FacebookloginController extends Controller
 	*/
 	public function handleFacebookCallback(SocialFacebookAccountService $service)
 	{
-		$user = $service->createOrGetUser(Socialite::driver('facebook')->user());
+		$user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
         auth()->login($user);
         return redirect()->to('/');
 	}
