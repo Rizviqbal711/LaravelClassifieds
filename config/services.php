@@ -45,9 +45,9 @@ return [
     ],
 
     'facebook'=> [
-        'client_id' => env('FACEBOOK_CLIENT_ID'),
-        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => env('FACEBOOK_CALLBACK_URL'),
+        'client_id' => '2035159810123718',
+        'client_secret' => '407a644459dd33a4a9bd6d24dd4889c5',
+        'redirect' => 'https://quicklist.io/callback/facebook',
 
     ],
 
