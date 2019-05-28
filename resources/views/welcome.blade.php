@@ -15,7 +15,7 @@
             </div>
             <div class="modal-body">
                 <div class="thank-you-pop">
-                    <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                    <img src="{{ asset('images/green-tick.png')}}" alt="">
                     <h1>Thank You!</h1>
                     <p>{{session('success')}}</p>
                 </div>
