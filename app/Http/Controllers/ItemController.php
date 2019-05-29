@@ -77,8 +77,9 @@ class ItemController extends Controller
             'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
-        $phone = request()->validate([
+        $user_details = request()->validate([
             'phone' => ['required'],
+            'contact_whatsapp' => ['required'],
         ]);
 
         $user_id = Auth()->user()->id;
@@ -99,7 +100,7 @@ class ItemController extends Controller
             'reward_points' => 5,
         ]);
 
-        User::where('id', $user_id)->update($phone);
+        User::where('id', $user_id)->update($user_details);
 
         return redirect('/items');
 
