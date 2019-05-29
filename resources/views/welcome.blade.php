@@ -99,6 +99,9 @@
                                     <i class="fas fa-user"></i>
                                     {{ $item->user->name }} - <i class="fas fa-phone"></i>
                                     {{ $item->user->phone }}
+                                    @if ($item->user->contact_whatsapp == 1 )
+                                     <a href="https://api.whatsapp.com/send?phone={{ $item->user->phone }}" class="text-success"><i class="fab fa-whatsapp"></i></a>
+                                     @endif
                                 </div>
                                 @endguest
                                 <div class="text-muted location">

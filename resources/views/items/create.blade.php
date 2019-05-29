@@ -24,7 +24,12 @@
         </div>
         <div class="form-group">
             <label>Phone</label>
-            <input type="tel"  class="form-control" name="phone" placeholder="888-888-8888" title="XXX-XXX-XXXX"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{ $phone }}">
+            <input type="tel"  class="form-control" name="phone" placeholder="9715XXXXXXXX" title="9715XXXXXXXX"  value="{{ $phone }}">
+        </div>
+         <div class="form-group">
+            <label>Contact via Whatsapp</label><br>
+            <input type="radio"  class="" name="contact_whatsapp" value="1"> Yes
+            <input type="radio"  class="" name="contact_whatsapp" value="0"> No
         </div>
         <div class="form-group">
             <label>

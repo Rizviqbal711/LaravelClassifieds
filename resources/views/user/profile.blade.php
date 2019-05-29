@@ -20,7 +20,12 @@
         </div>
         <div class="form-group">
             <label>Phone</label>
-    		<input type="tel"  class="form-control" name="phone" placeholder="888-888-8888" title="XXX-XXX-XXXX"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value="{{ $this_user->phone }}">
+    		<input type="tel"  class="form-control" name="phone" placeholder="888-888-8888" title="9715XXXXXXX" value="{{ $this_user->phone }}">
+        </div>
+        <div class="form-group">
+            <label>Contact via Whatsapp</label><br>
+            <input type="radio"  class="" name="contact_whatsapp" value="1" {{ $this_user->contact_whatsapp == 1  ? 'checked' : ''}}> Yes
+            <input type="radio"  class="" name="contact_whatsapp" value="0" {{ $this_user->contact_whatsapp == 1  ? '' : 'checked'}}> No
         </div>
         <div class="form-group">
             <div>
