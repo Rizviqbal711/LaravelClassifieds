@@ -60,3 +60,7 @@ Route::get('rewards', 'UserController@rewards');
 // Contact Form
 
 Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@contactSaveData']);
+
+// Mobile Landing
+
+Route::get('/m', 'MobileController@index');

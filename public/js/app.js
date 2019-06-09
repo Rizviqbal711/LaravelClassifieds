@@ -49683,6 +49683,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/mobile.scss":
+/*!************************************!*\
+  !*** ./resources/sass/mobile.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/privacy.scss":
 /*!*************************************!*\
   !*** ./resources/sass/privacy.scss ***!
@@ -49695,9 +49706,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/privacy.scss ./resources/sass/app.scss ./resources/sass/main.scss ./resources/sass/dashboard.scss ***!
-  \******************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/privacy.scss ./resources/sass/app.scss ./resources/sass/main.scss ./resources/sass/mobile.scss ./resources/sass/dashboard.scss ***!
+  \***********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49705,6 +49716,7 @@ __webpack_require__(/*! C:\xampp\htdocs\newlapp\resources\js\app.js */"./resourc
 __webpack_require__(/*! C:\xampp\htdocs\newlapp\resources\sass\privacy.scss */"./resources/sass/privacy.scss");
 __webpack_require__(/*! C:\xampp\htdocs\newlapp\resources\sass\app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! C:\xampp\htdocs\newlapp\resources\sass\main.scss */"./resources/sass/main.scss");
+__webpack_require__(/*! C:\xampp\htdocs\newlapp\resources\sass\mobile.scss */"./resources/sass/mobile.scss");
 module.exports = __webpack_require__(/*! C:\xampp\htdocs\newlapp\resources\sass\dashboard.scss */"./resources/sass/dashboard.scss");
 
 
