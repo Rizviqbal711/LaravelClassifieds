@@ -1,0 +1,43 @@
+@font-face {
+	font-family: 'MuseoSans-500';
+	src: url('/webfonts/3978CB_0_0.eot');
+	src: url('/webfonts/3978CB_0_0.eot?#iefix') format('embedded-opentype'),
+	url('/webfonts/3978CB_0_0.woff2') format('woff2'),
+	url('/webfonts/3978CB_0_0.woff') format('woff'),
+	url('/webfonts/3978CB_0_0.ttf') format('truetype');
+}
+
+.navbar-logo{
+	// padding:; 5px;
+}
+
+.categories{
+	background: white;
+}
+
+.one-category{
+	width:49%;
+}
+
+.one-item{
+	width: 45%;
+	margin-bottom: 15px;
+	margin-right:  7px;
+	margin-left: 7px;
+	border: 1px solid;
+	border-radius: 5px;
+	padding: 10px;
+	background: white;
+}
+
+.item-image{
+	background: white;
+}
+
+.no-margin{
+	margin: 0px;
+}
+
+.items{
+	padding-top: 25px;
+}

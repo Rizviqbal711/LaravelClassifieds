@@ -45,33 +45,6 @@
     </div>
 </div>
 <div class="container">
-    <h2 class="text-center">Why QuickList</h2>
-    <div class="row">
-        <div class="col text-center mt-5 mb-5">
-            <div class="about-image">
-                <img src="{{ asset('images/website.png') }}" width="100">
-            </div>
-            <h3>Register</h3>
-            <p class="text-wrap">Join the simplest and yet quickest classifieds website.</p>
-        </div>
-        <div class="col text-center mt-5 mb-5">
-            <div class="about-image">
-                <img src="{{ asset('images/list.png') }}" width="100">
-            </div>
-            <h3>List</h3>
-            <p class="text-wrap">List your items in seconds and start selling.</p>
-        </div>
-        <div class="col text-center mt-5 mb-5">
-            <div class="about-image">
-                <img src="{{ asset('images/gift.png') }}" width="100">
-            </div>
-            <h3>Win</h3>
-            <p class="text-wrap">Free raffles for exiting prices every weekend!</p>
-        </div>
-    </div>
-</div>
-<hr>
-<div class="container">
     <h2 class="text-center">
         RECOMMENDATIONS
     </h2>
@@ -122,46 +95,101 @@
             </div>
         @endforeach
     </div>
-    <div class="d-flex justify-content-center mt-4">
+    <div class="d-flex justify-content-center mt-3 mb-4">
         <a href="/items" class="btn btn-success">View All</a>
     </div>
 </div>
-<div class="container-fluid d-flex justify-content-center align-items-center listing mt-5 bg-white">
-    <div class="text-center">
-        <h3 class="text-white">Its Absoulety Free</h3>
-        <a href="/login" class="btn btn-success btn-lg mt-1"> Start Listing</a>    
+<div class="container-fluid bg-white border-top border-bottom border-dark pt-5 pb-5" id="about">
+    <div class=" container mt-5">
+        <h2 class="text-center">Why QuickList</h2>
+        <div class="row">
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/website.png') }}" width="60">
+                </div>
+                <h3>Join</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        Join the simplest and yet quickest classifieds website.
+                    </p>
+                </div>
+            </div>
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/list.png') }}" width="60">
+                </div>
+                <h3>List</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        List your items in seconds and start selling.
+                    </p>
+                </div>
+            </div>
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/gift.png') }}" width="60">
+                </div>
+                <h3>Win</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        Free raffles for exiting prices every weekend!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center mb-5">
+        <p>
+            Quicklist is a simply and innovative online classifieds platform that is developed to change the way things sell in Dubai. 
+            Quicklist introduces a new smart pricing feature which helps people to sell or buy any items for the right price. 
+            To get things done fast, Quicklist has an Instant & Easy communication using WhatsApp and other messengers
+        </p>
+    </div>
+    <div class=" container-fluid row justify-content-center align-items-center ">
+        <div class="embed-responsive embed-responsive-16by9 video">
+             <iframe src="https://www.youtube.com/embed/tLSfpyhtzUU?rel=0&enablejsapi=1" frameborder="0" ></iframe> 
+        </div>  
+    </div>
+    <div class="row justify-content-center align-items-center mt-5">
+        <div class="text-center">
+            <a href="/login" class="btn btn-success btn-lg "> Start Listing, Its Absoulety Free</a>    
+        </div>
     </div>
 </div>
-<div class="container text-center mt-5">
-    <h2>Get In Touch</h2>
-    <form method="post" action="/contact-us">
-        {{ csrf_field() }}
-        <div class="row mt-5">
-            <div class="col-12">
-                <div class="form-group">
-                    <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message" spellcheck="false"></textarea>
+<div class="container-fluid pt-5" id="contact">
+    <div class="container text-center">
+        <h2>Get In Touch</h2>
+        <form method="post" action="/contact-us">
+            {{ csrf_field() }}
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="form-group">
+                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message" spellcheck="false"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
-                </div>
+            <div class="form-group mt-3">
+                <button type="submit" id="send-message" class="btn btn-md btn-success">Send Message</button>
             </div>
-            <div class="col-sm-6">
-                <div class="form-group">
-                    <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
-                </div>
-            </div>
-        </div>
-        <div class="form-group mt-3">
-            <button type="submit" id="send-message" class="btn btn-md btn-success">Send Message</button>
-        </div>
-    </form>
+        </form>
+    </div>
+    
+
 </div>
 @if (session('success'))
 <script type="text/javascript">
