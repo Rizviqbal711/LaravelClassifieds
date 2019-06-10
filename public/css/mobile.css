@@ -12,6 +12,10 @@
   width: 49%;
 }
 
+.all-items {
+  margin-bottom: 60px;
+}
+
 .one-item {
   width: 45%;
   margin-bottom: 15px;
@@ -33,5 +37,19 @@
 
 .items {
   padding-top: 25px;
+}
+
+.footer {
+  height: 65px;
+}
+
+.footer-link {
+  font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: -8px;
+}
+
+.green {
+  color: #38c172;
 }
 

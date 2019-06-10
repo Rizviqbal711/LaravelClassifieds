@@ -9,6 +9,14 @@ use App\Reward;
 
 class UserController extends Controller
 {
+
+
+    public function __construct(){
+        
+        $this->middleware('auth');
+    
+    }
+
    	public function myprofile(User $user)
    	{
         $user_id = Auth()->user()->id;
