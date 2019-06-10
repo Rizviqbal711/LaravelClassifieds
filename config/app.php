@@ -177,6 +177,7 @@ return [
         \Torann\GeoIP\GeoIPServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
         Barryvdh\Cors\ServiceProvider::class,
+        App\Providers\AgentServiceProvider::class
 
     ],
 
