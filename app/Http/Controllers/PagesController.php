@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
 
 use App\Item;
+use App\Category;
+
 
 
 
@@ -24,7 +26,7 @@ class PagesController extends Controller
 
         $items = Item::limit(6)->get();
         $categories = Category::limit(6)->get();
-        
+
         // $item = $all_items->;
 
 
