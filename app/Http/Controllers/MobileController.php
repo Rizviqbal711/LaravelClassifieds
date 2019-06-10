@@ -10,9 +10,18 @@ use App\User;
 
 class MobileController extends Controller
 {
-    public function index() {
+    public function index(Request $request) {
     	$categories = Category::limit(6)->get();
-    	$items = Item::all();
+        
+        $search_categories = $request->category_id;
+    	
+		if ($search_categories) {
+            $items = Item::where('category_id' , $search_categories)->get();
+        } else {
+            $items = Item::all();
+        }
+
+
 
     	return view('mobile.home', compact('categories', 'items'));
 

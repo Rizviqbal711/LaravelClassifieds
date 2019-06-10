@@ -9,8 +9,12 @@
 			<?php $count = 0 ?>
 			@foreach($categories as $category)
 			<div class="one-category d-inline-block p-3 text-center">
-				<i class="fas fa-laptop"></i><br>
-				{{ $category->category_name }}
+				<form action="/m" method="get">
+                    <input type="hidden" name="category_id" value="{{ $category->id}}">
+					<button type="submit" class="btn "><i class="{{ $category->icon }}" style="font-size: 20px;"></i><br>
+					{{ $category->category_name }}</button> 
+				</form>
+				
 			</div>
 			<?php $count++ ?>
 			@if ($count % 2 == 0)

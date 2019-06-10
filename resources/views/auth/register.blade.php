@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends(($agent->isMobile()) ? 'layouts.mobile-layout' : 'layouts.app')
 @section('title', 'Register | QuickList')
 @section('content')
 <div class="body-content">
