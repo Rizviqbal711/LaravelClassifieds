@@ -140,19 +140,19 @@
     </div>
     <div class="container text-center mb-5">
         <p>
-            Quicklist is a simply and innovative online classifieds platform that is developed to change the way things sell in Dubai. 
+            Quicklist is a simple and innovative online classifieds platform that is developed to change the way things sell in Dubai. 
             Quicklist introduces a new smart pricing feature which helps people to sell or buy any items for the right price. 
-            To get things done fast, Quicklist has an Instant & Easy communication using WhatsApp and other messengers
+            To get things done fast, Quicklist has an Instant & Easy communication using WhatsApp and other messengers.
         </p>
     </div>
     <div class=" container-fluid row justify-content-center align-items-center ">
         <div class="embed-responsive embed-responsive-16by9 video">
-             <iframe src="https://www.youtube.com/embed/tLSfpyhtzUU?rel=0&enablejsapi=1" frameborder="0" ></iframe> 
+             <iframe src="https://www.youtube.com/embed/FTnvZotAuuc?rel=0&enablejsapi=1" frameborder="0"  allowfullscreen></iframe>
         </div>  
     </div>
     <div class="row justify-content-center align-items-center mt-5">
         <div class="text-center">
-            <a href="/login" class="btn btn-success btn-lg "> Start Listing, Its Absoulety Free</a>    
+            <a href="/login" class="btn btn-success btn-lg "> Start Listing, It's Absoulety Free</a>    
         </div>
     </div>
 </div>
