@@ -76,33 +76,67 @@
     @include('include.navbar')
     @yield('content')
     <div id="status"></div>
-    <footer class="text-white bg-dark footer-content ">
-        <div class="container">
-             <div class="row">
-                <div class="col-md-4 footer-container">
-                    <a class="align-middle footer-logo" href="/">
-                       <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
-                    </a>
-                </div>
-                <div class="col-md-4 text-center footer-container">
-                    <a class="text-white" href="/privacy">
-                            Privacy Policy
-                    </a>
-                    <br>
-                        <a class="text-white" href="/terms">
-                            Terms and Condition
+     <footer class="text-white bg-dark footer-content ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 footer-container">
+                        <a class="align-middle footer-logo" href="/">
+                            <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
                         </a>
-                    </br>
-                </div>
-                <div class="col-md-4 text-right footer-text">
-                    All rights reserved
-                    <br>
-                        Made with ❤ in Dubai
-                    </br>
+                        <p style="width: 75%">
+                            Quicklist is a simple and innovative online classifieds platform that is developed to change the way things sell in Dubai.
+                        </p>
+                    </div>
+                    <div class="col-md-3 text-left footer-container">
+                        <div class="mb-3">
+                            <a class="text-white" href="/login">
+                                Login
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <a class="text-white" href="/register">
+                                Register
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <a class="text-white" href="/privacy">
+                                Privacy Policy
+                            </a>
+                        </div>
+                        <div>
+                            <a class="text-white" href="/terms">
+                                Terms and Condition
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-left footer-container">
+                        <div class="mb-3">
+                            <a class="text-white" href="/">
+                                Home
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <a class="text-white" href="#about">
+                                About
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <a class="text-white" href="#contact">
+                                Contact
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+            <hr>
+            <div class="border-top border-grey">
+                <div class="container mt-4">
+                    <div class="col-md-12 text-right footer-text">
+                        Made with ❤ in Dubai
+                    </div>
+                </div>
+            </div>
+        </footer>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
