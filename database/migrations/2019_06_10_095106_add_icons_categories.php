@@ -14,7 +14,7 @@ class AddIconsCategories extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->unsignedinteger('facebook_id');
+            $table->string('icon');
         });
     }
 
