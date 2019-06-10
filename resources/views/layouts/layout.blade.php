@@ -35,7 +35,7 @@
                             <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
                         </a>
                         <p style="width: 75%">
-                            Quicklist is a simply and innovative online classifieds platform that is developed to change the way things sell in Dubai.
+                            Quicklist is a simple and innovative online classifieds platform that is developed to change the way things sell in Dubai.
                         </p>
                     </div>
                     <div class="col-md-3 text-left footer-container">
@@ -81,10 +81,8 @@
             </div>
             <hr>
             <div class="border-top border-grey">
-                <div class="container mt-5">
+                <div class="container mt-4">
                     <div class="col-md-12 text-right footer-text">
-                        QuickList is a registered trademark of Dotcom Ventures FZE©
-                        <br>
                         Made with ❤ in Dubai
                     </div>
                 </div>
@@ -110,7 +108,7 @@
                     loop: true
                 });
 
-        
+
 
 
             });
