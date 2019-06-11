@@ -72,7 +72,7 @@
                                 </button>
                             </div>
                             <div class="col-md-12 ">
-                                <a href="{{ url('auth/facebook') }}" class="btn btn-primary col-md-12">
+                                <a href="{{ url('login/facebook') }}" class="btn btn-primary col-md-12">
                                     <strong>Continue With Facebook</strong>
                                 </a> 
                             </div>
