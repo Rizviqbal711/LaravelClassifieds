@@ -47,7 +47,7 @@ return [
     'facebook'=> [
         'client_id' => '2035159810123718',
         'client_secret' => '407a644459dd33a4a9bd6d24dd4889c5',
-        'redirect' => 'https://quicklist.io/callback/facebook',
+        'redirect' => 'https://quicklist.io/login/facebook/callback',
 
     ],
 

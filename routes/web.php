@@ -43,9 +43,9 @@ Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('auth/redirect/{provider}', 'Auth\SocialloginController@redirect');
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
 
-Route::get('/callback/{provider}', 'Auth\SocialloginController@callback');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 // User
 
