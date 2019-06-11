@@ -42,9 +42,9 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectToProvider()
+    public function redirectToProvider($provider)
     {
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
@@ -52,9 +52,9 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback($provider)
     {
-        $userSocial = Socialite::driver('facebook')->user();
+        $userSocial = Socialite::driver($provider)->user();
         
         $findUser = User::where('email', $userSocial->email)->first();
 

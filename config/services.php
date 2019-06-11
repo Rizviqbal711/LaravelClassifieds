@@ -48,6 +48,12 @@ return [
         'client_id' => '2035159810123718',
         'client_secret' => '407a644459dd33a4a9bd6d24dd4889c5',
         'redirect' => 'https://quicklist.io/login/facebook/callback',
+    ],
+
+    'google'=> [
+        'client_id' => '823651355312-gc0aljsdn4k4ghcdtkn2anbtok3ta16s.apps.googleusercontent.com',
+        'client_secret' => 'AahNh9-Rj1epNRGT3bFo-DZY',
+        'redirect' => 'https://quicklist.io/login/google/callback',
 
     ],
 
