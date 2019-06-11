@@ -68,9 +68,14 @@
                                     {{ __('Login') }}
                                 </button>
                             </div>
-                            <div class="col-md-12 ">
+                            <div class="col-md-12 mt-1">
                                 <a href="{{ url('/login/facebook') }}" class="btn btn-primary col-md-12">
                                     <strong>Login With Facebook</strong>
+                                </a> 
+                            </div>
+                            <div class="col-md-12 mt-1">
+                                <a href="{{ url('/login/google') }}" class="btn btn-danger col-md-12">
+                                    <strong>Login With Google</strong>
                                 </a> 
                             </div>
                         </div>
