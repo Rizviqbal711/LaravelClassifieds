@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Socialite;
 use App\User;
+use App\Reward;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -65,6 +66,11 @@ class LoginController extends Controller
             $user->email = $userSocial->getEmail();
             $user->password = bcrypt(12345);
             $user->save();
+
+            $reward = Reward::create([
+            'user_id' => $user->id,
+            'reward_points' => 10,
+        ]);
         }
 
         Auth::login($user);
