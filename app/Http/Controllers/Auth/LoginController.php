@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use Socialite;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -53,7 +55,20 @@ class LoginController extends Controller
     {
         $userSocial = Socialite::driver('facebook')->user();
         
-        dd($userSocial);
-        // $user->token;
+        $findUser = User::where('email', $UserSocial->email)->first();
+
+        if ($findUser) {
+            $user = $findUser;
+        } else{
+            $user = new User;
+            $user->name = $userSocial->getName();
+            $user->email = $userSocial->getEmail();
+            $user->password = bcrypt(12345);
+            $user->save();
+        }
+
+        Auth::login($user);
+
+        return redirect ($this->redirectTo);
     }
 }
