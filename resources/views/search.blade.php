@@ -2,7 +2,6 @@
 
 @section('title' , 'Search Results')
 
-
 @section('content')
 <div class="container myitem-content">
 	<h1>

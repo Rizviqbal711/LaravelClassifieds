@@ -37,7 +37,9 @@
 					<div class="footer-link">
 						<i class="fas fa-home"></i>
 					</div>
-					Home
+					<span class="text-dark">
+						Home
+					</span>
 				</a>
 			</div>
 			<div class="col text-center">
@@ -45,7 +47,9 @@
 					<div class="footer-link">
 						<i class="fas fa-search"></i>
 					</div>
-					Search
+					<span class="text-dark">
+						Search
+					</span>
 				</a>
 			</div>
 			<div class="col text-center">
@@ -53,7 +57,9 @@
 					<div class="footer-link">
 						<i class="fas fa-plus"></i>
 					</div>
-					List
+					<span class="text-dark">
+						List
+					</span>
 				</a>
 			</div>
 			<div class="col text-center">
@@ -61,7 +67,9 @@
 					<div class="footer-link">
 						<i class="fas fa-user"></i>
 					</div>
-					Profile
+					<span class="text-dark">
+						Profile
+					</span>
 				</a>
 			</div>
 		</div>
