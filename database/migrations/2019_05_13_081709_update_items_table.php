@@ -19,9 +19,11 @@ class UpdateItemsTable extends Migration
             $table->string('item_area');
             $table->unsignedinteger('item_min_price');
             $table->unsignedinteger('item_max_price');
-            $table->string('item_image');
+            $table->text('item_image')->nullable();
             $table->renameColumn('title' ,'item_title');
             $table->renameColumn('description' ,'item_description');
+            $table->unsignedinteger('user_id');
+
 
         });
     }
