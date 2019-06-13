@@ -5,7 +5,7 @@
 
 
 @section('content')
-<div class="container col-md-3" style="margin-top: 100px;">
+<div class="container col-md-3 create-container">
     <h1 class="text-center">
         Add Items
     </h1>
@@ -81,16 +81,8 @@
             <label>
             	City
             </label>
-            <select class="form-control custom-select" name="item_city">
-            	<option disabled selected>Select City</option>
-                <option value="AUH">Abu Dhabi</option>
-                <option value="DXB">Dubai</option>
-                <option value="SHJ">Sharjah</option>
-                <option value="AJM">Ajman</option>
-                <option value="RAK">Ras Al Khaimah</option>
-                <option value="UAQ">Umm Al Quwain</option>
-                <option value="FUJ">Fujeirah</option>
-            </select>
+            <input type="text"  class="form-control" value="Dubai" readonly>
+            <input type="hidden" name="item_city" class="form-control" value="Dubai" readonly>
             <!--     <input name="Country" class="form-control" placeholder="Country" type="text" value="{{ old('country') }}"> -->
         </div>
         <div class="form-group">
