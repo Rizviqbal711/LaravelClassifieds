@@ -82,7 +82,8 @@
 }
 
 .myitem-content {
-  margin-top: 150px;
+  margin-top: 75px;
+  min-height: 66vh;
 }
 
 .all-item {
@@ -111,6 +112,10 @@
 .whatsapp-link {
   color: #25D366;
   font-size: 30px;
+}
+
+.create-container {
+  margin-top: 100px;
 }
 
 .video {

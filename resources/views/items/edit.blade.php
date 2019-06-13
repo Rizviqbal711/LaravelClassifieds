@@ -70,16 +70,8 @@
             <label>
             	City
             </label>
-            <select class="form-control custom-select" name="item_city">
-            	<option disabled selected>Select City</option>
-            	<option value="AUH" {{ $item->item_city == 'AUH'  ? 'selected' : ''}}>Abu Dhabi</option>
-            	<option value="DXB" {{ $item->item_city == 'DXB'  ? 'selected' : ''}}>Dubai</option>
-            	<option value="SHJ" {{ $item->item_city == 'SHJ'  ? 'selected' : ''}}>Sharjah</option>
-            	<option value="AJM" {{ $item->item_city == 'AJM'  ? 'selected' : ''}}>Ajman</option>
-                <option value="RAK" {{ $item->item_city == 'RAK'  ? 'selected' : ''}}>Ras Al Khaimah</option>
-            	<option value="UAQ" {{ $item->item_city == 'UAQ'  ? 'selected' : ''}}>Umm Al Quwain</option>
-            	<option value="FUJ" {{ $item->item_city == 'FUJ'  ? 'selected' : ''}}>Fujeirah</option>
-            </select>
+            <input type="text" value="{{ $item->item_city}}" class="form-control" readonly>
+            <input type="hidden" name="item_city" class="form-control" value="{{ $item->item_city}}" readonly>
             <!--     <input name="Country" class="form-control" placeholder="Country" type="text" value="{{ old('country') }}"> -->
         </div>
         <div class="form-group">

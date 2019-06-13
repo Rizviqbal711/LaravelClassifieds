@@ -127,8 +127,11 @@ class ItemController extends Controller
      */
     public function edit(Item $item)
     {
+
+        $this->authorize('update', $item);
+
         $categories = Category::all();
-        // dd($item);
+        
         return view('items.edit', compact('item', 'categories'));
     }
 
