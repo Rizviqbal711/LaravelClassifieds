@@ -23,8 +23,12 @@
         </div>
     </div>
 </div>
-<div class="jumbotron overlay">
-    <div class="container bannercontainer row justify-content-center align-items-center">
+<div class="container-fluid video-banner">
+    <div class="row justify-content-center align-items-center">
+    <video autoplay muted loop class="embed-responsive-item video-banner-vid" id="autovid">
+        <source src="{{asset('images/preview.mp4')}}" type="video/mp4">
+    </video>
+    <div class="container bannercontainer ">
         <h1 class=" display-4 text-center headline">
             Find what you are looking for
         </h1>
@@ -43,8 +47,14 @@
             </form>
         </div>
     </div>
+    </div>
 </div>
-<div class="container">
+
+
+
+<!-- <div class="jumbotron overlay">
+</div> -->
+<div class="container recommendation">
     <h2 class="text-center">
         RECOMMENDATIONS
     </h2>
@@ -73,13 +83,13 @@
                                     {{ $item->user->name }} - <i class="fas fa-phone"></i>
                                     {{ $item->user->phone }}
                                     @if ($item->user->contact_whatsapp == 1 )
-                                     <a href="https://api.whatsapp.com/send?phone={{ $item->user->phone }}" class="text-success"><i class="fab fa-whatsapp"></i></a>
+                                        <a href="https://api.whatsapp.com/send?phone={{ $item->user->phone }}" class="text-success"><i class="fab fa-whatsapp"></i></a>
                                      @endif
                                 </div>
                                 @endguest
                                 <div class="text-muted location">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    {{ $item->item_area}} > {{ $item->item_city}}
+                                    {{ $item->location->user_location_area}} > {{ $item->location->user_location_city}}
                                 </div>
                             </small>
                             <br>

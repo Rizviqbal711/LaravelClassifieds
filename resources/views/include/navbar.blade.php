@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <span style="font-family: MuseoSans-500">QUICK<span class="text-success">LIST</span></span>
+            <span style="font-family: MuseoSans-500"><span class="logo">QUICK</span><span class="text-success">LIST</span></span>
         </a>
         @if (\Request::is('login') || \Request::is('register')) 
         @else
@@ -13,8 +13,8 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
-                <li class="nav-item mr-1 mb-1">
-                    <a class=" btn btn-success btn-sm" href="/list">
+                <li class="nav-item  mr-1 mb-1">
+                    <a class=" btn btn-sm links" href="/list">
                         List your item
                     </a>
                 </li>
@@ -24,13 +24,13 @@
                     </a>
                 </li>
                 @guest
-                <li class="nav-item mr-1">
+                <li class="nav-item  mr-1">
                     <a class="btn btn-sm links" href="{{ route('login') }}">
                         {{ __('Login / Register') }}
                     </a>
                 </li>
                 @else
-                <li class="nav-item dropdown mr-1 mb-1">
+                <li class="nav-item  logo dropdown mr-1 mb-1">
                     <a aria-expanded="false" aria-haspopup="true" class="btn btn-sm btn-outline-success dropdown-toggle " data-toggle="dropdown" href="#" id="navbarDropdown" role="button" v-pre="">
                         {{ Auth::user()->name }}
                         <span class="caret">

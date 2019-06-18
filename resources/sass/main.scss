@@ -9,7 +9,7 @@
 }
 
 .body-content{
-	margin-top:55px;
+	// margin-top:55px;
 	margin-bottom:100px;
 	min-height: 66vh;
 }
@@ -32,12 +32,38 @@
 	color: white;
 }
 .bannercontainer{
-	margin-top: 90px;
+	margin-top: 25%;
 	margin-right: auto;
 	margin-left: auto;
+	position: absolute;
+  	top: 0;
+
+  	color: white;
+  	width: 100%;
+  	padding: 20px;
 }
 
+.recommendation{
+	margin-top: 4%;
+}
 
+.video-banner-vid{
+	width: 100%;
+	height: 100%;
+}
+
+.bg-white{
+background-color : white !important;
+}
+
+.ncol{
+ color: #28a745 !important;
+}
+
+.ncol-logo{
+ 	color: black !important;
+
+}
 #typed4{
 	height: 50px;
 }
@@ -47,7 +73,7 @@
 }
 
 .links{
-	color: #28a745; 
+	color: white; 
 }
 
 
@@ -80,6 +106,11 @@
 .home-card{
 	width: 31.5%
 }
+
+.location-details{
+	display: none;
+}
+
 
 .listing{
 	height: 400px;
@@ -149,7 +180,11 @@
     padding: 25px;
 }
 
+// Profile
 
+.place_form{
+	display: none;
+}
 
 
 // Modal CSS

@@ -57,6 +57,10 @@ Route::get('profile', 'UserController@myprofile');
 
 Route::get('rewards', 'UserController@rewards');
 
+Route::post('location', 'UserController@location');
+
+Route::delete('location/{location}', 'UserController@location_delete');
+
 // Contact Form
 
 Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@contactSaveData']);

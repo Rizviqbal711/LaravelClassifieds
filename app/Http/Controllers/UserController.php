@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Reward;
+use App\Location;
 
 class UserController extends Controller
 {
@@ -19,11 +20,14 @@ class UserController extends Controller
 
    	public function myprofile(User $user)
    	{
-        $user_id = Auth()->user()->id;
+      $user_id = Auth()->user()->id;
 
    		$this_user = User::where('id',$user_id)->first();
 
-   		return view('user.profile', compact('this_user'));
+      $locations = Location::where('user_id',$user_id)->get();
+      // dd($locations);
+
+   		return view('user.profile', compact('this_user','locations'));
 
    	}
 
@@ -48,5 +52,32 @@ class UserController extends Controller
         $rewards = Reward::where('user_id',$user_id)->sum('reward_points');
         // dd($rewards);
         return view('user.rewards', compact('rewards'));
+    }
+
+    public function location(Request $request)
+    {
+        $lcn_attr = request()->validate([
+          'user_location_name' => 'required',
+          'user_location_city' => 'required',
+          'user_location_area'=>'required',
+        ]);
+  
+
+        $user_id = Auth()->user()->id;
+        $lcn_attr['user_id'] = $user_id;
+
+        Location::create($lcn_attr);
+
+        return redirect('/profile');
+
+       
+    }
+
+    public function location_delete(Location $location)
+    {
+      $location->delete();
+      
+      return redirect('/profile');
+
     }
 }

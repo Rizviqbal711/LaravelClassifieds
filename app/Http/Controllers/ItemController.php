@@ -8,6 +8,7 @@ use App\Item;
 use App\Category;
 use App\User;
 use App\Reward;
+use App\Location;
 
 class ItemController extends Controller
 {
@@ -24,13 +25,15 @@ class ItemController extends Controller
         $categories = Category::all();
 
         $search_categories = $request->category_id;
+
+    
         if ($search_categories) {
             $items = Item::where('category_id' , $search_categories)->get();
         } else {
             $items = Item::all();
         }
 
-        // dd($items);
+        // dd($location_id);
 
         // dd($search_categories);
         return view('items.index', [
@@ -70,11 +73,18 @@ class ItemController extends Controller
             'item_age' => ['required'],
             'item_min_price' => ['numeric', 'required'],
             'item_max_price' => ['numeric', 'required', 'min:'.request()->item_min_price],
-            'item_city' => ['required'],
-            'item_area' => ['required', 'min:3'],
             'category_id' => ['required'],
+            'user_location_id' => ['required'],
             'item_primary_image' => ['required'],
             'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
+        ]);
+
+        // dd($validated_attr);
+
+        $location = request()->validate([
+            'user_location_name',
+            'user_location_city',
+            'user_location_area',
         ]);
 
         $user_details = request()->validate([
@@ -99,6 +109,16 @@ class ItemController extends Controller
             'user_id' => Auth()->user()->id,
             'reward_points' => 5,
         ]);
+
+        if(!empty($location)){
+            Location::create([
+                'user_id' => Auth()->user()->id,
+                'user_location_name' => $location['user_location_name'],
+                'user_location_city'=> $location['user_location_city'],
+                'user_location_area'=> $location['user_location_area'],
+            ]);
+        }
+
 
         User::where('id', $user_id)->update($user_details);
 
@@ -128,11 +148,15 @@ class ItemController extends Controller
     public function edit(Item $item)
     {
 
+        $user_id = Auth()->user()->id;
+        
         $this->authorize('update', $item);
 
         $categories = Category::all();
+
+        $locations = Location::where('user_id', $user_id)->get();
         
-        return view('items.edit', compact('item', 'categories'));
+        return view('items.edit', compact('item', 'categories', 'locations'));
     }
 
     /**

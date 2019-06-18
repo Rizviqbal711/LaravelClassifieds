@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="text-muted location">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    {{ $myitems->item_area}} > {{ $myitems->item_city}}
+                                    {{ $myitems->location->user_location_area}} > {{ $myitems->location->user_location_city}}
                                 </div>
                             </small>
                             <br>
