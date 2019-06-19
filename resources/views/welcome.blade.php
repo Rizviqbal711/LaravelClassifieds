@@ -23,8 +23,9 @@
         </div>
     </div>
 </div>
-<div class="container-fluid video-banner">
-    <div class="row justify-content-center align-items-center video-overlay">
+
+<div class="video-banner">
+    <div class="d-flex justify-content-center align-items-center video-overlay" style="    background-color: #000;">
     <video autoplay muted loop class="embed-responsive-item video-banner-vid" id="autovid">
         <source src="{{asset('images/preview.mp4')}}" type="video/mp4">
     </video>
