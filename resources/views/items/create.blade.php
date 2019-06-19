@@ -5,6 +5,7 @@
 
 
 @section('content')
+
 <div class="container col-md-3 create-container">
     <h1 class="text-center">
         Add Items
@@ -66,7 +67,12 @@
             <label>
             	Max. Price
             </label>
-            <input name="item_max_price" class="form-control" placeholder="Maximum Price" type="text" value="{{ old('max_price') }}">
+            <div class="input-group">
+                <input name="item_max_price" class="form-control" placeholder="Maximum Price" type="text" value="{{ old('max_price') }}">
+                <div class="input-group-append">
+                    <span class="input-group-addon btn btn-success price-info" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-info-circle"></i></span>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <label>Images</label>
@@ -95,8 +101,8 @@
                     @endforeach
                 </select>
                 <div class="mt-3">
-                    <button class="btn btn-success col-md-12 " id="place_button">+ Add Place</button>
-                    <div class="place_form mt-3">
+                    <button class="btn btn-success col-md-12 " id="place-button">+ Add Place</button>
+                    <div class="place-form mt-3">
                         <div class="form-group">
                             <label>Location Name</label>
                             <input type="text" class="form-control" placeholder="Home, Work" name="user_location_name" >
@@ -136,11 +142,25 @@
     @endif
 </div>
 
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        If you dont want to use the QuickList's Smart Pricing Feature, Please enter the same amount as the "Minimum Price"
+        <br><br>
+        Read more about it <a href="/">here</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#place_button").click(function (e) {
+        $("#place-button").click(function (e) {
             e.preventDefault();
-            $(".place_form").toggle("slow");
+            $(".place-form").toggle("slow");
         });
     });
 

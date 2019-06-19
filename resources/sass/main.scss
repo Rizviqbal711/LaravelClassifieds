@@ -9,6 +9,12 @@
 }
 
 .body-content{
+margin-top:55px;
+	margin-bottom:100px;
+	min-height: 66vh;
+
+}
+.body-content-home{
 	// margin-top:55px;
 	margin-bottom:100px;
 	min-height: 66vh;
@@ -100,6 +106,10 @@ background-color : white !important;
 	width: 48%
 }
 
+.pricing-card{
+	height: 90px;
+}
+
 .item-image{
 	width: 500px;
 }
@@ -115,13 +125,20 @@ background-color : white !important;
 }
 
 .home-card{
-	width: 31.5%
+	width: 23%
+}
+
+.about-text{
+	font-size: 17px;
 }
 
 .location-details{
 	display: none;
 }
 
+.item-card-desc{
+		font-size: 12px;
+}
 
 .listing{
 	height: 400px;
@@ -180,8 +197,9 @@ background-color : white !important;
 }
 
 .why-text{
-	width: 50%;
+	width: 70%;
 }
+
 
 .footer-content{
 	// position: fixed;
@@ -193,7 +211,7 @@ background-color : white !important;
 
 // Profile
 
-.place_form{
+.place-form{
 	display: none;
 }
 

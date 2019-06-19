@@ -5,6 +5,12 @@
 }
 
 .body-content {
+  margin-top: 55px;
+  margin-bottom: 100px;
+  min-height: 66vh;
+}
+
+.body-content-home {
   margin-bottom: 100px;
   min-height: 66vh;
 }
@@ -81,6 +87,10 @@
   width: 48%;
 }
 
+.pricing-card {
+  height: 90px;
+}
+
 .item-image {
   width: 500px;
 }
@@ -96,11 +106,19 @@
 }
 
 .home-card {
-  width: 31.5%;
+  width: 23%;
+}
+
+.about-text {
+  font-size: 17px;
 }
 
 .location-details {
   display: none;
+}
+
+.item-card-desc {
+  font-size: 12px;
 }
 
 .listing {
@@ -157,7 +175,7 @@
 }
 
 .why-text {
-  width: 50%;
+  width: 70%;
 }
 
 .footer-content {
@@ -167,7 +185,7 @@
   padding: 25px;
 }
 
-.place_form {
+.place-form {
   display: none;
 }
 

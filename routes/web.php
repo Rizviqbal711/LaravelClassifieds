@@ -12,7 +12,7 @@
 */
 // Landing Pages
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('/about', 'PagesController@about');
 

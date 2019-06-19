@@ -16,7 +16,7 @@
             <div class="modal-body">
                 <div class="thank-you-pop">
                     <img src="{{ asset('images/green-tick.png')}}" alt="">
-                    <h1>Thank You!</h1>
+                    <h2>Hey, Thanks for getting in touch!</h2>
                     <p>{{session('success')}}</p>
                 </div>
             </div>
@@ -24,13 +24,13 @@
     </div>
 </div>
 <div class="container-fluid video-banner">
-    <div class="row justify-content-center align-items-center viedo-overlay">
+    <div class="row justify-content-center align-items-center video-overlay">
     <video autoplay muted loop class="embed-responsive-item video-banner-vid" id="autovid">
         <source src="{{asset('images/preview.mp4')}}" type="video/mp4">
     </video>
     <div class="container bannercontainer ">
         <h1 class=" display-4 text-center headline">
-            Find what you are looking for
+            Now, what can we help you to find?
         </h1>
         <div class="col-md-12">
             <form action="/search" method="get" role="search">
@@ -55,7 +55,7 @@
 <!-- <div class="jumbotron overlay">
 </div> -->
 <div class="container recommendation">
-    <h2 class="text-center">
+    <h2 class="text-center ncol font-weight-bold">
         RECOMMENDATIONS
     </h2>
     <div class="mt-5 row justify-content-around">
@@ -66,40 +66,37 @@
                     <h5 class="card-title">
                         {{ $item->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</small>
                     </h5>
-                    <div class="card-text">
-                            <small>
-                                <div class="text-muted">
-                                    <i class="fas fa-layer-group"></i>
-                                    {{ $item->category->category_name }}
-                                </div>
-                                @guest
-                                <div class="text-muted">
-                                    <i class="fas fa-user"></i>
-                                    Login/Register to see the User Details
-                                </div>
-                                @else
-                                 <div class="text-muted">
-                                    <i class="fas fa-user"></i>
-                                    {{ $item->user->name }} - <i class="fas fa-phone"></i>
-                                    {{ $item->user->phone }}
-                                    @if ($item->user->contact_whatsapp == 1 )
-                                        <a href="https://api.whatsapp.com/send?phone={{ $item->user->phone }}" class="text-success"><i class="fab fa-whatsapp"></i></a>
-                                     @endif
-                                </div>
-                                @endguest
-                                <div class="text-muted location">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    {{ $item->location->user_location_area}} > {{ $item->location->user_location_city}}
-                                </div>
-                            </small>
-                            <br>
-                            <a class="btn-sm btn btn-success" href="/items/{{ $item->id }}">
-                                View Ad
-                            </a>
-                            <br>
-                            <small class="text-muted">
-                                {{ $item->created_at->diffForHumans() }}
-                            </small>
+                    <div class="card-text item-card-desc">
+                        <div class="text-muted">
+                            <i class="fas fa-layer-group"></i>
+                            {{ $item->category->category_name }}
+                        </div>
+                        @guest
+                        <div class="text-muted">
+                            <i class="fas fa-user"></i>
+                            Login/Register to see the User Details
+                        </div>
+                        @else
+                        <div class="text-muted">
+                            <i class="fas fa-user"></i> {{ $item->user->name }} <br>
+                            <i class="fas fa-phone"></i> {{ $item->user->phone }}
+                            @if ($item->user->contact_whatsapp == 1 )
+                                <a href="https://api.whatsapp.com/send?phone={{ $item->user->phone }}" class="text-success"><i class="fab fa-whatsapp"></i></a>
+                             @endif
+                        </div>
+                        @endguest
+                        <div class="text-muted location">
+                            <i class="fas fa-map-marker-alt"></i>
+                            {{ $item->location->user_location_area}} > {{$item->location->user_location_city}}
+                        </div>                          
+                        <br>
+                        <a class="btn-sm btn btn-success" href="/items/{{ $item->id }}">
+                            View Ad
+                        </a>
+                        <br>
+                        <small class="text-muted">
+                            {{ $item->created_at->diffForHumans() }}
+                        </small>
                     </div>
                 </div>
             </div>
@@ -110,8 +107,8 @@
     </div>
 </div>
 <div class="container-fluid bg-white border-top border-bottom border-dark pt-5 pb-5" id="about">
-    <div class=" container mt-5">
-        <h2 class="text-center">Why QuickList</h2>
+    <div class=" container mt-4">
+        <h2 class="text-center ncol font-weight-bold">Why QuickList?</h2>
         <div class="row">
             <div class="col text-center mt-5 mb-5">
                 <div class="about-image">
@@ -120,7 +117,7 @@
                 <h3>Join</h3>
                 <div class="text-wrap row justify-content-center">
                     <p class="why-text">
-                        Join the simplest and yet quickest classifieds website.
+                        Be a part of Dubai’s simplest, speediest and friendliest online marketplace.
                     </p>
                 </div>
             </div>
@@ -131,7 +128,18 @@
                 <h3>List</h3>
                 <div class="text-wrap row justify-content-center">
                     <p class="why-text">
-                        List your items in seconds and start selling.
+                        Post your items in seconds.
+                    </p>
+                </div>
+            </div>
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/browse.png') }}" width="60">
+                </div>
+                <h3>Browse</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        Find just what you want at great prices.
                     </p>
                 </div>
             </div>
@@ -142,18 +150,54 @@
                 <h3>Win</h3>
                 <div class="text-wrap row justify-content-center">
                     <p class="why-text">
-                        Free raffles for exiting prices every weekend!
+                        Free raffles for exiting prices every weekend!<br>Login to find out more.
                     </p>
                 </div>
             </div>
         </div>
+    <hr>
     </div>
-    <div class="container text-center mb-5">
-        <p>
-            Quicklist is a simple and innovative online classifieds platform that is developed to change the way things sell in Dubai. 
-            Quicklist introduces a new smart pricing feature which helps people to sell or buy any items for the right price. 
-            To get things done fast, Quicklist has an Instant & Easy communication using WhatsApp and other messengers.
-        </p>
+    <div class="container text-center mb-5 mt-5">
+        <div>
+            <h2 class="ncol font-weight-bold">
+                Join the Quicklist family!
+            </h2>
+            <p class="mt-5 about-text">
+               Quicklist is an innovative and intelligent digital classifieds platform developed to transform online buying and selling in Dubai... And it’s FREE! Using Quicklist is beautifully quick and easy – and there are no annoying commercials to get in your way. You can chat securely on WhatsApp via Quicklist with a buyer or seller. Plus, a brand new smart pricing feature helps you to sell or buy your items for the right price. Sorted!
+            </p>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 ">
+                <h3>SMART PRICING means everyone’s happy!</h3>
+                <p>Quicklist’s own smart and flexible pricing algorithm adds fun and value to every transaction.</p>
+                <div class="row text-left">
+                    <div class="col-md-6">
+                        <div class="card border-success pricing-card mt-3">
+                            <div class="card-body align-items-center d-flex">
+                                A seller gives Quicklist a minimum (and an optional maximum) price they want for their item.
+                            </div>
+                        </div>
+                        <div class="card border-success pricing-card mt-3">
+                            <div class="card-body align-items-center d-flex">
+                               Within that range, the Quicklist algorithm varies the price every 24 hours.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border-success pricing-card mt-3">
+                            <div class="card-body align-items-center d-flex">
+                                The buyer has fun deciding when to buy – and what price makes them happy!
+                            </div>
+                        </div>
+                        <div class="card border-success pricing-card mt-3">
+                            <div class="card-body align-items-center d-flex">
+                                Sellers have the freedom to offer discounts if they wish.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class=" container-fluid row justify-content-center align-items-center ">
         <div class="embed-responsive embed-responsive-16by9 video">
@@ -162,44 +206,65 @@
     </div>
     <div class="row justify-content-center align-items-center mt-5">
         <div class="text-center">
-            <a href="/login" class="btn btn-success btn-lg "> Start Listing, It's Absoulety Free</a>    
+            <a href="/login" class="btn btn-success btn-lg "> Start listing now. It’s absolutely FREE!</a>    
         </div>
     </div>
 </div>
 <div class="container-fluid pt-5" id="contact">
-    <div class="container text-center">
-        <h2>Get In Touch</h2>
-        <form method="post" action="/contact-us">
-            {{ csrf_field() }}
-            <div class="row mt-5">
-                <div class="col-12">
-                    <div class="form-group">
-                        <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message" spellcheck="false"></textarea>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group">
-                        <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group mt-3">
-                <button type="submit" id="send-message" class="btn btn-md btn-success">Send Message</button>
-            </div>
-        </form>
-    </div>
-    
+    <h2 class="text-center ncol font-weight-bold">Get In Touch</h2>
+    <div class="container">   
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mt-5">
+                    <h1 class="font-weight-bold">
+                        Hello Quicklister!
+                        <br>
+                        How are we doing?
+                    </h1>
+                    <p class="mt-4">
+                        Because we’ve built Quicklist for members like you, we’d really value your opinions on how we’re doing.
+                        <br><br>
+                        What features do you love most of all?<br>
+                        What could we do better?<br>
+                        Do you have any suggestions for new categories or features?
+                        <br><br>
+                        Please let us know on the form – and watch out to see your ideas become reality!
 
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6 text-left">
+                <form method="post" action="/contact-us">
+                    {{ csrf_field() }}
+                    <div class="row mt-5">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message" spellcheck="false"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <button type="submit" id="send-message" class="btn btn-md btn-success">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 @if (session('success'))
 <script type="text/javascript">

@@ -27,6 +27,6 @@ class ContactUsController extends Controller
       $message->from('info@quicklist.io');
       $message->to('info@quicklist.io', 'Admin')->subject($request->get('subject'));
    });
-       return back()->with('success', 'Your Message has been received');
+       return back()->with('success', 'If you need a reply we’ll get back to you just as soon as we can');
    }
 }
