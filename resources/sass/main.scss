@@ -9,7 +9,13 @@
 }
 
 .body-content{
-	margin-top:55px;
+margin-top:55px;
+	margin-bottom:100px;
+	min-height: 66vh;
+
+}
+.body-content-home{
+	// margin-top:55px;
 	margin-bottom:100px;
 	min-height: 66vh;
 }
@@ -32,12 +38,48 @@
 	color: white;
 }
 .bannercontainer{
-	margin-top: 90px;
+	margin-top: 25%;
 	margin-right: auto;
 	margin-left: auto;
+	position: absolute;
+  	top: 0;
+
+  	color: white;
+  	width: 100%;
+  	padding: 20px;
 }
 
+.recommendation{
+	margin-top: 4%;
+}
 
+.video-overlay:before{
+	background: 
+    /* top, transparent red */ 
+    linear-gradient(
+      rgba(53, 59, 65, 0.32941176470588235), 
+     rgba(53, 59, 65, 0.32941176470588235)
+    );
+
+}
+
+.video-banner-vid{
+	width: 100%;
+	height: 100%;
+}
+
+.bg-white{
+background-color : white !important;
+}
+
+.ncol{
+ color: #28a745 !important;
+}
+
+.ncol-logo{
+ 	color: black !important;
+
+}
 #typed4{
 	height: 50px;
 }
@@ -47,7 +89,8 @@
 }
 
 .links{
-	color: #28a745; 
+	color: white;
+	font-size: 15px 
 }
 
 
@@ -61,6 +104,10 @@
 
 .item-card{
 	width: 48%
+}
+
+.pricing-card{
+	height: 90px;
 }
 
 .item-image{
@@ -78,7 +125,19 @@
 }
 
 .home-card{
-	width: 31.5%
+	width: 23%
+}
+
+.about-text{
+	font-size: 17px;
+}
+
+.location-details{
+	display: none;
+}
+
+.item-card-desc{
+		font-size: 12px;
 }
 
 .listing{
@@ -138,8 +197,9 @@
 }
 
 .why-text{
-	width: 50%;
+	width: 70%;
 }
+
 
 .footer-content{
 	// position: fixed;
@@ -149,7 +209,11 @@
     padding: 25px;
 }
 
+// Profile
 
+.place-form{
+	display: none;
+}
 
 
 // Modal CSS

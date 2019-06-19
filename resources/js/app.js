@@ -26,6 +26,28 @@ Vue.component('example-component', require('./components/ExampleComponent.vue')[
 var app = new Vue({
   el: '#app'
 });
+
+$(window).scroll(function(){
+    $('nav').toggleClass('bg-white', $(this).scrollTop() > 800);
+   
+});
+
+$(window).scroll(function(){
+    if($(this).scrollTop() > 800){
+        $('.logo').addClass('ncol-logo')
+        $('.links').addClass('ncol')
+    } else {
+        $('.logo').removeClass('ncol-logo')
+        $('.links').removeClass('ncol')
+
+    }
+});
+
+
+
+
+
+
 /**
  *
  * JQUERY EU COOKIE LAW POPUPS

@@ -12,11 +12,10 @@ class Item extends Model
     	'item_age',
     	'item_min_price',
     	'item_max_price',
-    	'item_city',
-    	'item_area',
         'category_id',
         'item_primary_image',
     	'user_id',
+        'user_location_id',
     ];
 
     public function category(){
@@ -25,5 +24,9 @@ class Item extends Model
 
     public function user() {
         return $this->belongsTo(User::class); 
+    }
+
+    public function location() {
+        return $this->belongsTo(Location::class, 'user_location_id', 'id'); 
     }
 }

@@ -19,12 +19,12 @@
         <link href="/css/privacy.css" rel="stylesheet" type="text/css"/>
          <!-- Scripts -->
         <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+        <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/privacy.js') }}"></script>
     </head>
     <body class="eupopup eupopup-bottom eupopup-style-compact">
         @include('include.navbar')
-        <div class="body-content">
+        <div class=" {{Request::path() == '/' ? 'body-content-home' : 'body-content'}} ">
             @yield('content')
         </div>
         <footer class="text-white bg-dark footer-content ">
@@ -35,7 +35,7 @@
                             <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
                         </a>
                         <p style="width: 75%">
-                            Quicklist is a simple and innovative online classifieds platform that is developed to change the way things sell in Dubai.
+                           Quicklist is Dubai’s exciting and innovative digital classifieds platform, making buying and selling faster, easier and a whole lot more fun!
                         </p>
                     </div>
                     <div class="col-md-3 text-left footer-container">
@@ -89,7 +89,7 @@
             </div>
         </footer>
         <!-- Scripts -->
-        <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+        <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.min.js">
         </script>
         <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
         </script>
@@ -107,10 +107,6 @@
                     bindInputFocusEvents: true,
                     loop: true
                 });
-
-
-
-
             });
         </script>
     </body>

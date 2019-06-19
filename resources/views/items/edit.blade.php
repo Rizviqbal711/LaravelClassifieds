@@ -67,33 +67,49 @@
             <input name="item_max_price" class="form-control" placeholder="Maximum Price" type="text" value="{{ $item->item_max_price }}">
         </div>
         <div class="form-group">
-            <label>
-            	City
-            </label>
-            <input type="text" value="{{ $item->item_city}}" class="form-control" readonly>
-            <input type="hidden" name="item_city" class="form-control" value="{{ $item->item_city}}" readonly>
-            <!--     <input name="Country" class="form-control" placeholder="Country" type="text" value="{{ old('country') }}"> -->
-        </div>
-        <div class="form-group">
-            <label>
-            	Area
-            </label>
-        	<input type="text" name="item_area" placeholder="Area" value="{{ $item->item_area }}" class="form-control">
-            <!--     <input name="Country" class="form-control" placeholder="Country" type="text" value="{{ old('country') }}"> -->
-        </div>
-        <div class="form-group">
             <label>Images</label>
             <input type="file" name="item_primary_image">
         </div>
-            @if($item->item_primary_image)
+        @if($item->item_primary_image)
             <input type="hidden" name="item_primary_image" value="{{$item->item_primary_image}}">
-            @endif
-            <div class="img-uploads">
-                @if($item->item_primary_image)
+        @endif
+        <div class="img-uploads">
+            @if($item->item_primary_image)
                 <img src="{{asset('uploads') .'/'. $item->item_primary_image}}" width="100">
-                @endif
+            @endif
+        </div>
+        <hr>
+        <div class="card mb-3" >
+            <div class="card-body">
+                <h4 class="text-center">
+                    User Details
+                </h4>
+                <label>Location</label>
+                <select class="form-control custom-select" placeholder="Category" name="user_location_id">
+                    <option disabled selected>Location</option>
+                    @foreach($locations as $lcn)
+                        <option value="{{ $lcn->id }}" {{$lcn->id == $item->user_location_id ? 'selected' : '' }}>{{ $lcn->user_location_name }}</option>
+                    @endforeach
+                </select>
+                <div class="mt-3">
+                    <button class="btn btn-success col-md-12 " id="place_button">+ Add Place</button>
+                    <div class="place_form mt-3">
+                        <div class="form-group">
+                            <label>Location Name</label>
+                            <input type="text" class="form-control" placeholder="Home, Work" name="user_location_name" >
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" class="form-control" placeholder="Dubai" name="user_location_city" >
+                        </div>
+                        <div class="form-group">
+                            <label>Area</label>
+                            <input type="text" class="form-control" placeholder="Al Nahda 2, Qusais" name="user_location_area" >
+                        </div>
+                    </div>
+                </div>
             </div>
-       
+        </div>   
         <div class="form-group">
             <div>
                 <button class="btn btn-success col-md-12" type="submit">

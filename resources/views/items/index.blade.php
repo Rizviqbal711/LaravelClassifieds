@@ -82,7 +82,7 @@
                                 @endguest
                                 <div class="text-muted location">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    {{ $item->item_area}} > {{ $item->item_city}}
+                                    {{ $item->location->user_location_area}} > {{ $item->location->user_location_city}}
                                 </div>
                             </small>
                             <br>

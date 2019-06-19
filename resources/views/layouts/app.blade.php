@@ -75,7 +75,6 @@
     </script>
     @include('include.navbar')
     @yield('content')
-    <div id="status"></div>
      <footer class="text-white bg-dark footer-content ">
             <div class="container">
                 <div class="row">
@@ -84,7 +83,7 @@
                             <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
                         </a>
                         <p style="width: 75%">
-                            Quicklist is a simple and innovative online classifieds platform that is developed to change the way things sell in Dubai.
+                            Quicklist is Dubai’s exciting and innovative digital classifieds platform, making buying and selling faster, easier and a whole lot more fun!
                         </p>
                     </div>
                     <div class="col-md-3 text-left footer-container">

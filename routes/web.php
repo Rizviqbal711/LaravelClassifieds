@@ -12,7 +12,7 @@
 */
 // Landing Pages
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('/about', 'PagesController@about');
 
@@ -56,6 +56,10 @@ Route::get('myitems', 'ItemController@useritems');
 Route::get('profile', 'UserController@myprofile');
 
 Route::get('rewards', 'UserController@rewards');
+
+Route::post('location', 'UserController@location');
+
+Route::delete('location/{location}', 'UserController@location_delete');
 
 // Contact Form
 
