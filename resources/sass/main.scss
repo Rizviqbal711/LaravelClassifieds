@@ -47,13 +47,14 @@ margin-top:55px;
   	color: white;
   	width: 100%;
   	padding: 20px;
+  	z-index: 100000000;
 }
 
 .recommendation{
 	margin-top: 4%;
 }
 
-.video-overlay{
+.video-container{
     height: 600px;
     left: 0;
     overflow: hidden;
@@ -61,7 +62,14 @@ margin-top:55px;
     transform-style: preserve-3d;
     width: 100%;
     z-index: 2;
+}
 
+.video-overlay{
+	background-color: #0000003d;
+    width: 100%;
+    position: absolute;
+    height: 64%;
+    z-index: 100;
 }
 
 .video-banner-vid{
