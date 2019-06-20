@@ -25,10 +25,13 @@
 </div>
 
 <div class="video-banner">
+        <div class="video-image-container">
+            <img src="{{asset('images/preview.png')}}" class="video-image">
+        </div>
     <div class="d-flex justify-content-center align-items-center video-container">
         <div class="video-overlay"></div>
     <video autoplay muted loop class="embed-responsive-item video-banner-vid" id="autovid">
-        <source src="{{asset('images/preview-1.mp4')}}" type="video/mp4">
+        <source src="{{asset('images/preview.mov')}}" type="video/mp4">
     </video>
     <div class="container bannercontainer ">
         <h1 class=" display-4 text-center headline">
@@ -56,6 +59,58 @@
 
 <!-- <div class="jumbotron overlay">
 </div> -->
+<div class="bg-white border-top border-bottom border-dark pt-5 pb-5">
+    
+ <div class=" container mt-4 ">
+        <h2 class="text-center ncol font-weight-bold">Why QuickList?</h2>
+        <div class="row">
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/website.png') }}" width="60">
+                </div>
+                <h3>Join</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        Be a part of Dubai’s simplest, speediest and friendliest online marketplace.
+                    </p>
+                </div>
+            </div>
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/list.png') }}" width="60">
+                </div>
+                <h3>List</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        Post your items in seconds.
+                    </p>
+                </div>
+            </div>
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/browse.png') }}" width="60">
+                </div>
+                <h3>Browse</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        Find just what you want at great prices.
+                    </p>
+                </div>
+            </div>
+            <div class="col text-center mt-5 mb-5">
+                <div class="about-image">
+                    <img src="{{ asset('images/gift.png') }}" width="60">
+                </div>
+                <h3>Win</h3>
+                <div class="text-wrap row justify-content-center">
+                    <p class="why-text">
+                        Free raffles for exiting prices every weekend!<br>Login to find out more.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="container recommendation">
     <h2 class="text-center ncol font-weight-bold">
         RECOMMENDATIONS
@@ -109,56 +164,6 @@
     </div>
 </div>
 <div class="container-fluid bg-white border-top border-bottom border-dark pt-5 pb-5" id="about">
-    <div class=" container mt-4">
-        <h2 class="text-center ncol font-weight-bold">Why QuickList?</h2>
-        <div class="row">
-            <div class="col text-center mt-5 mb-5">
-                <div class="about-image">
-                    <img src="{{ asset('images/website.png') }}" width="60">
-                </div>
-                <h3>Join</h3>
-                <div class="text-wrap row justify-content-center">
-                    <p class="why-text">
-                        Be a part of Dubai’s simplest, speediest and friendliest online marketplace.
-                    </p>
-                </div>
-            </div>
-            <div class="col text-center mt-5 mb-5">
-                <div class="about-image">
-                    <img src="{{ asset('images/list.png') }}" width="60">
-                </div>
-                <h3>List</h3>
-                <div class="text-wrap row justify-content-center">
-                    <p class="why-text">
-                        Post your items in seconds.
-                    </p>
-                </div>
-            </div>
-            <div class="col text-center mt-5 mb-5">
-                <div class="about-image">
-                    <img src="{{ asset('images/browse.png') }}" width="60">
-                </div>
-                <h3>Browse</h3>
-                <div class="text-wrap row justify-content-center">
-                    <p class="why-text">
-                        Find just what you want at great prices.
-                    </p>
-                </div>
-            </div>
-            <div class="col text-center mt-5 mb-5">
-                <div class="about-image">
-                    <img src="{{ asset('images/gift.png') }}" width="60">
-                </div>
-                <h3>Win</h3>
-                <div class="text-wrap row justify-content-center">
-                    <p class="why-text">
-                        Free raffles for exiting prices every weekend!<br>Login to find out more.
-                    </p>
-                </div>
-            </div>
-        </div>
-    <hr>
-    </div>
     <div class="container text-center mb-5 mt-5">
         <div>
             <h2 class="ncol font-weight-bold">
@@ -172,7 +177,7 @@
             <div class="col-md-12 ">
                 <h3>SMART PRICING means everyone’s happy!</h3>
                 <p>Quicklist’s own smart and flexible pricing algorithm adds fun and value to every transaction.</p>
-                <div class="row text-left">
+                <div class="row text-left mt-5">
                     <div class="col-md-6">
                         <div class="card border-success pricing-card mt-3">
                             <div class="card-body align-items-center d-flex">
@@ -201,14 +206,19 @@
             </div>
         </div>
     </div>
-    <div class=" container-fluid row justify-content-center align-items-center ">
-        <div class="embed-responsive embed-responsive-16by9 video">
-            <iframe width="640" height="360" src="https://www.youtube.com/embed/ty6bRi9w4S4?rel=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
-        </div>  
-    </div>
-    <div class="row justify-content-center align-items-center mt-5">
-        <div class="text-center">
-            <a href="/login" class="btn btn-success btn-lg "> Start listing now. It’s absolutely FREE!</a>    
+    <div class="text-center">
+        
+        <h2> Unleash the fun </h2>
+            <p>Watch Now</p>
+        <div class=" container-fluid row justify-content-center align-items-center ">
+            <div class="embed-responsive embed-responsive-16by9 video">
+                <iframe width="640" height="360" src="https://www.youtube.com/embed/ty6bRi9w4S4?rel=0&enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+            </div>  
+        </div>
+        <div class="row justify-content-center align-items-center mt-5">
+            <div class="text-center">
+                <a href="/login" class="btn btn-success btn-lg "> Start listing now. It’s absolutely FREE!</a>    
+            </div>
         </div>
     </div>
 </div>

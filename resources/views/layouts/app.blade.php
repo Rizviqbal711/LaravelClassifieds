@@ -132,9 +132,27 @@
             <hr>
             <div class="border-top border-grey">
                 <div class="container mt-4">
-                    <div class="col-md-12 text-right footer-text">
-                        Made with ❤ in Dubai
+                    <div class="row">
+                        <div class="col-md-6 text-left footer-text">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <a href="www.facebook.com/quicklist.io/">
+                                        <i class="fab fa-facebook-square"></i>
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://www.instagram.com/quicklist.io/">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            Made with ❤ in Dubai
+                        </div>
+                        
                     </div>
+
                 </div>
             </div>
         </footer>

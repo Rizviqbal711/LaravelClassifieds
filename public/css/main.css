@@ -57,7 +57,7 @@
   background-color: #0000003d;
   width: 100%;
   position: absolute;
-  height: 64%;
+  height: 600px;
   z-index: 100;
 }
 
@@ -77,6 +77,20 @@
   z-index: 0;
 }
 
+.video-image-container {
+  z-index: -1;
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  bottom: 34%;
+  zoom: 115%;
+}
+
+.video-image {
+  width: 100%;
+  height: 150%;
+}
+
 .bg-white {
   background-color: white !important;
 }
@@ -90,11 +104,12 @@
 }
 
 #typed4 {
-  height: 50px;
+  height: 60px;
+  border-radius: 4px;
 }
 
 .search-bar {
-  height: 50px;
+  height: 60px;
 }
 
 .links {
@@ -212,6 +227,10 @@
   padding: 25px;
 }
 
+.footer-text {
+  font-size: 30px;
+}
+
 .place-form {
   display: none;
 }
@@ -262,61 +281,8 @@
   border: 0px;
 }
 
-@media screen and (max-width: 780px) {
-  .body-content {
-    min-height: 100vh;
-  }
-
-  .bannercontainer {
-    margin-top: 95px;
-  }
-
-  .jumbotron {
-    height: 79vh;
-    background-size: 287%;
-    background-position-x: -525px;
-    background-position-y: 0px;
-  }
-
-  .listing {
-    background-position-y: 0px;
-  }
-
-  .item-card {
-    width: 90%;
-  }
-
-  .home-card {
-    width: 81%;
-  }
-
-  .item-image {
-    width: 345px;
-  }
-
-  .item-desc {
-    height: 200px;
-  }
-
-  .other-desc {
-    position: relative;
-    bottom: 0px;
-  }
-
-  .footer-content {
-    height: 100%;
-  }
-
-  .footer-logo {
-    margin-left: 20%;
-  }
-
-  .footer-container {
-    margin-bottom: 10px;
-  }
-
-  .footer-text {
-    text-align: center !important;
-  }
+#map {
+  width: 395px;
+  height: 500px;
 }
 
