@@ -181,24 +181,24 @@
                     <div class="col-md-6">
                         <div class="card border-success pricing-card mt-3">
                             <div class="card-body align-items-center d-flex">
-                                A seller gives Quicklist a minimum (and an optional maximum) price they want for their item.
+                                A seller sets the minimum (and an optional maximum) price for their item
                             </div>
                         </div>
                         <div class="card border-success pricing-card mt-3">
                             <div class="card-body align-items-center d-flex">
-                               Within that range, the Quicklist algorithm varies the price every 24 hours.
+                              The Quicklist algorithm varies the price within that range every 24 hours
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card border-success pricing-card mt-3">
                             <div class="card-body align-items-center d-flex">
-                                The buyer has fun deciding when to buy – and what price makes them happy!
+                               The buyer has fun deciding when to buy – and the price that makes them happy!
                             </div>
                         </div>
                         <div class="card border-success pricing-card mt-3">
                             <div class="card-body align-items-center d-flex">
-                                Sellers have the freedom to offer discounts if they wish.
+                                Sellers can also choose to offer discounts
                             </div>
                         </div>
                     </div>
