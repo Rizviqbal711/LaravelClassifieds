@@ -113,8 +113,12 @@
                         </div>
                         <div class="form-group">
                             <label>Area</label>
-                            <input type="text" class="form-control" placeholder="Al Nahda 2, Qusais" name="user_location_area" >
+                            <input type="text" class="form-control input-area" placeholder="Al Nahda 2, Qusais" name="user_location_area" >
                         </div>
+                        
+                        <div id="map"></div>
+
+                        <span class="btn btn-primary col-md-12 location-click">Get location</span>
                     </div>
                 </div>
             </div>
@@ -128,7 +132,6 @@
             </div>
         </div>
     </form>
-</div>
     @if ($errors->any())
     <div class="alert alert-danger" role="alert">
         <ul>
@@ -141,6 +144,7 @@
     </div>
     @endif
 </div>
+
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -165,6 +169,48 @@
     });
 
 
+    var map, infoWindow;
 
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 12
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var pos = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+
+
+                infoWindow.open(map);
+                map.setCenter(pos);
+                var marker = new google.maps.Marker({
+                    position: pos,
+                    map: map
+
+                });
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({location: pos }, function (results, status){
+                    $(".location-click").click(function(){
+                        var array = results[0]["formatted_address"].split("-");
+                        $(".place-form").find(".input-area").val(array[0]);
+
+                        // alert();
+                    })
+                });
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+
+        } else {
+        // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
 </script>
 @endsection

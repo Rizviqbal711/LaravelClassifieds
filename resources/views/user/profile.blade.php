@@ -49,8 +49,8 @@
                     My Places
                 </h5>
             </div>
-            <button class="btn btn-success col-md-12 " id="place_button">+ Add Place</button>
-            <div class="place_form mt-3">
+            <button class="btn btn-success col-md-12 " id="place-button">+ Add Place</button>
+            <div class="place-form mt-3">
                 <form action="/location" method="POST">
                     @csrf
                     <div class="form-group">
@@ -65,6 +65,8 @@
                         <label>Area</label>
                         <input type="text" class="form-control" placeholder="Al Nahda 2, Qusais" name="user_location_area" >
                     </div>
+                    <div id="map"></div>
+                    <span class="btn btn-primary col-md-12 location-click">Get location</span>
                     <div>
                         <button class="btn btn-success col-md-12">Submit</button>
                     </div>
@@ -86,9 +88,7 @@
                                 <form action="/location/{{$lcn->id}}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    
-                                        <button type="submit" class=" btn btn-danger btn-sm col-md-12"><i class="fas fa-trash"></i></button>
-                    
+                                    <button type="submit" class=" btn btn-danger btn-sm col-md-12"><i class="fas fa-trash"></i></button>
                                 </form>
                             </div>
                         </div>
@@ -109,15 +109,7 @@
         @endif
     </div>
 </div>
-<script>
-    $(document).ready(function(){
-        $("#place_button").click(function (e) {
-            e.preventDefault();
-            $(".place_form").toggle("slow");
-        });
 
-    });
-</script>
 
 
 @endsection

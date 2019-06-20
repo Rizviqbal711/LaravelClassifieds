@@ -17,16 +17,23 @@
         <link href="/css/app.css" rel="stylesheet" type="text/css">
         <link href="/css/main.css" rel="stylesheet" type="text/css">
         <link href="/css/privacy.css" rel="stylesheet" type="text/css"/>
-         <!-- Scripts -->
-        <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Scripts -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/privacy.js') }}"></script>
+        
+        
+        
+        
     </head>
     <body class="eupopup eupopup-bottom eupopup-style-compact">
         @include('include.navbar')
         <div class=" {{Request::path() == '/' ? 'body-content-home' : 'body-content'}} ">
             @yield('content')
         </div>
+
         <footer class="text-white bg-dark footer-content ">
             <div class="container">
                 <div class="row">
@@ -82,32 +89,37 @@
             <hr>
             <div class="border-top border-grey">
                 <div class="container mt-4">
-                    <div class="col-md-12 text-right footer-text">
-                        Made with ❤ in Dubai
+                    <div class="row">
+                        <div class="col-md-6 text-left footer-text">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <a href="www.facebook.com/quicklist.io/">
+                                        <i class="fab fa-facebook-square"></i>
+                                    </a>
+                                </div>
+                                <div class="col-md-1">
+                                    <a href="https://www.instagram.com/quicklist.io/">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            Made with ❤ in Dubai
+                        </div>
+                        
                     </div>
+
                 </div>
             </div>
         </footer>
         <!-- Scripts -->
-        <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.min.js">
-        </script>
-        <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
-        </script>
-        <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9">
-        </script>
-        <script type="text/javascript">
-            $( document ).ready(function() {
-                var typed4 = new Typed('#typed4', {
-                    strings: ['Furniture', 'Television', 'Clothes'],
-                    typeSpeed: 75,
-                    backSpeed: 75,
-                    attr: 'placeholder',
-                    bindInputFocusEvents: true,
-                    loop: true
-                });
-            });
-        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC12HNKX8G_sCFJl5bgTBOpi1hh3e7tje4&callback=initMap"
+    async defer></script>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script> -->
     </body>
 </html>

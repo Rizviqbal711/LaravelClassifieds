@@ -27,26 +27,36 @@ var app = new Vue({
   el: '#app'
 });
 
-$(window).scroll(function(){
-    $('nav').toggleClass('bg-white', $(this).scrollTop() > 800);
-   
+
+$(document).ready(function(){
+
+    var Typed = require('typed.js');
+
+    var typed4 = new Typed('#typed4', {
+        strings: ['Electronics', 'Motors', 'Jobs', 'Gaming', 'Sports', 'Clothing', 'Misc', 'Household', 'Furniture'],
+        typeSpeed: 75,
+        backSpeed: 75,
+        attr: 'placeholder',
+        bindInputFocusEvents: true,
+        loop: true
+    });
+
+
+
+    $(window).scroll(function(){
+        $('nav').toggleClass('bg-white', $(this).scrollTop() > 550);
+    });
+
+    $(window).scroll(function(){
+        if($(this).scrollTop() > 550){
+            $('.logo').addClass('ncol-logo')
+            $('.links').addClass('ncol')
+        } else {
+            $('.logo').removeClass('ncol-logo')
+            $('.links').removeClass('ncol')
+        }
+    });
 });
-
-$(window).scroll(function(){
-    if($(this).scrollTop() > 800){
-        $('.logo').addClass('ncol-logo')
-        $('.links').addClass('ncol')
-    } else {
-        $('.logo').removeClass('ncol-logo')
-        $('.links').removeClass('ncol')
-
-    }
-});
-
-
-
-
-
 
 /**
  *

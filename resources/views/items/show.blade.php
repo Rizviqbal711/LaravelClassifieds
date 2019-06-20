@@ -39,7 +39,7 @@
                 </div>
                 <div class="text-muted location">
                     <i class="fas fa-map-marker-alt"></i>
-                    {{ $item->location->user_location_area}} > {{ $item->location->user_location_city}}
+                    <span id="address">{{ $item->location->user_location_area}}</span> > {{ $item->location->user_location_city}}
                 </div>
             </div>
             <a href="https://www.facebook.com/sharer/sharer.php?u={{$route}}&display=popup" style="font-size: 30px;" class="facebook-link"> 
@@ -51,7 +51,46 @@
             <a href="whatsapp://send?text= Hey! I found this amazing item on Qucklist!" data-action="share/whatsapp/share" style="font-size: 30px;" class="whatsapp-link">
                 <i class="fab fa-whatsapp-square"></i>
             </a>
+            <div id="map" style="width: 395px; height: 250px;"></div>
         </div> 
     </div>
 </div>
+<script type="text/javascript">
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 12
+        });
+        infoWindow = new google.maps.InfoWindow;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                
+                var address = document.getElementById( 'address' ).innerHTML;
+
+                console.log(address);
+
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode({address: address }, function (results, status){
+                    console.log(results)
+                    infoWindow.open(map);
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        position: results[0].geometry.location ,
+                        map: map
+
+                    });
+                });
+
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+
+        } else {
+        // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
+    }
+</script>
+
 @endsection
