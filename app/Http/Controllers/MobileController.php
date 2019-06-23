@@ -21,9 +21,13 @@ class MobileController extends Controller
             $items = Item::all();
         }
 
-
-
     	return view('mobile.home', compact('categories', 'items'));
 
+    }
+
+    public function about() {
+
+        return view('mobile.about');
+        
     }
 }

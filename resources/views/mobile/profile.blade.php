@@ -25,4 +25,18 @@
              </a>
 		</li>
 	</ul>
+	<ul class="list-group mt-4">
+		<li class="list-group-item green">
+			<i class="fas fa-info-circle"></i>&nbsp;
+			<a href="/m/about" class="text-dark">About</a>
+		</li>	
+		<li class="list-group-item green">
+			<i class="fas fa-info-circle"></i>&nbsp;
+			<a href="/terms" class="text-dark">Terms And Conditions</a>
+		</li>
+		<li class="list-group-item green">
+			<i class="fas fa-info-circle"></i>&nbsp;
+			<a href="/privacy" class="text-dark">Privacy Policy</a>
+		</li>
+	</ul>
 @endsection

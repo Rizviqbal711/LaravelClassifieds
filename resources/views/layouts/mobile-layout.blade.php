@@ -35,7 +35,7 @@
 	<footer class="fixed-bottom bg-white footer">
 		<div class="container-fluid d-flex align-items-center footer">
 			<div class="col text-center">
-				<a href="/" class="green">
+				<a href="/m" class="green">
 					<div class="footer-link">
 						<i class="fas fa-home"></i>
 					</div>

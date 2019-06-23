@@ -1,4 +1,4 @@
-@extends('layouts.layout')
+@extends(($agent->isMobile()) ? 'layouts.mobile-layout' : 'layouts.layout')
 
 @section('title', 'Rewards | QuickList')
 
