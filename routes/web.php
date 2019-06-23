@@ -14,6 +14,8 @@
 
 Route::get('/', 'PagesController@home')->name('home');
 
+Route::get('/privacy', 'PagesController@privacy');
+
 Route::get('/terms', 'PagesController@terms');
 
 

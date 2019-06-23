@@ -136,7 +136,7 @@
                         <div class="col-md-6 text-left footer-text">
                             <div class="row">
                                 <div class="col-md-1">
-                                    <a href="www.facebook.com/quicklist.io/" class="text-white">
+                                    <a href="https://www.facebook.com/quicklist.io/" class="text-white">
                                         <i class="fab fa-facebook-square"></i>
                                     </a>
                                 </div>

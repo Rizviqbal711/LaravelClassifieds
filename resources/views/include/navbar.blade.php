@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark {{Request::path() == 'privacy' || Request::path() == 'terms' ? 'bg-white' : 'bg-transparent'}} fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
             <span style="font-family: MuseoSans-500"><span class="{{Request::path() == '/' ? 'logo' : 'ncol-logo'}}">QUICK</span><span class="text-success">LIST</span></span>
