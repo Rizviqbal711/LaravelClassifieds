@@ -28,7 +28,9 @@
 </head>
 <body class="eupopup eupopup-bottom eupopup-style-compact">
 	@include('include.mobile-navbar')
-	@yield('content')
+	<div class="body-content">
+		@yield('content')
+	</div>
 
 	<footer class="fixed-bottom bg-white footer">
 		<div class="container-fluid d-flex align-items-center footer">
@@ -63,7 +65,7 @@
 				</a>
 			</div>
 			<div class="col text-center">
-				<a href="/profile" class="green">
+				<a href="/m/profile" class="green">
 					<div class="footer-link">
 						<i class="fas fa-user"></i>
 					</div>
@@ -82,5 +84,7 @@
     </script>
     <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
     </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC12HNKX8G_sCFJl5bgTBOpi1hh3e7tje4&callback=initMap"
+    async defer></script>
 </body>
 </html>

@@ -80,4 +80,12 @@ class UserController extends Controller
       return redirect('/profile');
 
     }
+
+
+    public function mymprofile(User $user) {
+    
+        return view('mobile.profile');
+
+    }
+
 }
