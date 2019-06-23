@@ -208,7 +208,7 @@
     </div>
     <div class="text-center">
         
-        <h2> Unleash the fun </h2>
+        <h2> Unleash the Fun! </h2>
             <p>Watch Now</p>
         <div class=" container-fluid row justify-content-center align-items-center ">
             <div class="embed-responsive embed-responsive-16by9 video">
