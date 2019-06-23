@@ -12,7 +12,7 @@
 */
 // Landing Pages
 
-Route::get('/privacy', 'PagesController@privacy');
+Route::get('/', 'PagesController@home')->name('home');
 
 Route::get('/terms', 'PagesController@terms');
 
