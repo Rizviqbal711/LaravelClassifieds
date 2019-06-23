@@ -61,7 +61,7 @@
 </div> -->
 <div class="bg-white border-top border-bottom border-dark pt-5 pb-5">
     
- <div class=" container mt-4 ">
+ <div class=" container mt-4">
         <h2 class="text-center ncol font-weight-bold">Why QuickList?</h2>
         <div class="row">
             <div class="col text-center mt-5 mb-5">
