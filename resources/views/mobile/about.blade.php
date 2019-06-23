@@ -1,62 +1,6 @@
 @extends('layouts.mobile-layout')
 
 @section('content')
-<div class="section-1">
-    <h3 class="text-center">
-        Why QuickList?
-    </h3>
-    <div class="section-1-container container mt-4">
-        <div class="row text-center">
-            <div class="card">
-                <div class="card-body">
-                    <div class="col-sm-12">
-                        <img src="{{ asset('images/website.png') }}" width="60">
-                            <h4 class="mt-3">
-                                Join
-                            </h4>
-                            <p>
-                                Be a part of Dubai’s simplest, speediest and friendliest online marketplace.
-                            </p>
-                       
-                    </div>
-                    <div class="col-sm-12">
-                        <img src="{{ asset('images/list.png') }}" width="60">
-                            <h4 class="mt-3">
-                                List
-                            </h4>
-                            <p>
-                                Post your items in seconds.
-                            </p>
-   
-                    </div>
-                    <div class="col-sm-12">
-                        <img src="{{ asset('images/browse.png') }}" width="60">
-                            <h4 class="mt-3">
-                                Browse
-                            </h4>
-                            <p>
-                                Find just what you want at great prices.
-                            </p>
-                        
-                    </div>
-                    <div class="col-sm-12">
-                        <img src="{{ asset('images/gift.png') }}" width="60">
-                            <h4 class="mt-3">
-                                Win
-                            </h4>
-                            <p>
-                                Free raffles for exiting prices every weekend!
-                                <br>
-                                    Login to find out more.
-                               
-                            </p>
-                     
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="section-2 mt-4">
 	 <h3 class="text-center">
         Join the QuickList Family!
@@ -69,10 +13,10 @@
 	    			<h4 class="mt-4">SMART PRICING means everyone’s happy!</h4>
 	    			<p>Quicklist’s own smart and flexible pricing algorithm adds fun and value to every transaction.</p>
 	    			<ol class="text-left">
-	    				<li>A seller gives Quicklist a minimum (and an optional maximum) price they want for their item.</li>
-	    				<li>Within that range, the Quicklist algorithm varies the price every 24 hours.</li>
-	    				<li>The buyer has fun deciding when to buy – and what price makes them happy!</li>
-	    				<li>Sellers have the freedom to offer discounts if they wish.</li>
+	    				<li> 1. A seller sets the minimum (and an optional maximum) price for their item</li>
+	    				<li>The Quicklist algorithm varies the price within that range every 24 hours.</li>
+	    				<li> The buyer has fun deciding when to buy – and the price that makes them happy!</li>
+	    				<li>Sellers can also choose to offer discounts.</li>
 	    			</ol>
 	    			<h4 class="mt-4">Unleash the fun!</h4>
 	    			<p>Watch Now.</p>
