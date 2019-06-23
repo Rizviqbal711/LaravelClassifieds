@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group">
                     <label>Phone</label>
-            		<input type="tel"  class="form-control" name="phone" placeholder="888-888-8888" title="9715XXXXXXX" value="{{ $this_user->phone }}">
+            		<input type="tel"  class="form-control" name="phone" placeholder="9715XXXXXXX" title="9715XXXXXXX" value="{{ $this_user->phone }}">
                 </div>
                 <div class="form-group">
                     <label>Contact via Whatsapp</label><br>

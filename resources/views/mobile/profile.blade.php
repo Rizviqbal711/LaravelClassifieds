@@ -12,7 +12,7 @@
 		</li>
 		<li class="list-group-item green">
 			<i class="fas fa-gift"></i>&nbsp;
-			<a href="/rewards" class="text-dark">	Your Rewards</a>
+			<a href="/rewards" class="text-dark">Your Rewards</a>
 		</li>
 		<li class="list-group-item green">
 			<i class="fas fa-key"></i>&nbsp;
