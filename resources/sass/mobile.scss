@@ -7,6 +7,11 @@
 	url('/webfonts/3978CB_0_0.ttf') format('truetype');
 }
 
+
+.body-content{
+	margin-bottom:100px;
+}
+
 .navbar-logo{
 	// padding:; 5px;
 }
@@ -62,4 +67,9 @@
 
 .green{
 	color: #38c172;
+}
+
+#map{
+	width: 302px;
+	height:500px;
 }

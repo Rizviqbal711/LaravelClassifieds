@@ -68,3 +68,4 @@ Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@
 // Mobile Landing
 
 Route::get('/m', 'MobileController@index');
+Route::get('/m/profile', 'UserController@mymprofile');
