@@ -1,9 +1,45 @@
-@extends('layouts.layout')
+@extends(($agent->isMobile()) ? 'layouts.mobile-layout' : 'layouts.layout')
 
 
 @section('title', 'My Items')
 
 @section('content')
+@if($agent->isMobile())
+<div class="container myitem-content">
+        <h1>
+            My Items
+        </h1>
+
+        <div class="mt-5 row justify-content-around">
+        @foreach($user_items as $myitems)
+            <div class="d-inline-block one-item">
+                <a href="/items/{{ $myitems->id }}">
+                    <div class="item-image">
+                        <img src="{{asset('uploads') .'/'. $myitems->item_primary_image}}" width="100%">
+                    </div>  
+                    <hr>
+                    <div class="item-desc">
+                        <span class="text-success">{{$myitems->item_title}}</span>
+                        <br>
+                        <small class="text-success">{{ germanizer($myitems->item_min_price, $myitems->item_max_price, date('w') + 1)}} AED</small>
+
+                        <small>
+                            <div class="text-muted">
+                                <i class="fas fa-layer-group"></i>
+                                {{ $myitems->category->category_name }}
+                            </div>
+                           
+                            <div class="text-muted location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                    {{ $myitems->location->user_location_area}} > {{ $myitems->location->user_location_city}}
+                            </div>
+                        </small>
+                    </div>
+                </a>
+            </div>
+        @endforeach
+    </div>
+    @else
 	<div class="container myitem-content">
 		<h1>
 			My Items
@@ -52,4 +88,7 @@
         </div>
         @endforeach
     </div>
+
+
+    @endif
 @endsection

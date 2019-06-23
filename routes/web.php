@@ -12,12 +12,6 @@
 */
 // Landing Pages
 
-Route::get('/', 'PagesController@home')->name('home');
-
-Route::get('/about', 'PagesController@about');
-
-Route::get('/contact', 'PagesController@contact');
-
 Route::get('/privacy', 'PagesController@privacy');
 
 Route::get('/terms', 'PagesController@terms');
@@ -68,4 +62,7 @@ Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@
 // Mobile Landing
 
 Route::get('/m', 'MobileController@index');
+
 Route::get('/m/profile', 'UserController@mymprofile');
+
+Route::get('/m/about', 'MobileController@about');
