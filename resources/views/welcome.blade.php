@@ -14,16 +14,18 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="thank-you-pop">
                     @if(session('success'))
+                    <div class="thank-you-pop">
                         <img src="{{ asset('images/green-tick.png')}}" alt="">
                         <h2>Hey, Thanks for getting in touch!</h2>
                         <p>{{session('success')}}</p>
-                    else
+                    </div>
+                    @else
+                    <div class="sorry-pop">
                         <img src="{{ asset('images/red-cross.png')}}" alt="">
                         <p>{{session('danger')}}</p>
+                    </div>
                     @endif
-                </div>
             </div>
         </div>
     </div>
@@ -278,7 +280,7 @@
                     <input type="hidden" value="" name="recaptcha_response" id="recaptchaResponse">
 
                     <div class="form-group mt-3">
-                        <button type="submit" id="send-message" class="btn btn-md btn-success send-message" disabled="disabled">Send Message</button>
+                        <button type="submit" id="send-message" class="btn btn-md btn-success send-message" >Send Message</button>
                     </div>
                 </form>
                 @if ($errors->any())

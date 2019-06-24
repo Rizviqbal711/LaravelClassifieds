@@ -295,6 +295,45 @@ background-color : white !important;
 	margin-right:5px;
 	color:#fff;
 }
+
+.sorry-pop{
+	width:100%;
+ 	padding:20px;
+	text-align:center;
+}
+.sorry-pop img{
+	width:76px;
+	height:auto;
+	margin:0 auto;
+	display:block;
+	margin-bottom:25px;
+}
+
+.sorry-pop h1{
+	font-size: 42px;
+    margin-bottom: 25px;
+	color:#5C5C5C;
+}
+.sorry-pop p{
+	font-size: 20px;
+    margin-bottom: 27px;
+ 	color:#5C5C5C;
+}
+.sorry-pop a{
+	display: inline-block;
+    margin: 0 auto;
+    padding: 9px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    background-color: #8BC34A;
+    border-radius: 17px;
+}
+.sorry-pop a i{
+	margin-right:5px;
+	color:#fff;
+}
+
 #ignismyModal .modal-header{
     border:0px;
 }
