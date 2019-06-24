@@ -88,4 +88,10 @@ class UserController extends Controller
 
     }
 
+    public function referral(){
+
+        return view('user.referral');
+
+    }
+
 }

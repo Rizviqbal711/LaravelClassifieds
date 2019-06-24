@@ -109,6 +109,19 @@
         @endif
     </div>
 </div>
+@forelse(auth()->user()->getReferrals() as $referral)
+        <h4>
+            {{ $referral->program->name }}
+        </h4>
+        <code>
+            {{ $referral->link }}
+        </code>
+        <p>
+            Number of referred users: {{ $referral->relationships()->count() }}
+        </p>
+    @empty
+        No referrals
+    @endforelse
 
 
 

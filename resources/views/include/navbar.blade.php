@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark {{Request::path() == 'privacy' || Request::path() == 'terms' ? 'bg-white' : 'bg-transparent'}} fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark {{Request::path() == '/'  ? 'bg-transparent' : 'bg-white'}} fixed-top">
     <div class="container">
         <a class="navbar-brand" href="/">
             <span style="font-family: MuseoSans-500"><span class="{{Request::path() == '/' ? 'logo' : 'ncol-logo'}}">QUICK</span><span class="text-success">LIST</span></span>
@@ -41,6 +41,7 @@
                         <a href="/myitems" class="dropdown-item">My Items</a>
                         <a href="/profile" class="dropdown-item">My Profile</a>
                         <a href="/rewards" class="dropdown-item">Your Rewards</a>
+                        <a href="/referral" class="dropdown-item">Free Points</a>
                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}

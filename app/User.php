@@ -48,4 +48,12 @@ class User extends Authenticatable implements MustVerifyEmail
     public function location(){
         return $this->hasMany(Location::class);
     }
+
+    public function getReferrals()
+    {
+        return ReferralProgram::all()->map(function ($program) {
+            return ReferralLink::getReferral($this, $program);
+        });
+    }
+
 }
