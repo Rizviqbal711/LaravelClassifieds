@@ -15,9 +15,14 @@
             </div>
             <div class="modal-body">
                 <div class="thank-you-pop">
-                    <img src="{{ asset('images/green-tick.png')}}" alt="">
-                    <h2>Hey, Thanks for getting in touch!</h2>
-                    <p>{{session('success')}}</p>
+                    @if(session('success'))
+                        <img src="{{ asset('images/green-tick.png')}}" alt="">
+                        <h2>Hey, Thanks for getting in touch!</h2>
+                        <p>{{session('success')}}</p>
+                    else
+                        <img src="{{ asset('images/green-tick.png')}}" alt="">
+                        <p>{{session('danger')}}</p>
+                    @endif
                 </div>
             </div>
         </div>
