@@ -270,8 +270,10 @@
                             </div>
                         </div>
                     </div>
+                    <input type="hidden" value="" name="recaptcha_response" id="recaptchaResponse">
+
                     <div class="form-group mt-3">
-                        <button type="submit" id="send-message" class="btn btn-md btn-success">Send Message</button>
+                        <button type="submit" id="send-message" class="btn btn-md btn-success send-message">Send Message</button>
                     </div>
                 </form>
             </div>
@@ -283,6 +285,18 @@
    $( document ).ready(function() {
         $('#myModal').modal('show');
     });
+
+
+   grecaptcha.ready(function() {
+        grecaptcha.execute( '{{ env('CAPTCHA_KEY') }}' , { action: 'contact' } )
+           .then(function(token) {
+                var recaptchaResponse = document.getElementById('recaptchaResponse');
+                recaptchaResponse.value = token;
+                $('.send-message').removeAttr('disabled','disabled');
+            });
+     });
+
+      
 </script>
 @endif
 @endsection
