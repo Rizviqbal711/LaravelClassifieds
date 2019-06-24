@@ -43,10 +43,10 @@ class ContactUsController extends Controller
             });
                return back()->with('success', 'If you need a reply we’ll get back to you just as soon as we can');
            } else {
-                return back()->with('danger', 'Please try again later');
+                return back()->with('success', 'Please try again later');
            }
         } else {
-            return back()->with('danger', 'Please try again later, Could not validate you');
+            return back()->with('success', 'Please try again later, Could not validate you');
         }       
     }
 }
