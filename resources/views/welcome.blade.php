@@ -251,22 +251,22 @@
                     <div class="row mt-5">
                         <div class="col-12">
                             <div class="form-group">
-                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message" spellcheck="false"></textarea>
+                                <textarea class="form-control w-100" name="message" id="message" cols="30" rows="9" placeholder="Enter Message" spellcheck="false"></textarea required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name">
+                                <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address">
+                                <input class="form-control" name="email" id="email" type="email" placeholder="Enter email address" required>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-group">
-                                <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject">
+                                <input class="form-control" name="subject" id="subject" type="text" placeholder="Enter Subject" required>
                             </div>
                         </div>
                     </div>
@@ -276,6 +276,17 @@
                         <button type="submit" id="send-message" class="btn btn-md btn-success send-message">Send Message</button>
                     </div>
                 </form>
+                @if ($errors->any())
+                <div class="alert alert-danger" role="alert">
+                    <ul>
+                    @foreach($errors->all() as $error)
+                        <li>
+                            {{ $error }}
+                        </li>
+                    @endforeach
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
     </div>
