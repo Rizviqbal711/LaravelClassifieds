@@ -299,7 +299,7 @@
 
 
    grecaptcha.ready(function() {
-        grecaptcha.execute( '{{ env('CAPTCHA_KEY') }}' , { action: 'contact' } )
+        grecaptcha.execute( '6LdCTqoUAAAAAPE3ZQ7_kMhDZQNVObt_houfvMHd' , { action: 'contact' } )
            .then(function(token) {
                 var recaptchaResponse = document.getElementById('recaptchaResponse');
                 recaptchaResponse.value = token;
