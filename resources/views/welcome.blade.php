@@ -299,10 +299,10 @@
       
 </script>
 @endif
-<script src="https://www.google.com/recaptcha/api.js?render=6LdCTqoUAAAAAPE3ZQ7_kMhDZQNVObt_houfvMHd"></script>
+<script src="https://www.google.com/recaptcha/api.js?render={{ env('CAPTCHA_KEY') }}"></script>
 <script type="text/javascript">
     grecaptcha.ready(function() {
-        grecaptcha.execute( '6LdCTqoUAAAAAPE3ZQ7_kMhDZQNVObt_houfvMHd' , { action: 'contact' } )
+        grecaptcha.execute( '{{ env('CAPTCHA_KEY') }}' , { action: 'contact' } )
            .then(function(token) {
                 var recaptchaResponse = document.getElementById('recaptchaResponse');
                 recaptchaResponse.value = token;

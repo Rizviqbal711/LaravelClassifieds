@@ -10,8 +10,8 @@ class ContactUsController extends Controller
    public function contactSaveData(Request $request)
    {
 
-    $recaptcha_secret_key = '6LdCTqoUAAAAAPE3ZQ7_kMhDZQNVObt_houfvMHd';
-    $recaptcha_secret = '6LdCTqoUAAAAAPSv0nWkIhDnU4rxZaRMPvT-9KJ-';
+    $recaptcha_secret_key = env('CAPTCHA_KEY');
+    $recaptcha_secret = env('CAPTCHA_SECRET_KEY');
 
     $recaptcha_url = 'https://www.google.com/recaptcha/api/siteverify';
     $recaptcha_response = $request->recaptcha_response;
