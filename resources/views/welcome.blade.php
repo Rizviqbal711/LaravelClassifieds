@@ -273,7 +273,7 @@
                     <input type="hidden" value="" name="recaptcha_response" id="recaptchaResponse">
 
                     <div class="form-group mt-3">
-                        <button type="submit" id="send-message" class="btn btn-md btn-success send-message">Send Message</button>
+                        <button type="submit" id="send-message" class="btn btn-md btn-success send-message" disabled="disabled">Send Message</button>
                     </div>
                 </form>
                 @if ($errors->any())
@@ -300,7 +300,7 @@
 </script>
 @endif
 <script type="text/javascript">
-       grecaptcha.ready(function() {
+    grecaptcha.ready(function() {
         grecaptcha.execute( '6LdCTqoUAAAAAPE3ZQ7_kMhDZQNVObt_houfvMHd' , { action: 'contact' } )
            .then(function(token) {
                 var recaptchaResponse = document.getElementById('recaptchaResponse');
