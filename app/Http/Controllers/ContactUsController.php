@@ -38,18 +38,15 @@ class ContactUsController extends Controller
                 'user_message' => $request->get('message')
             ), function($message) use ($request)
            	{
-                $message->from('info@quicklist.io', 'QuickList')
-                        ->to($request->get('email'), $request->get('name'))
-                        ->subject('Thanks for your feedback')
-                        ->cc(['info@quicklist.io']);
-
+                $message->from('info@quicklist.io');
+                $message->to('info@quicklist.io', 'Admin')->subject($request->get('subject'));
             });
                return back()->with('success', 'If you need a reply we’ll get back to you just as soon as we can');
            } else {
-                return back()->with('success', 'Please try again later');
+                return back()->with('danger', 'Please try again later');
            }
         } else {
-            return back()->with('success', 'Please try again later, Could not validate you');
+            return back()->with('danger', 'Please try again later, Could not validate you');
         }       
     }
 }
