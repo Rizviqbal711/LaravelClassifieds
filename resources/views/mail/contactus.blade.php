@@ -1,12 +1,12 @@
 <div class="d-flex justify-content-center"> 
-	<img src="{{asset('images/logo.png')}}">
+	 <span  class="text-white" style="font-family: MuseoSans-500; font-size: 35px;">QUICK<span class="text-success">LIST</span></span>
 </div>
-<p>Hello {{ $name }},</p>
-<p>Thanks for reaching QuickList. We'll get back to you as soon as possible</p>
-<p>Here are the details:</p>
-<p>Name: {{ $name }}</p>
-<p>Email: {{ $email }}</p>
-<p>Subject: {{ $subject }}</p>
-<p>Message: {{ $user_message }}</p>
-<p>Thank You,</p>
-<p>QuickList Team</p>
+<p>Hello {{ $name }},<br>
+Thanks for reaching QuickList. We'll get back to you as soon as possible</p>
+<p>Here are the details:<br>
+Name: {{ $name }}<br>
+Email: {{ $email }}<br>
+Subject: {{ $subject }}<br>
+Message: {{ $user_message }}</p>
+<p>Thank You,<br>
+QuickList Team</p>
