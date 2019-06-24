@@ -296,9 +296,11 @@
    $( document ).ready(function() {
         $('#myModal').modal('show');
     });
-
-
-   grecaptcha.ready(function() {
+      
+</script>
+@endif
+<script type="text/javascript">
+       grecaptcha.ready(function() {
         grecaptcha.execute( '6LdCTqoUAAAAAPE3ZQ7_kMhDZQNVObt_houfvMHd' , { action: 'contact' } )
            .then(function(token) {
                 var recaptchaResponse = document.getElementById('recaptchaResponse');
@@ -307,7 +309,5 @@
             });
      });
 
-      
 </script>
-@endif
 @endsection
