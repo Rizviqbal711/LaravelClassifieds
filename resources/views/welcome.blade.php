@@ -280,7 +280,7 @@
                     <input type="hidden" value="" name="recaptcha_response" id="recaptchaResponse">
 
                     <div class="form-group mt-3">
-                        <button type="submit" id="send-message" class="btn btn-md btn-success send-message" >Send Message</button>
+                        <button type="submit" id="send-message" class="btn btn-md btn-success send-message" disabled="disabled">Send Message</button>
                     </div>
                 </form>
                 @if ($errors->any())
