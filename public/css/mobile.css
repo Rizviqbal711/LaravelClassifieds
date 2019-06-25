@@ -48,6 +48,10 @@
   margin-top: 35px;
 }
 
+.place-form {
+  display: none;
+}
+
 .footer {
   height: 65px;
 }
