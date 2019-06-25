@@ -53,6 +53,8 @@ Route::get('profile', 'UserController@myprofile');
 
 Route::get('rewards', 'UserController@rewards');
 
+Route::get('referral', 'UserController@referral');
+
 Route::post('location', 'UserController@location');
 
 Route::delete('location/{location}', 'UserController@location_delete');
@@ -65,6 +67,6 @@ Route::post('contact-us', ['as'=>'contactus.store','uses'=>'ContactUsController@
 
 Route::get('/m', 'MobileController@index');
 
-Route::get('/m/profile', 'UserController@mymprofile');
+Route::get('/m/profile', 'MobileController@mymprofile');
 
 Route::get('/m/about', 'MobileController@about');

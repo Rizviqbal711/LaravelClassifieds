@@ -63,12 +63,12 @@
                     </div>
                     <div class="form-group">
                         <label>Area</label>
-                        <input type="text" class="form-control input-area"  placeholder="Al Nahda 2, Qusais" name="user_location_area" >
+                        <input type="text" class="form-control input-area" placeholder="Al Nahda 2, Qusais" name="user_location_area" >
                     </div>
                     <div id="map"></div>
                     <span class="btn btn-primary col-md-12 location-click">Get location</span>
                     <div>
-                        <button class="btn btn-success col-md-12 mt-4">Submit</button>
+                        <button class="btn btn-success col-md-12 mt-3">Submit</button>
                     </div>
                 </form>
             </div>

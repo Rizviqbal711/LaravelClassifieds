@@ -75,6 +75,8 @@ class RegisterController extends Controller
             'reward_points' => 10,
         ]);
 
+        event(new \App\Events\UserReferred(request()->cookie('ref'), $user));
+
         return $user;
     }
 }

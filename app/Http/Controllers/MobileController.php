@@ -25,6 +25,12 @@ class MobileController extends Controller
 
     }
 
+    public function mymprofile(User $user) {
+    
+        return view('mobile.profile');
+
+    }
+
     public function about() {
 
         return view('mobile.about');
