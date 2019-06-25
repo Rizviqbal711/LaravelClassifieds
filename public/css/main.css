@@ -329,3 +329,7 @@
   height: 500px;
 }
 
+.alert {
+  display: none;
+}
+
