@@ -100,7 +100,12 @@
                         <option value="{{ $lcn->id }}">{{ $lcn->user_location_name }}</option>
                     @endforeach
                 </select>
-                <div class="mt-3">
+                <div class="mt-4">
+                    <p class="h2">
+                        <span>Or</span>
+                    </p>
+                </div>
+                <div class="mt-4">
                     <button class="btn btn-success col-md-12 " id="place-button">+ Add Place</button>
                     <div class="place-form mt-3">
                         <div class="form-group">
