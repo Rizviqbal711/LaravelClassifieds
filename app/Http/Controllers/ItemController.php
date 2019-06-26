@@ -236,9 +236,15 @@ class ItemController extends Controller
     public function destroy(Item $item)
     {
         
+        $agent = new Agent();
+        
         $item->delete();
-    
-        return redirect('/items');
+
+        if ($agent->isMobile()) {
+            return redirect('/');
+        } else {
+            return redirect('/items');
+        }
     
     }
 
