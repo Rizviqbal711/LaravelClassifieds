@@ -76,7 +76,7 @@
                                     {{ $item->user->name }} - <i class="fas fa-mobile-alt"></i>
                                     {{ $item->user->phone }}
                                     @if ($item->user->contact_whatsapp == 1 )
-                                     <a href="https://api.whatsapp.com/send?phone={{ $item->user->phone }}" class="text-success"><i class="fab fa-whatsapp"></i></a>
+                                     <a href="https://api.whatsapp.com/send?phone={{ $item->user->phone }}" class="text-success font-16"><i class="fab fa-whatsapp"></i></a>
                                      @endif
                                 </div>
                                 @endguest
