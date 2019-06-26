@@ -148,7 +148,12 @@
       <div class="modal-body">
         If you dont want to use the QuickList's Smart Pricing Feature, Please enter the same amount as the "Minimum Price"
         <br><br>
-        Read more about it <a href="/">here</a>
+        Read more about it 
+        @if($agent->isMobile())
+        <a href="/m/about">here</a>
+        @else
+        <a href="/">here</a>
+        @endif
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Close</button>
