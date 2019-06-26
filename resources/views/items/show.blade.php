@@ -3,7 +3,7 @@
 @section('title',  $item->item_title)
 
 @section('content')
-<div class="container" style="margin-top: 100px; min-height: 68vh;">
+<div class="container show-item-content">
     <div class="row">
         <div class="col-md-7">
             <div>
@@ -11,11 +11,13 @@
                     <h1>{{ $item->item_title }} <small> - <span class="text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</span></small></h1> 
                 </div>
                 @if(Auth::user())
+                    @if(Auth::user()->id == $item->user_id)
                     <div class="d-inline-block">
                         <a href="/items/{{ $item->id }}/edit" class="btn btn-sm btn-success">
                         Edit
                         </a>
                     </div>
+                    @endif
                 @endif
             </div>
             <div>
@@ -54,7 +56,7 @@
             <a href="whatsapp://send?text= Hey! I found this amazing item on Qucklist!" data-action="share/whatsapp/share" style="font-size: 30px;" class="whatsapp-link">
                 <i class="fab fa-whatsapp-square"></i>
             </a>
-            <div id="map" style="width: 395px; height: 250px;"></div>
+            <div id="map"></div>
         </div> 
     </div>
 </div>
