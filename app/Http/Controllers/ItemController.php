@@ -181,11 +181,12 @@ class ItemController extends Controller
      */
     public function update(Item $item)
     {
-        // dd($item);
         $attr = request()->all(); 
         unset($attr['_method']);
         unset($attr['_token']);
 
+        // dd($attr);
+        
         if (request()->hasFile('item_primary_image')) {
             $file_name = date('YmdHis') . '-' . request()->file('item_primary_image')->getClientOriginalName();
             request()->file('item_primary_image')->move(public_path() . '/uploads/', $file_name);  
