@@ -53,7 +53,7 @@
             <a href="http://twitter.com/share?text=Hey! I found this amazing item on Qucklist!&url={{$route}}" style="font-size: 30px;" class="twitter-link"> 
                 <i class="fab fa-twitter-square"></i>
             </a>
-            <a href="whatsapp://send?text= Hey! I found this amazing item on Qucklist!" data-action="share/whatsapp/share" style="font-size: 30px;" class="whatsapp-link">
+            <a href="whatsapp://send?text= Hey! I found this amazing item on Qucklist!{{$route}}" data-action="share/whatsapp/share" style="font-size: 30px;" class="whatsapp-link">
                 <i class="fab fa-whatsapp-square"></i>
             </a>
             <div id="map"></div>
