@@ -21,8 +21,7 @@
                 Description
             </label>
                 <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
-            <textarea  class="form-control" name="item_description" placeholder="Describe your Item, List down as much detail as possible">{{ old('description') }}
-            </textarea>
+            <textarea class="form-control" name="item_description" placeholder="Describe your Item, List down as much detail as possible">{{ old('description') }}</textarea>
         </div>
         <div class="form-group">
             <label>
@@ -106,8 +105,8 @@
                     </p>
                 </div>
                 <div class="mt-4">
-                    <button class="btn btn-success col-md-12 " id="place-button">+ Add Place</button>
-                    <div class="place-form mt-3">
+                    <h4 class="text-center">Add Place</h4>
+                    <div class="mt-3">
                         <div class="form-group">
                             <label>Location Name</label>
                             <input type="text" class="form-control" placeholder="Home, Work" name="user_location_name" >
