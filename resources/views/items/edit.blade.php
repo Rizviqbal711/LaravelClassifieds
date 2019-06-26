@@ -92,21 +92,7 @@
                     @endforeach
                 </select>
                 <div class="mt-3">
-                    <button class="btn btn-success col-md-12 " id="place_button">+ Add Place</button>
-                    <div class="place_form mt-3">
-                        <div class="form-group">
-                            <label>Location Name</label>
-                            <input type="text" class="form-control" placeholder="Home, Work" name="user_location_name" >
-                        </div>
-                        <div class="form-group">
-                            <label>City</label>
-                            <input type="text" class="form-control" placeholder="Dubai" name="user_location_city" >
-                        </div>
-                        <div class="form-group">
-                            <label>Area</label>
-                            <input type="text" class="form-control" placeholder="Al Nahda 2, Qusais" name="user_location_area" >
-                        </div>
-                    </div>
+                    <a href="/profile" class="btn btn-success col-md-12"> + Add Place</a>
                 </div>
             </div>
         </div>   

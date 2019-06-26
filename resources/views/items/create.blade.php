@@ -105,8 +105,8 @@
                     </p>
                 </div>
                 <div class="mt-4">
-                    <h4 class="text-center">Add Place</h4>
-                    <div class="mt-3">
+                    <button class="btn btn-success col-md-12 " id="place-button">+ Add Place</button>
+                    <div class=" place-form mt-3">
                         <div class="form-group">
                             <label>Location Name</label>
                             <input type="text" class="form-control" placeholder="Home, Work" name="user_location_name" >
@@ -171,7 +171,6 @@
             $(".place-form").toggle("slow");
         });
     });
-
 
     var map, infoWindow;
 
