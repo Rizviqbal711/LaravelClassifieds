@@ -24,7 +24,7 @@ class PagesController extends Controller
         $isMobile = $agent->isMobile();
         $isTablet = $agent->isTablet();
 
-        $items = Item::limit(6)->get();
+        $items = Item::limit(4)->get();
         $categories = Category::limit(6)->get();
 
         // $item = $all_items->;

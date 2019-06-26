@@ -9,6 +9,7 @@ use App\Category;
 use App\User;
 use App\Reward;
 use App\Location;
+use Jenssegers\Agent\Agent;
 
 class ItemController extends Controller
 {
@@ -66,7 +67,9 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(request()->user_location_id);
+
+        $agent = new Agent();
+
         $validated_attr = request()->validate([
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
@@ -91,7 +94,6 @@ class ItemController extends Controller
 
         }
 
-        // dd($item_location);
         if (request()->user_location_id == null) {
             $location = request()->validate([
                 'user_location_name' => ['required', 'min:3'],
@@ -110,11 +112,8 @@ class ItemController extends Controller
         $validated_attr['user_id'] = $user_id;
 
         // TEMPORARY: remove later after fixing the age..
-        // $validated_attr['item_age'] = 0;
-        // dd($validated_attr);
-        $item = Item::create($validated_attr);
 
-        // dd($item->id);
+        $item = Item::create($validated_attr);
 
         Reward::create([
             'user_id' => Auth()->user()->id,
@@ -139,7 +138,12 @@ class ItemController extends Controller
 
         User::where('id', $user_id)->update($user_details);
 
-        return redirect('/items');
+        if ($agent->isMobile()) {
+            return redirect('/');
+        } else {
+            return redirect('/items');
+        }
+
 
     }
 
@@ -185,6 +189,10 @@ class ItemController extends Controller
      */
     public function update(Item $item)
     {
+
+
+        $agent = new Agent();
+
         $attr = request()->validate([
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
@@ -211,7 +219,12 @@ class ItemController extends Controller
 
 
 
-        return redirect('/items');
+        if ($agent->isMobile()) {
+            return redirect('/');
+        } else {
+            return redirect('/items');
+        }
+
     }
 
     /**

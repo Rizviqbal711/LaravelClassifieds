@@ -41,6 +41,7 @@
 
 .item-image{
 	background: white;
+	width:100%;
 }
 
 .no-margin{
@@ -75,12 +76,27 @@
 
 
 #map{
-	width: 304px;
+	width: 100%;
 	height:500px;
 }
 
-.alert{
+.link-alert{
 	display: none;
+}
+
+.facebook-link{
+	color: #4267b2;
+	font-size: 30px;
+}
+
+.twitter-link{
+	color: #38A1F3;
+	font-size: 30px;	
+}
+
+.whatsapp-link{
+	color: #25D366;
+	font-size: 30px;
 }
 
 .h2 { 
