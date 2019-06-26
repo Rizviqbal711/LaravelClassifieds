@@ -74,18 +74,23 @@ class ItemController extends Controller
             'item_min_price' => ['numeric', 'required'],
             'item_max_price' => ['numeric', 'required', 'min:'.request()->item_min_price],
             'category_id' => ['required'],
-            'user_location_id' => ['required'],
             'item_primary_image' => ['required'],
             'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
-        // dd($validated_attr);
-
-        $location = request()->validate([
-            'user_location_name',
-            'user_location_city',
-            'user_location_area',
+        $item_location = request([
+            'user_location_id'
         ]);
+
+        // dd($item_location);
+        if ($item_location == null) {
+            $location = request()->validate([
+                'user_location_name' => ['min:3'],
+                'user_location_city' => ['min:3'],
+                'user_location_area' => ['min:3'],
+            ]);
+        }
+
 
         $user_details = request()->validate([
             'phone' => ['required'],
@@ -103,7 +108,9 @@ class ItemController extends Controller
         // TEMPORARY: remove later after fixing the age..
         // $validated_attr['item_age'] = 0;
         // dd($validated_attr);
-        Item::create($validated_attr);
+        $item = Item::create($validated_attr);
+
+        // dd($item->id);
 
         Reward::create([
             'user_id' => Auth()->user()->id,
@@ -111,12 +118,18 @@ class ItemController extends Controller
         ]);
 
         if(!empty($location)){
-            Location::create([
+            $new_location = Location::create([
                 'user_id' => Auth()->user()->id,
                 'user_location_name' => $location['user_location_name'],
                 'user_location_city'=> $location['user_location_city'],
                 'user_location_area'=> $location['user_location_area'],
             ]);
+
+            Item::where('id', $item->id)->update(['user_location_id' => $new_location->id]);
+
+        } else {
+
+            Item::where('id', $item->id)->update($item_location);
         }
 
 
