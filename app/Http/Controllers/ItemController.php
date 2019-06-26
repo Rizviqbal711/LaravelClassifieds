@@ -66,7 +66,7 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        // dd(request()->phone);
+        // dd(request()->user_location_id);
         $validated_attr = request()->validate([
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
@@ -78,24 +78,28 @@ class ItemController extends Controller
             'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
         ]);
 
-        $item_location = request([
-            'user_location_id'
-        ]);
-
-        // dd($item_location);
-        if ($item_location == null) {
-            $location = request()->validate([
-                'user_location_name' => ['min:3'],
-                'user_location_city' => ['min:3'],
-                'user_location_area' => ['min:3'],
-            ]);
-        }
-
-
         $user_details = request()->validate([
             'phone' => ['required'],
             'contact_whatsapp' => ['required'],
         ]);
+
+
+        if (request()->user_location_name == null || request()->user_location_city == null || request()->user_location_area == null) {
+            $item_location = request()->validate([
+                'user_location_id' =>['required']
+            ]);
+
+        }
+
+        // dd($item_location);
+        if (request()->user_location_id == null) {
+            $location = request()->validate([
+                'user_location_name' => ['required', 'min:3'],
+                'user_location_city' => ['required', 'min:3'],
+                'user_location_area' => ['required', 'min:3'],
+            ]);
+        }
+
 
         $user_id = Auth()->user()->id;
         if (request()->hasFile('item_primary_image')) {
@@ -181,12 +185,22 @@ class ItemController extends Controller
      */
     public function update(Item $item)
     {
-        $attr = request()->all(); 
+        $attr = request()->validate([
+            'item_title' => ['required', 'min:3'],
+            'item_description' => ['required', 'min:3'],
+            'item_age' => ['required'],
+            'item_min_price' => ['numeric', 'required'],
+            'item_max_price' => ['numeric', 'required', 'min:'.request()->item_min_price],
+            'category_id' => ['required'],
+            'user_location_id' => ['required'],
+            'item_primary_image' => ['required'],
+            'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
+        ]);
         unset($attr['_method']);
         unset($attr['_token']);
 
         // dd($attr);
-        
+
         if (request()->hasFile('item_primary_image')) {
             $file_name = date('YmdHis') . '-' . request()->file('item_primary_image')->getClientOriginalName();
             request()->file('item_primary_image')->move(public_path() . '/uploads/', $file_name);  

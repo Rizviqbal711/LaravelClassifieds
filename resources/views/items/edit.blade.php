@@ -17,21 +17,20 @@
 
 		<div class="form-group">
             <label>Title</label>
-    		<input type="text" class="form-control" placeholder="Title" name="item_title" value="{{ $item->item_title }}">
+    		<input type="text" class="form-control  {{$errors->has('item_title') ? 'is-invalid' : '' }}" placeholder="Title" name="item_title" value="{{ $item->item_title }}">
         </div>
         <div class="form-group">
             <label>
                 Description
             </label>
-                <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
-            <textarea  class="form-control" name="item_description" placeholder="Description">{{ $item->item_description }}</textarea>
+            <textarea  class="form-control {{$errors->has('item_description') ? 'is-invalid' : '' }}" name="item_description" placeholder="Description">{{ $item->item_description }}</textarea>
         </div>
         <div class="form-group">
             <label>
                 Category
             </label>
-                <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
-                <select class="form-control custom-select" placeholder="Category" name="category_id">
+            
+                <select class="form-control custom-select  {{$errors->has('category_id') ? 'is-invalid' : '' }}" placeholder="Category" name="category_id">
                     <option disabled selected>Category</option>
                     @foreach($categories as $category)
                         <option value="{{ $category->id }}" {{ $item->category_id == $category->id  ? 'selected' : ''}}>{{ $category->category_name }}</option>
@@ -43,8 +42,7 @@
             <label>
                 Age
             </label>
-                <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
-                <select class="form-control custom-select" placeholder="Age" name="item_age">
+                <select class="form-control custom-select {{$errors->has('item_age') ? 'is-invalid' : '' }}" placeholder="Age" name="item_age">
             		<option disabled selected>Age</option>
             		<option value="1" {{ $item->item_age == 1  ? 'selected' : ''}}>Brand New</option>
             		<option value="2" {{ $item->item_age == 2  ? 'selected' : ''}}>1 - 6 Months</option>
@@ -58,17 +56,20 @@
             <label>
             	Min. Price
             </label>
-            <input name="item_min_price" class="form-control" placeholder="Minimum Price" type="text" value="{{ $item->item_min_price }}">
+            <input name="item_min_price" class="form-control {{$errors->has('item_min_price') ? 'is-invalid' : '' }}" placeholder="Minimum Price" type="text" value="{{ $item->item_min_price }}">
         </div>
         <div class="form-group">
             <label>
             	Max. Price
             </label>
-            <input name="item_max_price" class="form-control" placeholder="Maximum Price" type="text" value="{{ $item->item_max_price }}">
+            <input name="item_max_price" class="form-control {{$errors->has('item_max_price') ? 'is-invalid' : '' }}" placeholder="Maximum Price" type="text" value="{{ $item->item_max_price }}">
         </div>
         <div class="form-group">
             <label>Images</label>
-            <input type="file" name="item_primary_image">
+            <div class="custom-file">
+                <input type="file" name="item_primary_image" class=" custom-file-input {{$errors->has('item_primary_image') ? 'is-invalid' : '' }}" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
         </div>
         @if($item->item_primary_image)
             <input type="hidden" name="item_primary_image" value="{{$item->item_primary_image}}">
