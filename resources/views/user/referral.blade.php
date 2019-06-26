@@ -12,7 +12,7 @@
 			<p>Your Referral Link</p>
 			<input type="text" value="{{ auth()->user()->getReferrals()[0]->link }}" class="allowCopy form-control" readonly>
 			<small>Please click the link to copy</small>
-			<div class="alert alert-success text-center alert fade-in mt-2">
+			<div class="alert alert-success text-center link-alert fade-in mt-2">
 				Link Copied!
 			</div>
 		</div>
