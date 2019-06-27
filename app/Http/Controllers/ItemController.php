@@ -74,6 +74,7 @@ class ItemController extends Controller
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
             'item_age' => ['required'],
+            'item_condition' => ['required'],
             'item_min_price' => ['numeric', 'required'],
             'item_max_price' => ['numeric', 'required', 'min:'.request()->item_min_price],
             'category_id' => ['required'],
@@ -197,12 +198,13 @@ class ItemController extends Controller
             'item_title' => ['required', 'min:3'],
             'item_description' => ['required', 'min:3'],
             'item_age' => ['required'],
+            'item_condition' => ['required'],
             'item_min_price' => ['numeric', 'required'],
             'item_max_price' => ['numeric', 'required', 'min:'.request()->item_min_price],
             'category_id' => ['required'],
             'user_location_id' => ['required'],
             'item_primary_image' => ['required'],
-            'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:2048'],
+            'item_primary_image.*' => ['mimes:jpeg,png,jpg,gif', 'max:7168'],
         ]);
         unset($attr['_method']);
         unset($attr['_token']);

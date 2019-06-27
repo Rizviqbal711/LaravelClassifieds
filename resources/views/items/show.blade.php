@@ -14,7 +14,7 @@
                     @if(Auth::user()->id == $item->user_id)
                     <div class="d-inline-block">
                         <a href="/items/{{ $item->id }}/edit" class="btn btn-sm btn-success">
-                        Edit
+                        Edit/Delete
                         </a>
                     </div>
                     @endif
