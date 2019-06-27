@@ -54,6 +54,19 @@
         </div>
         <div class="form-group">
             <label>
+                Condition
+            </label>
+            <select class="form-control custom-select {{$errors->has('item_condition') ? 'is-invalid' : '' }}" placeholder="Age" name="item_condition">
+                <option disabled selected>Condition</option>
+                <option value="1" {{ $item->item_condition  == 1 ? "selected":"") }}>Perfect Inside and Out</option>
+                <option value="2" {{ $item->item_condition == 2 ? "selected":"") }}>Almost no noticeable flaws </option>
+                <option value="3" {{ $item->item_condition == 3 ? "selected":"") }}>A bit of wear and tear, But in good working condition</option>
+                <option value="4" {{ $item->item_condition == 4 ? "selected":"") }}>Normal wear and tear, A few problems</option>
+                <option value="5" {{ $item->item_condition == 5 ? "selected":"") }}>The item may need a repair to work properly</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>
             	Min. Price
             </label>
             <input name="item_min_price" class="form-control {{$errors->has('item_min_price') ? 'is-invalid' : '' }}" placeholder="Minimum Price" type="text" value="{{ $item->item_min_price }}">
