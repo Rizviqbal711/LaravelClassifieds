@@ -37,19 +37,28 @@
             <label>
                 Age
             </label>
-                <!-- <input  id="inputPassword3" placeholder="Password" type="password"> -->
-                <select class="form-control custom-select {{$errors->has('item_age') ? 'is-invalid' : '' }}" placeholder="Age" name="item_age">
-            		<option disabled selected>Age</option>
-                    <option value="1" {{ (old("item_age") == 1 ? "selected":"") }}>Brand New</option>
-                    <option value="2" {{ (old("item_age") == 2 ? "selected":"") }}>1 - 6 Months</option>
-                    <option value="3" {{ (old("item_age") == 3 ? "selected":"") }}>6 - 12 Months</option>
-                    <option value="4" {{ (old("item_age") == 4 ? "selected":"") }}>1 - 2 Years</option>
-                    <option value="5" {{ (old("item_age") == 5 ? "selected":"") }}>2 - 5 Years</option>
-                    <option value="6" {{ (old("item_age") == 6 ? "selected":"") }}>5+ Years</option>
-            	</select>
-                <!-- <textarea  class="form-control" name="description" placeholder="Description">
-                {{ old('description') }}
-            	</textarea> -->
+            <select class="form-control custom-select {{$errors->has('item_age') ? 'is-invalid' : '' }}" placeholder="Age" name="item_age">
+            	<option disabled selected>Age</option>
+                <option value="1" {{ (old("item_age") == 1 ? "selected":"") }}>Brand New</option>
+                <option value="2" {{ (old("item_age") == 2 ? "selected":"") }}>1 - 6 Months</option>
+                <option value="3" {{ (old("item_age") == 3 ? "selected":"") }}>6 - 12 Months</option>
+                <option value="4" {{ (old("item_age") == 4 ? "selected":"") }}>1 - 2 Years</option>
+                <option value="5" {{ (old("item_age") == 5 ? "selected":"") }}>2 - 5 Years</option>
+                <option value="6" {{ (old("item_age") == 6 ? "selected":"") }}>5+ Years</option>
+        	</select>
+        </div>
+        <div class="form-group">
+            <label>
+                Condition
+            </label>
+            <select class="form-control custom-select {{$errors->has('item_condition') ? 'is-invalid' : '' }}" placeholder="Age" name="item_condition">
+                <option disabled selected>Condition</option>
+                <option value="1" {{ (old("item_condition") == 1 ? "selected":"") }}>Perfect Inside and Out</option>
+                <option value="2" {{ (old("item_condition") == 2 ? "selected":"") }}>Almost no noticeable flaws </option>
+                <option value="3" {{ (old("item_condition") == 3 ? "selected":"") }}>A bit of wear and tear, But in good working condition</option>
+                <option value="4" {{ (old("item_condition") == 4 ? "selected":"") }}>Normal wear and tear, A few problems</option>
+                <option value="5" {{ (old("item_condition") == 5 ? "selected":"") }}>The item may need a repair to work properly</option>
+            </select>
         </div>
         <div class="form-group">
             <label>
@@ -68,11 +77,13 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group was-validated">
             <label>Images</label>
             <div class="custom-file">
-                <input type="file" name="item_primary_image" class=" custom-file-input {{$errors->has('item_primary_image') ? 'is-invalid' : '' }}" id="customFile">
-                <label class="custom-file-label" for="customFile">Choose file</label>
+                <input type="file" name="item_primary_image" class="custom-file-input {{$errors->has('item_primary_image') ? 'is-invalid' : '' }}" id="validatedCustomFile" required>
+                    <label class="custom-file-label" for="validatedCustomFile">Choose file</label>
+                    <div class="invalid-feedback">Please upload an Image</div>
+                    <div class="valid-feedback">Image has been uploaded</div>
             </div>
         </div>
         <hr>
@@ -88,7 +99,7 @@
                  <div class="form-group">
                     <label>Contact via Whatsapp</label>
                     <div class="custom-control custom-radio">
-                        <input type="radio" class="custom-control-input {{$errors->has('contact_whatsapp') ? 'is-invalid' : '' }}" id="customControlValidation2" name="contact_whatsapp" value="1">
+                        <input type="radio" class="custom-control-input {{$errors->has('contact_whatsapp') ? 'is-invalid' : '' }}" id="customControlValidation2" name="contact_whatsapp" value="1" checked="checked">
                         <label class="custom-control-label" for="customControlValidation2">Yes</label>
                     </div>
                     <div class="custom-control custom-radio">
@@ -99,7 +110,11 @@
                 </div>
                 <label>Location</label>
                 <select class="form-control custom-select {{$errors->has('user_location_id') ? 'is-invalid' : '' }}" placeholder="Category" name="user_location_id">
-                    <option disabled selected>Location</option>
+                    @if(empty($locations))
+                    <option disabled selected>Please add a new location</option>
+                    @else
+                    <option disabled selected>Select a Location</option>
+                    @endif
                     @foreach($locations as $lcn)
                         <option value="{{ $lcn->id }}">{{ $lcn->user_location_name }}</option>
                     @endforeach
@@ -111,14 +126,23 @@
                 </div>
                 <div class="mt-4">
                     <h4 class="text-center">Add Place</h4>
-                    <div class="mt-3">
+                    <div class="place-form mt-3">
                         <div class="form-group">
                             <label>Location Name</label>
                             <input type="text" class="form-control {{$errors->has('user_location_name') ? 'is-invalid' : '' }}" placeholder="Home, Work" name="user_location_name" value="{{ old('user_location_name') }}">
                         </div>
                         <div class="form-group">
                             <label>City</label>
-                            <input type="text" class="form-control {{$errors->has('user_location_city') ? 'is-invalid' : '' }}" placeholder="Dubai" name="user_location_city" value="{{ old('user_location_city') }}">
+                            <select class="form-control custom-select {{$errors->has('item_condition') ? 'is-invalid' : '' }}" placeholder="Age" name="item_condition">
+                                <option disabled selected>Select City</option>
+                                <option value="Abu Dhabi" {{ (old("item_city") == 1 ? "selected":"") }}>Abu Dhabi</option>
+                                <option value="Dubai" {{ (old("item_city") == 2 ? "selected":"") }}>Dubai</option>
+                                <option value="Sharjah" {{ (old("item_city") == 3 ? "selected":"") }}>Sharjah</option>
+                                <option value="Ajman" {{ (old("item_city") == 4 ? "selected":"") }}>Ajman</option>
+                                <option value="Ras Al Khaimah" {{ (old("item_city") == 5 ? "selected":"") }}>Ras Al Khaimah</option>
+                                <option value="Umm Al Quwain" {{ (old("item_city") == 6 ? "selected":"") }}>Umm Al Quwain</option>
+                                <option value="Fujairah" {{ (old("item_city") == 7 ? "selected":"") }}>Fujeirah</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Area</label>
@@ -135,31 +159,58 @@
             
         <div class="form-group mt-3">
             <div>
-                <button class="btn btn-success col-md-12" type="submit">
+                <button type="button" class="btn btn-success col-md-12" data-toggle="modal" data-target="#exampleModal">
                     Submit
                 </button>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel"></h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Before Listing your Item, Please check the rules:</h2>
+                        <ul>
+                            <li>For any prohibited item or activity that violates UAE law</li>
+                            <li>That promotes any business, commercial services or products</li>
+                            <li>More than once, or in multiple categories</li>
+                            <li>With Fraudulent information</li>
+                            <li>Item should not be located outside of UAE</li>
+                            <li>For any prohibited item or activity that violates UAE law</li>
+                        </ul>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                        <button type="submit" class="btn btn-primary">Accept and Submit</button>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
 </div>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        If you dont want to use the QuickList's Smart Pricing Feature, Please enter the same amount as the "Minimum Price"
-        <br><br>
-        Read more about it 
-        @if($agent->isMobile())
-        <a href="/m/about">here</a>
-        @else
-        <a href="/">here</a>
-        @endif
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Close</button>
-      </div>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                If you dont want to use the QuickList's Smart Pricing Feature, Please enter the same amount as the "Minimum Price"
+                <br><br>
+                Read more about it 
+                @if($agent->isMobile())
+                    <a href="/m/about">here</a>
+                @else
+                    <a href="/">here</a>
+                @endif
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <script type="text/javascript">
 

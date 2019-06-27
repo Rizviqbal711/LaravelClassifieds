@@ -50,7 +50,7 @@
                 </h5>
             </div>
             <button class="btn btn-success col-md-12 " id="place-button">+ Add Place</button>
-            <div class="place-form mt-3">
+            <div class="place-form-profile mt-3">
                 <form action="/location" method="POST">
                     @csrf
                     <div class="form-group">
@@ -59,7 +59,16 @@
                     </div>
                     <div class="form-group">
                         <label>City</label>
-                        <input type="text" class="form-control" placeholder="Dubai" name="user_location_city" >
+                        <select class="form-control custom-select {{$errors->has('item_condition') ? 'is-invalid' : '' }}" placeholder="Age" name="item_condition">
+                            <option disabled selected>Select City</option>
+                            <option value="Abu Dhabi" {{ (old("item_city") == 1 ? "selected":"") }}>Abu Dhabi</option>
+                            <option value="Dubai" {{ (old("item_city") == 2 ? "selected":"") }}>Dubai</option>
+                            <option value="Sharjah" {{ (old("item_city") == 3 ? "selected":"") }}>Sharjah</option>
+                            <option value="Ajman" {{ (old("item_city") == 4 ? "selected":"") }}>Ajman</option>
+                            <option value="Ras Al Khaimah" {{ (old("item_city") == 5 ? "selected":"") }}>Ras Al Khaimah</option>
+                            <option value="Umm Al Quwain" {{ (old("item_city") == 6 ? "selected":"") }}>Umm Al Quwain</option>
+                            <option value="Fujairah" {{ (old("item_city") == 7 ? "selected":"") }}>Fujeirah</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Area</label>
