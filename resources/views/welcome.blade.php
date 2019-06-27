@@ -125,7 +125,7 @@
     <div class="mt-5 row justify-content-around">
         @foreach($items as $i => $item)
             <div class="card d-inline-block mr-3 mb-3 home-card" style="">
-            <img alt="..." class="card-img-top" src="{{asset('uploads') .'/'. $item->item_primary_image}}"/>
+            <img alt="..." class="card-img-top" src="{{asset('uploads') .'/'. $item->item_primary_image}}" height="260"/>
                 <div class="card-body">
                     <h5 class="card-title">
                         {{ $item->item_title }} <small class="float-right text-success">{{ germanizer($item->item_min_price, $item->item_max_price, date('w') + 1)}} AED</small>
