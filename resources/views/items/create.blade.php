@@ -186,7 +186,8 @@
                     </div>
                     <div class="modal-footer">
                         <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                        <button type="submit" class="btn btn-primary">Accept and Submit</button>
+                        <a href="/terms" class="btn btn-primary">Terms and Condition</a>
+                        <button type="submit" class="btn btn-success">Accept and Submit</button>
                     </div>
                 </div>
             </div>
