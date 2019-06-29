@@ -15,7 +15,7 @@
 			How does this Work?
 		</h2>
 		<div>
-			Every week we hold a Grand Draw with an exciting, on-trend prize to be won by a lucky Quicklister! You’ll get a draw entry for every single point you earn!
+			Every month we hold a Grand Draw with an exciting, on-trend prize to be won by a lucky Quicklister! You’ll get a draw entry for every single point you earn!
 			<br>
 			Points for everyone:
 			<ul>
