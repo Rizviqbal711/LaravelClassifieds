@@ -74,8 +74,8 @@
                         <label>Area</label>
                         <input type="text" class="form-control input-area" placeholder="Al Nahda 2, Qusais" name="user_location_area" >
                     </div>
-                    <div id="map"></div>
-                    <span class="btn btn-primary col-md-12 location-click">Get location</span>
+                  <!--   <div id="map"></div>
+                    <span class="btn btn-primary col-md-12 location-click">Get location</span> -->
                     <div>
                         <button class="btn btn-success col-md-12 mt-3">Submit</button>
                     </div>
@@ -127,48 +127,48 @@
     });
 
 
-    var map, infoWindow;
+    // var map, infoWindow;
 
 
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 12
-        });
-        infoWindow = new google.maps.InfoWindow;
+    // function initMap() {
+    //     map = new google.maps.Map(document.getElementById('map'), {
+    //         center: {lat: -34.397, lng: 150.644},
+    //         zoom: 12
+    //     });
+    //     infoWindow = new google.maps.InfoWindow;
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
+    //     if (navigator.geolocation) {
+    //         navigator.geolocation.getCurrentPosition(function(position) {
+    //             var pos = {
+    //                 lat: position.coords.latitude,
+    //                 lng: position.coords.longitude
+    //             };
 
 
-                infoWindow.open(map);
-                map.setCenter(pos);
-                var marker = new google.maps.Marker({
-                    position: pos,
-                    map: map
+    //             infoWindow.open(map);
+    //             map.setCenter(pos);
+    //             var marker = new google.maps.Marker({
+    //                 position: pos,
+    //                 map: map
 
-                });
-                var geocoder = new google.maps.Geocoder();
-                geocoder.geocode({location: pos }, function (results, status){
-                    $(".location-click").click(function(){
-                        var array = results[0]["formatted_address"].split("-");
-                        $(".place-form").find(".input-area").val(array[0]);
+    //             });
+    //             var geocoder = new google.maps.Geocoder();
+    //             geocoder.geocode({location: pos }, function (results, status){
+    //                 $(".location-click").click(function(){
+    //                     var array = results[0]["formatted_address"].split("-");
+    //                     $(".place-form").find(".input-area").val(array[0]);
 
-                        // alert();
-                    })
-                });
-            }, function() {
-                handleLocationError(true, infoWindow, map.getCenter());
-            });
+    //                     // alert();
+    //                 })
+    //             });
+    //         }, function() {
+    //             handleLocationError(true, infoWindow, map.getCenter());
+    //         });
 
-        } else {
-        // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
-        }
-    }
+    //     } else {
+    //     // Browser doesn't support Geolocation
+    //         handleLocationError(false, infoWindow, map.getCenter());
+    //     }
+    // }
 </script>
 @endsection

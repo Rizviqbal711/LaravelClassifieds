@@ -56,13 +56,11 @@
             <a href="whatsapp://send?text= Hey! I found this amazing item on Quicklist!{{$route}}" data-action="share/whatsapp/share" style="font-size: 30px;" class="whatsapp-link">
                 <i class="fab fa-whatsapp-square"></i>
             </a>
-            <div id="map"></div>
+            <!-- <div id="map"></div> -->
         </div> 
     </div>
 </div>
-<script type="text/javascript">
-    var map;
-
+<!-- <script type="text/javascript">
     function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {lat: -34.397, lng: 150.644},
@@ -98,6 +96,6 @@
             handleLocationError(false, infoWindow, map.getCenter());
         }
     }
-</script>
+</script> -->
 
 @endsection

@@ -149,9 +149,9 @@
                             <input type="text" class="form-control input-area {{$errors->has('user_location_area') ? 'is-invalid' : '' }}" placeholder="Al Nahda 2, Qusais" name="user_location_area" value="{{ old('user_location_area') }}">
                         </div>
                         
-                        <div id="map"></div>
+                       <!--  <div id="map"></div>
 
-                        <span class="btn btn-primary col-md-12 location-click">Get location</span>
+                        <span class="btn btn-primary col-md-12 location-click">Get location</span> -->
                     </div>
                 </div>
             </div>
@@ -213,7 +213,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     var map, infoWindow;
 
@@ -258,5 +258,5 @@
             handleLocationError(false, infoWindow, map.getCenter());
         }
     }
-</script>
+</script> -->
 @endsection
