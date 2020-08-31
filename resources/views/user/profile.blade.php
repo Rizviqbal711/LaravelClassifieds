@@ -59,15 +59,15 @@
                     </div>
                     <div class="form-group">
                         <label>City</label>
-                        <select class="form-control custom-select {{$errors->has('item_condition') ? 'is-invalid' : '' }}" placeholder="Age" name="item_condition">
+                        <select class="form-control custom-select {{$errors->has('user_location_city') ? 'is-invalid' : '' }}" placeholder="Age" name="user_location_city">
                             <option disabled selected>Select City</option>
-                            <option value="Abu Dhabi" {{ (old("item_city") == 1 ? "selected":"") }}>Abu Dhabi</option>
-                            <option value="Dubai" {{ (old("item_city") == 2 ? "selected":"") }}>Dubai</option>
-                            <option value="Sharjah" {{ (old("item_city") == 3 ? "selected":"") }}>Sharjah</option>
-                            <option value="Ajman" {{ (old("item_city") == 4 ? "selected":"") }}>Ajman</option>
-                            <option value="Ras Al Khaimah" {{ (old("item_city") == 5 ? "selected":"") }}>Ras Al Khaimah</option>
-                            <option value="Umm Al Quwain" {{ (old("item_city") == 6 ? "selected":"") }}>Umm Al Quwain</option>
-                            <option value="Fujairah" {{ (old("item_city") == 7 ? "selected":"") }}>Fujeirah</option>
+                            <option value="Abu Dhabi" {{ (old("user_location_city") == 1 ? "selected":"") }}>Abu Dhabi</option>
+                            <option value="Dubai" {{ (old("user_location_city") == 2 ? "selected":"") }}>Dubai</option>
+                            <option value="Sharjah" {{ (old("user_location_city") == 3 ? "selected":"") }}>Sharjah</option>
+                            <option value="Ajman" {{ (old("user_location_city") == 4 ? "selected":"") }}>Ajman</option>
+                            <option value="Ras Al Khaimah" {{ (old("user_location_city") == 5 ? "selected":"") }}>Ras Al Khaimah</option>
+                            <option value="Umm Al Quwain" {{ (old("user_location_city") == 6 ? "selected":"") }}>Umm Al Quwain</option>
+                            <option value="Fujairah" {{ (old("user_location_city") == 7 ? "selected":"") }}>Fujeirah</option>
                         </select>
                     </div>
                     <div class="form-group">

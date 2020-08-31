@@ -68,6 +68,8 @@ class ItemController extends Controller
     public function store(Request $request)
     {
 
+        // dd($request);
+
         $agent = new Agent();
 
         $validated_attr = request()->validate([
@@ -103,6 +105,7 @@ class ItemController extends Controller
             ]);
         }
 
+        // dd((!empty($location)) ? true : false);
 
         $user_id = Auth()->user()->id;
         if (request()->hasFile('item_primary_image')) {
